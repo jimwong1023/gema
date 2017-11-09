@@ -1,0 +1,76 @@
+<div class="page-width featured-product">
+  <div class = "grid product-single">
+    <div class="grid__item product-single__photos medium-up--one-half">
+      <style>
+        #did-you-know-photo {
+          max-height: 500px;
+          min-height: 500px;
+          object-fit: cover;
+          overflow: auto;
+        }
+        #did-you-know-text {
+          max-height: 500px;
+          min-height: 500px;
+        }
+        
+        
+        @media (max-width: 550px) {
+          #did-you-know-photo {
+            max-height: auto;
+            min-height: auto;
+            object-fit: cover;
+            overflow: hidden;
+          }
+          
+          #did-you-know-text {
+            max-height: auto;
+            min-height: auto;
+          }
+        }
+        
+        @media (min-width: 750px) {
+          #did-you-know-text-wrapper {
+            padding-left: 0;
+          }
+        }
+      </style>
+      <div class="product-single__photo-wrapper js">
+        <div style="padding-top:95%;" class="product-single__photo">
+          <img id="did-you-know-photo" class="feature-row__image product-featured-img lazyautosizes lazyloaded" src="//cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_200x200.jpg?v=1499572982" data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-aspectratio="1.0351617440225036" data-sizes="auto" alt="" data-srcset="//cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_180x.jpg?v=1499572982 180w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_360x.jpg?v=1499572982 360w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_540x.jpg?v=1499572982 540w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_720x.jpg?v=1499572982 720w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_900x.jpg?v=1499572982 900w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1080x.jpg?v=1499572982 1080w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1296x.jpg?v=1499572982 1296w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1512x.jpg?v=1499572982 1512w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1728x.jpg?v=1499572982 1728w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_2048x.jpg?v=1499572982 2048w" sizes="454px" srcset="//cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_180x.jpg?v=1499572982 180w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_360x.jpg?v=1499572982 360w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_540x.jpg?v=1499572982 540w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_720x.jpg?v=1499572982 720w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_900x.jpg?v=1499572982 900w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1080x.jpg?v=1499572982 1080w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1296x.jpg?v=1499572982 1296w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1512x.jpg?v=1499572982 1512w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_1728x.jpg?v=1499572982 1728w, //cdn.shopify.com/s/files/1/2109/1565/files/did_you_know_2048x.jpg?v=1499572982 2048w">
+        </div>
+      </div>
+    </div>
+    <div id="did-you-know-text-wrapper" class="grid__item medium-up--one-half">
+      <div id="did-you-know-text" class="product-single__meta did-you-know">
+        <div style="width: 100%;">
+          {% include 'icon-lightbulb' %}
+        </div>
+        <h2 class="did-you-know-header h3">Did you know?</h2>
+        <p class="did-you-know-p">On average, couples spends $6,500 on an engagement ring. The investment with Gema? As low as:</p>
+        <h3 class="did-you-know-price">$195</h3>
+<!--         <a href="/collections/frontpage" class="btn did-you-know-btn">Shop now</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Did you know",
+    "class": "index-section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Did you know",
+        "category": "Custom layout"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
