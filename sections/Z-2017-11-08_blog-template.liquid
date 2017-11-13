@@ -1,0 +1,136 @@
+{% paginate blog.articles by 12 %}
+
+
+<div class="hero hero-width c-hero-width c-journal-hero">
+  <div class="hero__inner padding-top-none">
+    <h2 class="c-section-header-xlg margin-bottom-xs">Discover</h2>
+    <p class="c-blog-subheader">a new kind of engagement ring.<br>
+    so practical your wallet will thank you.</p>
+  </div>
+</div>
+
+<div class="pg-bg-primary">
+  <div class="c-page-width-l padding-top-l">
+    <header class="section-header text-center">
+      <div class="c-section-center c-page-width-m">
+        <p class="c-mini-header padding-bottom-s">DISCOVER MORE ABOUT MOISSANITE</p>
+        <h3 class="c-section-header-lg">Explore the Journal</h3>
+      </div>
+      {% if blog.tags.size > 0 %}
+        <select id="BlogTagFilter">
+          <option value="/blogs/{{ blog.handle }}">{{ 'blogs.article.all_topics' | t }}</option>
+          {% for tag in blog.all_tags %}
+            <option value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+    </header>
+  </div>
+
+  <div class="page-width padding-top-xl m-padding-top-s">
+    {% for article in blog.articles %}
+      <div class="c-column-flex-container c-mobile-flex-column padding-top-m padding-bottom-m c-article-line">
+        {% if article.image %}
+          {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
+          {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
+          {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+          {% include 'image-style' with image: article.image, small_style: true, width: 345, height: 345, wrapper_id: img_wrapper_id, img_id: img_id %}
+          <div id="{{ img_wrapper_id }}" class="c-column-flex-1 js c-blog-image">
+            <a href="{{ article.url }}" class="">
+              <img id="{{ img_id }}"
+                   class="lazyload"
+                   src="{{ article.image | img_url: '300x300' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ article.image.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ article.image.alt | escape }}">
+            </a>
+          </div>
+          <noscript>
+            <a href="{{ article.url }}" class="">
+              {{ article | img_url: '345x345', scale: 2 | img_tag: article.title, 'article__grid-image' }}
+            </a>
+          </noscript>
+        {% endif %}
+        <div class="c-column-flex-2 padding-top-m padding-bottom-m">
+          <h2 class="c-section-header-blog">
+            <strong><a href="{{ article.url }}">{{ article.title }}</a></strong>
+          </h2>
+          <div class="padding-top-xs c-page-width-narrow">
+            {% if article.excerpt.size > 0 %}
+              {{ article.excerpt }}
+            {% else %}
+              {{ article.content | strip_html | truncate: 200 }}
+            {% endif %}
+          </div>
+
+          {% if article.tags.size > 0 %}
+            <div class="">
+              {% for tag in article.tags %}
+                <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <ul class="list--inline padding-top-m">
+            <li>
+              <a href="{{ article.url }}" class="c-link">
+                {{ 'blogs.article.read_more' | t }}
+              </a>
+            </li>
+
+            {% if blog.comments_enabled? and article.comments_count > 0 %}
+              <li>
+                <a href="{{ article.url }}#comments" class="btn btn--small btn--link">
+                  {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+    {% endif %}
+  </div>
+</div>
+{% endpaginate %}
+
+{% schema %}
+  {
+    "name": "Blog pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "grid",
+        "options": [
+          {
+            "value": "grid",
+            "label": "Grid"
+          },
+          {
+            "value": "list",
+            "label": "List"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}
