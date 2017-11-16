@@ -20,7 +20,7 @@
 
 {% paginate collection.products by limit %}
 
-<div data-section-id="{{ section.id }}" data-section-type="collection-template" {% if collection.handle == "engagement-rings" or collection.handle == "loose-gems"%} class="c-engagement-container" {% endif %}>
+<div data-section-id="{{ section.id }}" data-section-type="collection-template" class="c-engagement-container">
   <header class="collection-header">
 
     {% if section.settings.show_collection_image and collection.image %}

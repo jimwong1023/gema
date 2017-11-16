@@ -378,7 +378,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?9950898685614838466'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?923633711138764699'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -490,7 +490,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?9950898685614838466);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?923633711138764699);
 }
 
 // Unused intentionally
@@ -5072,10 +5072,7 @@ $toolbar-height-small: 46px;
   }
 }
 
-.site-footer__linklist,
-.site-footer__newsletter {
-  margin-top: $section-spacing-small;
-
+.site-footer__linklist {
   @include media-query($medium-up) {
     margin-top: $section-spacing;
   }
@@ -5097,11 +5094,9 @@ $toolbar-height-small: 46px;
 }
 
 .site-footer__newsletter {
-  margin: $section-spacing-small auto 0;
   max-width: 320px;
 
   @include media-query($medium-up) {
-    margin: $section-spacing 0 0;
     max-width: none;
   }
 }
@@ -6039,6 +6034,11 @@ $toolbar-height-small: 46px;
     padding-top: 20px;
   }
 }
+.m-padding-top-m {
+  @media only screen and (max-width: $grid-medium) {
+    padding-top: 50px;
+  }
+}
 .padding-top-none {
   padding-top: 0px;
 }
@@ -6068,10 +6068,19 @@ $toolbar-height-small: 46px;
 .padding-bottom-xl {
   padding-bottom: 120px;
 }
-
+.m-padding-bottom-none {
+    @media only screen and (max-width: $grid-medium) {
+    padding-bottom: 0px;
+  }
+}
 .m-padding-bottom-s {
   @media only screen and (max-width: $grid-medium) {
     padding-bottom: 20px;
+  }
+}
+.m-padding-bottom-m {
+  @media only screen and (max-width: $grid-medium) {
+    padding-bottom: 50px;
   }
 }
 
@@ -6234,7 +6243,7 @@ $toolbar-height-small: 46px;
   border-bottom-right-radius: $border-rad; */
   opacity: 0;
 
-  animation: 1s anim-lightspeed-in ease forwards;
+  animation: 0.5s anim-lightspeed-in ease forwards;
 }
 .chart__bar_secondary {
   color: #CDA490;
@@ -6430,6 +6439,7 @@ $toolbar-height-small: 46px;
   margin: 0px;
   @media only screen and (max-width: 450px) {
     font-size: 2em;
+    text-align: center;
   }
 }
 .c-header-xxl {
@@ -7345,6 +7355,12 @@ input {
 .c-split-screen {
   width: 100%;
   display: flex;
+}
+
+.c-flex__small-screen {
+  @media only screen and (max-width: $grid-large) {
+    flex-direction: column;
+  }
 }
 
 .c-flex-reverse__small-screen {
