@@ -788,7 +788,7 @@ body {
   padding-top: 110px;
   
   @media only screen and (max-width: $grid-medium) {
-    padding-top: 53px;
+    padding-top: 52px;
   }
 }
 
@@ -1262,6 +1262,9 @@ html {
   }
 }
 
+.main-content {
+  min-height: 63vh;
+}
 /* .main-content {
   display: block;
   padding-top: $section-spacing-small;
@@ -1854,7 +1857,7 @@ a {
   margin: ($gutter-site * .5) 0;
 
   @include media-query($small) {
-    margin-bottom: (-$section-spacing) - 1; // same as .site-footer
+/*     margin-bottom: (-$section-spacing) - 1; // same as .site-footer */
 
     .btn {
       display: block;
@@ -2301,6 +2304,7 @@ $dropdown-padding: 11px 17px;
 .site-nav {
   position: relative;
   right: 40px;
+  min-width: 162px;
   padding: 0;
 /*   text-align: center; */
   margin: 18px 0;
@@ -3713,6 +3717,10 @@ h1.product-single__title {
   text-align: center;
   position: relative;
   z-index: $z-index-announcement-bar;
+  
+  @media only screen and (max-width: $grid-medium) {
+    display: none;
+  }
 }
 
 .announcement-bar--link {
@@ -3739,7 +3747,7 @@ h1.product-single__title {
 
     @include media-query($small) {
       text-align: left;
-      margin: 15px 0;
+      margin: 8px 0;
     }
   }
 }
@@ -3922,10 +3930,6 @@ h1.product-single__title {
     vertical-align: middle;
     padding: 0px 8px;
     margin: 0;
-
-    .site-header__icons--plus & {
-      padding: 18px 6px;
-    }
   }
 
   .site-header__logo {
@@ -5820,7 +5824,7 @@ $toolbar-height-small: 46px;
 }
 
 .mega-subtitle p {
-  font-size: .75em;
+  font-size: 1.25em;
   margin: 30px 0px 0px 0px;
 
   @media only screen and (max-width: $grid-medium) {
@@ -5993,6 +5997,12 @@ $toolbar-height-small: 46px;
 
 .padding-right-l {
   padding-right: 80px;
+}
+
+.m-padding-right-none {
+  @media only screen and (max-width: $grid-medium) {
+    padding-right: 0px !important;
+  }
 }
 
 .m-padding-right-s {
@@ -6453,7 +6463,6 @@ $toolbar-height-small: 46px;
   margin: 0px;
   @media only screen and (max-width: 450px) {
     font-size: 2em;
-    text-align: center;
   }
 }
 .c-header-xxl {
@@ -6624,11 +6633,6 @@ $toolbar-height-small: 46px;
 .compare h4 {
   font-size: 16px;
 }
-.announcement-bar {
-  @media only screen and (max-device-width: $grid-medium) {
-    display: none;
-  }
-}
 .c-site-header-padding {
   padding: 0 $gutter-site;
   
@@ -6656,7 +6660,7 @@ $toolbar-height-small: 46px;
   line-height: 1.25em;
   
   @media only screen and (max-width: $grid-medium) {
-    text-align: center;
+    display: none;
   }
 }
 
@@ -7077,18 +7081,38 @@ input {
 // HOMEPAGE CSS
 .c-page-width-narrow {
   max-width: 600px;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-page-width-m {
   max-width: 700px;
   margin: 0 auto;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-page-width-l {
   max-width: 750px;
   margin: 0 auto;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-page-width-narrow-mid {
   max-width: 800px;
   margin: 0 auto;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-homepage-subheader {
   margin-bottom: 60px;
@@ -7307,9 +7331,9 @@ input {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    width: 67.5%;
-    min-height: 43rem;
-    height: 43rem;
+    width: 55%;
+    min-height: 700px;
+    height: 700px;
     overflow: hidden;
     z-index: 0;
     
@@ -7320,6 +7344,7 @@ input {
     }
 
     img {
+      width: 100%;
       height: 100%;
       max-height: 100%;
       object-fit: cover;
@@ -7327,14 +7352,13 @@ input {
   }
 
   .c-layered-section__copy-box-wrapper {
-    transform: translate3d(545px, -645px, 0px);
+    transform: translate3d(550px, -625px, 0px);
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    width: 50%;
+    width: 49%;
     margin-right: 4.7619%;
     margin-left: auto;
-    padding-left: .2%;
     z-index: 2;
 
     @media only screen and (max-width: 1215px) {
@@ -7346,8 +7370,8 @@ input {
 
     .copy-box {
       background: #ffffff;
-      min-height: 600px;
-      max-height: 600px;
+      min-height: 550px;
+      max-height: 550px;
       overflow: hidden;
 
       @media only screen and (max-width: $grid-large) {

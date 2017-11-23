@@ -303,7 +303,7 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 // Text colors
 $color-text: #494d50;
 $color-text-shadow: rgba(0, 0, 0, 0.1);
-$color-body-text: #808284;
+$color-body-text: #494d50;
 $color-sale-text: #808284;
 $color-small-button: #494d50;
 $color-small-button-text: #ffffff;
@@ -324,7 +324,7 @@ $transition-link-hover: 0.1s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 $color-body: #ffffff;
 $color-bg: #ffffff;
 $color-drawer-background: rgba(0, 0, 0, 0.6);
-$color-newsletter-background: rgba(128, 130, 132, 0.1);
+$color-newsletter-background: rgba(73, 77, 80, 0.1);
 
 // Overlays
 $color-overlay-title-text: #fff;
@@ -378,7 +378,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?923633711138764699'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?9965503975147120656'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -490,7 +490,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?923633711138764699);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?9965503975147120656);
 }
 
 // Unused intentionally
@@ -774,7 +774,7 @@ body {
   padding-top: 110px;
   
   @media only screen and (max-width: $grid-medium) {
-    padding-top: 53px;
+    padding-top: 52px;
   }
 }
 
@@ -1248,6 +1248,9 @@ html {
   }
 }
 
+.main-content {
+  min-height: 63vh;
+}
 /* .main-content {
   display: block;
   padding-top: $section-spacing-small;
@@ -1840,7 +1843,7 @@ a {
   margin: ($gutter-site * .5) 0;
 
   @include media-query($small) {
-    margin-bottom: (-$section-spacing) - 1; // same as .site-footer
+/*     margin-bottom: (-$section-spacing) - 1; // same as .site-footer */
 
     .btn {
       display: block;
@@ -2287,6 +2290,7 @@ $dropdown-padding: 11px 17px;
 .site-nav {
   position: relative;
   right: 40px;
+  min-width: 162px;
   padding: 0;
 /*   text-align: center; */
   margin: 18px 0;
@@ -3699,6 +3703,10 @@ h1.product-single__title {
   text-align: center;
   position: relative;
   z-index: $z-index-announcement-bar;
+  
+  @media only screen and (max-width: $grid-medium) {
+    display: none;
+  }
 }
 
 .announcement-bar--link {
@@ -3725,7 +3733,7 @@ h1.product-single__title {
 
     @include media-query($small) {
       text-align: left;
-      margin: 15px 0;
+      margin: 8px 0;
     }
   }
 }
@@ -3908,10 +3916,6 @@ h1.product-single__title {
     vertical-align: middle;
     padding: 0px 8px;
     margin: 0;
-
-    .site-header__icons--plus & {
-      padding: 18px 6px;
-    }
   }
 
   .site-header__logo {
@@ -5806,7 +5810,7 @@ $toolbar-height-small: 46px;
 }
 
 .mega-subtitle p {
-  font-size: .75em;
+  font-size: 1.25em;
   margin: 30px 0px 0px 0px;
 
   @media only screen and (max-width: $grid-medium) {
@@ -5979,6 +5983,12 @@ $toolbar-height-small: 46px;
 
 .padding-right-l {
   padding-right: 80px;
+}
+
+.m-padding-right-none {
+  @media only screen and (max-width: $grid-medium) {
+    padding-right: 0px !important;
+  }
 }
 
 .m-padding-right-s {
@@ -6439,7 +6449,6 @@ $toolbar-height-small: 46px;
   margin: 0px;
   @media only screen and (max-width: 450px) {
     font-size: 2em;
-    text-align: center;
   }
 }
 .c-header-xxl {
@@ -6610,11 +6619,6 @@ $toolbar-height-small: 46px;
 .compare h4 {
   font-size: 16px;
 }
-.announcement-bar {
-  @media only screen and (max-device-width: $grid-medium) {
-    display: none;
-  }
-}
 .c-site-header-padding {
   padding: 0 $gutter-site;
   
@@ -6642,7 +6646,7 @@ $toolbar-height-small: 46px;
   line-height: 1.25em;
   
   @media only screen and (max-width: $grid-medium) {
-    text-align: center;
+    display: none;
   }
 }
 
@@ -7063,18 +7067,38 @@ input {
 // HOMEPAGE CSS
 .c-page-width-narrow {
   max-width: 600px;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-page-width-m {
   max-width: 700px;
   margin: 0 auto;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-page-width-l {
   max-width: 750px;
   margin: 0 auto;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-page-width-narrow-mid {
   max-width: 800px;
   margin: 0 auto;
+  
+  @include media-query($small) {
+    padding-left: $gutter-site-mobile;
+    padding-right: $gutter-site-mobile;
+  }
 }
 .c-homepage-subheader {
   margin-bottom: 60px;
@@ -7293,9 +7317,9 @@ input {
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    width: 67.5%;
-    min-height: 43rem;
-    height: 43rem;
+    width: 55%;
+    min-height: 700px;
+    height: 700px;
     overflow: hidden;
     z-index: 0;
     
@@ -7306,6 +7330,7 @@ input {
     }
 
     img {
+      width: 100%;
       height: 100%;
       max-height: 100%;
       object-fit: cover;
@@ -7313,14 +7338,13 @@ input {
   }
 
   .c-layered-section__copy-box-wrapper {
-    transform: translate3d(545px, -645px, 0px);
+    transform: translate3d(550px, -625px, 0px);
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    width: 50%;
+    width: 49%;
     margin-right: 4.7619%;
     margin-left: auto;
-    padding-left: .2%;
     z-index: 2;
 
     @media only screen and (max-width: 1215px) {
@@ -7332,8 +7356,8 @@ input {
 
     .copy-box {
       background: #ffffff;
-      min-height: 600px;
-      max-height: 600px;
+      min-height: 550px;
+      max-height: 550px;
       overflow: hidden;
 
       @media only screen and (max-width: $grid-large) {
