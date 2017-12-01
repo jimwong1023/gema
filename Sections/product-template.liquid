@@ -101,7 +101,7 @@
       {% endif %}
     </div>
 
-    <div class="grid__item {{ product_description_width }} c-bg-white padding-top-m padding-left-l padding-right-l m-padding-top-s c-product-template-mobile c-product-description-desktop">
+    <div class="grid__item {{ product_description_width }} c-bg-white padding-top-l padding-left-l padding-right-l m-padding-top-s c-product-template-mobile c-product-description-desktop">
       <div class="product-single__meta margin-bottom-md">
         <div class="custom-product-text">
           <h1 itemprop="name" class="product-single__title custom-product-header">{{ product.title }} –</h1>
@@ -203,25 +203,27 @@
         <div class="product-single__description rte" itemprop="description">         	
           <div id="accordion">
             <section class="ac_item">
-              <a href="#"><label>Description<span class="plus hidden">{% include 'icon-chevron-down-small' %}</span><span class="minus">{% include 'icon-minus-small' %}</span></label></a>
-              {% if product.tags contains 'loose stone' %}
-                {% include 'loose-stone-description' %}
-              {% else %}
-                {{ product.description }}
-              {% endif %}
-            </section>
-            <section class="ac_item ac_hidden">
-              <a href="#"><label>Shipping & returns<span class="plus">{% include 'icon-chevron-down-small' %}</span><span class="minus hidden">{% include 'icon-minus-small' %}</span></label></a>
-              <p>Shipping: Handmade to order and delivered in 2-3 weeks.</p>
-              <p>Returns: If you are not completely satisfied with your purchase, you 
-                can send it back to us for a refund or credit within 10 days of receipt. 
-                <a href="/pages/shipping-and-returns">Learn more</a></p>
+              <a href="#"><label >Description<span class="plus hidden">{% include 'icon-chevron-down-small' %}</span><span class="minus">{% include 'icon-minus-small' %}</span></label></a>
+              <div class="c-product-description-text">  
+                {% if product.tags contains 'loose stone' %}
+                  {% include 'loose-stone-description' %}
+                {% else %}
+                  {{ product.description }}
+                {% endif %}
+              </div>
             </section>
             <section class="ac_item ac_hidden">
               <a href="#"><label>The Gem<span class="plus">{% include 'icon-chevron-down-small' %}</span><span class="minus hidden">{% include 'icon-minus-small' %}</span></label></a>
-              <p>Cut: Excellent<br>Color: D-E-F<br>Clarity: IF-VVS1<br>Warranty: 1 year warranty guarantee.</p>
-              <p>We exclusively use conflict-free, lab created Moissanites for all of our products.
+              <p class="c-product-description-text">Cut: Excellent<br>Color: D-E-F<br>Clarity: IF-VVS1<br>Warranty: 1 year warranty guarantee.</p>
+              <p class="c-product-description-text">We exclusively use conflict-free, lab created Moissanites for all of our products.
               <a href="#">Learn more</a></p>
+            </section>
+            <section class="ac_item ac_hidden">
+              <a href="#"><label>Shipping & returns<span class="plus">{% include 'icon-chevron-down-small' %}</span><span class="minus hidden">{% include 'icon-minus-small' %}</span></label></a>
+              <p class="c-product-description-text">Shipping: Handmade to order and delivered in 2-3 weeks.</p>
+              <p class="c-product-description-text">Returns: If you are not completely satisfied with your purchase, you 
+                can send it back to us for a refund or credit within 10 days of receipt. 
+                <a href="/pages/shipping-and-returns">Learn more</a></p>
             </section>
           </div>
         </div>
@@ -241,6 +243,19 @@
       data-description="{{ product.description | escape }}">
     </div> -->
 </div>
+
+<!-- <div class="page-width m-padding-top-s c-engagement-container">
+  <div class="c-section-center c-page-width-s padding-top-m padding-bottom-m">
+    <p class="c-mini-header padding-bottom-s">OUR PROMISE</p>
+    <h3 class="c-header-l">Free shipping and free returns, always</h3>
+    <p class="padding-top-m text-light">
+      We have a 30-day, no-questions-asked return policy for all our 
+      jewelry as well as a one-year, no-damage guarantee for our gemstones; 
+      we’ll replace your damaged gemstones for free within the first 12 months.
+    </p>
+  </div>
+</div> -->
+  
 
 <!-- {% if collection %}
   <div class="text-center return-link-wrapper">
