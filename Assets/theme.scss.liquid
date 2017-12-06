@@ -1756,7 +1756,7 @@ a {
   vertical-align: middle;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: $border-radius;
+/*   border-radius: $border-radius; */
   padding: $input-padding-top-bottom-small $input-padding-left-right-small;
   background-color: $color-btn-primary;
   color: $color-btn-primary-text;
@@ -2029,7 +2029,6 @@ select {
   color: $color-text-field-text;
   max-width: 100%;
   line-height: 1.2;
-  border-radius: $border-radius;
 
   &:focus {
     border-color: darken($color-border, 10%);
@@ -2318,6 +2317,10 @@ $dropdown-padding: 11px 17px;
   padding: 0;
 /*   text-align: center; */
   margin: 18px 0;
+  font-family: proxima nova;
+  letter-spacing: 2.5px;
+  font-size: 12px;
+  text-transform: uppercase;
 
   a {
     padding: 3px 10px;
@@ -5085,7 +5088,7 @@ $toolbar-height-small: 46px;
 .site-footer {
 /*   margin: $section-spacing 0; */
 /*   padding-bottom: 50px; */
-  background-color: #ADADAD;
+  background-color: #f2f2f2;
   
   @media only screen and (max-width: 450px) {
     padding-top: 25px;
@@ -5624,23 +5627,25 @@ $toolbar-height-small: 46px;
   position: relative;
   width: 100%;
   padding-bottom: 100%;
-  margin-bottom: $gutter-site-mobile;
+/*   margin-bottom: $gutter-site-mobile;
 
   @include media-query($medium-up) {
     margin-bottom: $grid-gutter;
-  }
+  } */
 }
 
 .collection-grid-item__title {
-  color: $color-overlay-title-text;
+  font-family: proxima nova !important;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: .1em;
   position: absolute;
   text-align: center;
   width: 100%;
-  top: 50%;
+  top: 20%;
   padding: 0 5px;
   @include transform(translateY(-50%));
   transition: $transition-link-hover;
-  text-shadow: 0 0 15px $color-text-shadow;
 
   @if $font-bold-titles {
     font-weight: $font-weight-bold;
@@ -5912,7 +5917,6 @@ $toolbar-height-small: 46px;
 }
 .text-light {
   color: #676f78;
-  font-size: 17px;
 }
 
 // END COLORS
@@ -6372,8 +6376,8 @@ $toolbar-height-small: 46px;
 
 .m-stacked-text__right {
   position: relative;
-  left: 65%;
-  width: 35%;
+  left: 63%;
+  width: 30%;
   
   @media only screen and (max-width: $grid-medium) {
     position: static;
@@ -6384,8 +6388,8 @@ $toolbar-height-small: 46px;
 
 .m-stacked-text__left {
   position: relative;
-  left: 10%;
-  width: 35%;
+  left: 8%;
+  width: 30%;
   
   @media only screen and (max-width: $grid-medium) {
     position: static;
@@ -6412,6 +6416,14 @@ $toolbar-height-small: 46px;
   @media only screen and (max-width: $grid-medium) {
     max-width: 80px;
   }
+}
+
+.c-float-none {
+  float: none;
+}
+
+.c-display-inline {
+  display: inline-block;
 }
 
 .c-mobile-hide {
@@ -6527,6 +6539,7 @@ $toolbar-height-small: 46px;
   margin: 0px;
   @media only screen and (max-width: 450px) {
     font-size: 1.75em;
+    color:#414b56;
   }
 }
 .c-header-xxl {
@@ -7039,7 +7052,7 @@ input {
 // FOOTER
 .copyright {
   float: right;
-  color: white;
+  color: #676f78;
   
   @media only screen and (max-width: $grid-medium) {
     float: none;
@@ -7057,7 +7070,7 @@ input {
 .icon-twitter,
 .icon-instagram,
 .icon-snapchat {
-  color: white;
+  color: #676f78;
   margin-right: 20px;
   height: 20px !important;
   width: 20px !important;
@@ -7067,37 +7080,37 @@ input {
     }
 }
 .icon-pinterest {
-  color: white;
+  color: #676f78;
   height: 20px !important;
   width: 20px !important;
 }
 .c-newsletter-input {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #676f78;
   border-radius: 0;
-  background-color: #ADADAD; 
-  color: white !important;
+  background-color: #F2f2f2; 
+  color: #676f78 !important;
 }
 .c-newsletter-input::-webkit-input-placeholder {
-  color: white;
+  color: #676f78;
   opacity: 1;
 }
 .c-newsletter-input::-moz-placeholder { /* Firefox 19+ */
-  color: white;
+  color: #676f78;
   opacity: 1;
 }
 .c-newsletter-input:-ms-input-placeholder { /* IE 10+ */
-  color: white;
+  color: #676f78;
   opacity: 1;
 }
 .c-newsletter-input:-moz-placeholder { /* Firefox 18- */
-  color: white;
+  color: #676f78;
   opacity: 1;
 }
 
 .c-submit {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  border-right: 1px solid white;
+  border-top: 1px solid #676f78;
+  border-bottom: 1px solid #676f78;
+  border-right: 1px solid #676f78;
   border-radius: 0 !important;
   border-left: 0px;
 }
@@ -7128,7 +7141,7 @@ input {
 }
 .c-site-footer__linklist-item a,
 .newsletter__submit-text--large{
-  color: white;
+  color: #676f78;
   font-size: 15px;
 }
 .c-site-footer__newsletter {
@@ -7623,13 +7636,13 @@ input {
   font-style: bold;
 }
 .c-primary-btn {
-  padding: 18px 35px !important;
+  padding: 15px 20px !important;
   font-size: 15px !important;
   border-radius: 0;
   background-color: #2E394F;
   color: #FFFFFF;
   margin-top: 1.5%;
-  min-width: 220px;
+  min-width: 190px;
   
   &:hover {
     opacity: 0.9;
@@ -7637,33 +7650,34 @@ input {
   
   @media only screen and (max-width: 450px) {
     margin-top: 3%;
-    padding: 18px 30px !important;
+    padding: 12px 20px !important;
     font-size: 13px !important;
     border-radius: 0;
     background-color: #2E394F;
     color: #FFFFFF;
     margin-top: 4%;
-    min-width: 175px;
+    min-width: 220px;
     
   }
 }
 .c-secondary-btn {
-  padding: 18px 30px !important;
+  padding: 15px 20px !important;
   font-size: 15px !important;
   border-radius: 0;
   background-color: #FFFFFF;
   color: #414b56;
   margin-top: 3%;
-  min-width: 220px;
+  min-width: 190px;
   border: 1px solid #a1a4a6;
   
   @media only screen and (max-width: 450px) {
     margin-top: 0%;
-    padding: 14px 30px !important;
+    padding: 12px 20px !important;
+    min-width: 220px;
   }
 }
 .c-tertiary-btn {
-  padding: 20px 50px !important;
+  padding: 15px 50px !important;
   font-size: 13px !important;
   border: 1px solid #2E394F;
   background-color: #FFFFFF;
@@ -7769,9 +7783,38 @@ input {
   }
 }
 .c-landing-3 {
-  height: 40em;
-  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/landing-3.png?2867440629716631119");
+  height: 38em;
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/Artboard_12_869f22cf-0eac-4ae5-9cb6-5010d448d12d.png?4671940841266909575");
+  @media only screen and (max-width: $grid-medium) {
+    height: 20em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/mobile_landing3.png?1831599432067432610");
+    background-position: center top;
+    padding-right: 0;
+  }
 }
+.c-landing-4 {
+  height: 0em;
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/moissanite-diamond-desktop.gif?1831599432067432610");
+  @media only screen and (max-width: $grid-medium) {
+    height: 20em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/moissanite-diamond-mobile.gif?1831599432067432610");
+    background-position: center top;
+    padding-right: 0;
+  }
+}
+
+.c-landing-5 {
+  height: 38em;
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/landing-5.png?16520321795192906158");
+  @media only screen and (max-width: $grid-medium) {
+    height: 20em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/mobile-landing-5.png?10831452693414926084");
+    background-position: center top;
+    padding-right: 0;
+  }
+}
+
+
 /*text size*/
 .text-m {
   font-size: 1.5em;
@@ -7807,4 +7850,12 @@ input {
   font-size: 15px;
   letter-space: 0px !important;
   font-weight: normal !important;
+}
+.text-white {
+  color: white;
+}
+p {
+  @media only screen and (max-width: 450px) {
+    color:#676f78 !important;
+  }
 }

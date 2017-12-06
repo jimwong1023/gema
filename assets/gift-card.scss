@@ -60,7 +60,7 @@ $color-image-overlay: #5c5c5c;
 $opacity-image-overlay: 0;
 
 // Border colors
-$color-border: #e8e9eb;
+$color-border: #a1a4a6;
 
 // Helper colors for form error states
 $color-disabled: #f4f4f4;
@@ -101,7 +101,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?16045761891937669441'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?12587037419161743362'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -131,7 +131,7 @@ $font-size-header: 20px;
 $font-bold-titles: false;
 
 $font-stack-body: Proxima_Nova_Reg;
-$font-size-base: 15px; // Henseforth known as 1em
+$font-size-base: 17px; // Henseforth known as 1em
 
 $font-stack-cart-notification: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 

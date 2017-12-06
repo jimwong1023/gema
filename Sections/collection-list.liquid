@@ -1,13 +1,8 @@
 <div class="page-width">
-  {% if section.settings.title != blank %}
-    <div class="section-header text-center">
-      <h2>{{ section.settings.title | escape }}</h2>
-    </div>
-  {% endif %}
 
   {% case section.settings.grid %}
     {% when '2' %}
-      {%- assign grid_item_width = 'medium-up--one-half' -%}
+  	  {%- assign grid_item_width = 'small--one-whole medium-up--one-third' -%}
     {% when '3' %}
       {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
     {% when '4' %}
@@ -17,9 +12,9 @@
   {% endcase %}
 
   <div class="collection-grid">
-    <div class="grid grid--uniform">
+    <div class="grid grid--uniform align--top-middle">
       {% for block in section.blocks limit: section.blocks.size %}
-        <div class="grid__item {{ grid_item_width }}" {{ block.shopify_attributes }}>
+        <div class="grid__item {{ grid_item_width }} c-float-none c-display-inline" {{ block.shopify_attributes }}>
           {%- assign collection = collections[block.settings.collection] -%}
           {% include 'collection-grid-item' %}
         </div>
