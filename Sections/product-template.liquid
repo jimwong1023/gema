@@ -101,8 +101,8 @@
       {% endif %}
     </div>
 
-    <div class="grid__item {{ product_description_width }} c-bg-white padding-top-l padding-left-l padding-right-l m-padding-top-s c-product-template-mobile c-product-description-desktop">
-      <div class="product-single__meta margin-bottom-md">
+    <div class="grid__item {{ product_description_width }} c-bg-white padding-top-m padding-left-l padding-right-l m-padding-top-s c-product-template-mobile c-product-description-desktop">
+      <div class="product-single__meta margin-bottom-s">
         <div class="custom-product-text">
           <h1 itemprop="name" class="product-single__title custom-product-header">{{ product.title }} –</h1>
           <span class="product-price__price product-price__price-{{ section.id }}">
@@ -204,7 +204,7 @@
           <div id="accordion">
             <section class="ac_item">
               <a href="#"><label >Description<span class="plus hidden">{% include 'icon-chevron-down-small' %}</span><span class="minus">{% include 'icon-minus-small' %}</span></label></a>
-              <div class="c-product-description-text">  
+              <div class="c-product-description-text padding-top-xs">  
                 {% if product.tags contains 'loose stone' %}
                   {% include 'loose-stone-description' %}
                 {% else %}
@@ -212,7 +212,7 @@
                 {% endif %}
               </div>
             </section>
-            <section class="ac_item ac_hidden">
+<!--             <section class="ac_item ac_hidden">
               <a href="#"><label>The Gem<span class="plus">{% include 'icon-chevron-down-small' %}</span><span class="minus hidden">{% include 'icon-minus-small' %}</span></label></a>
               <p class="c-product-description-text">Cut: Excellent<br>Color: D-E-F<br>Clarity: IF-VVS1<br>Warranty: 1 year warranty guarantee.</p>
               <p class="c-product-description-text">We exclusively use conflict-free, lab created Moissanites for all of our products.
@@ -224,7 +224,7 @@
               <p class="c-product-description-text">Returns: If you are not completely satisfied with your purchase, you 
                 can send it back to us for a refund or credit within 10 days of receipt. 
                 <a href="/pages/shipping-and-returns">Learn more</a></p>
-            </section>
+            </section> -->
           </div>
         </div>
 
@@ -244,17 +244,115 @@
     </div> -->
 </div>
 
-<!-- <div class="page-width m-padding-top-s c-engagement-container">
+<div class="c-hero__m-stacked-text">
+  <div class="hero hero-width c-landing-6">
+  </div>
+  <div class="m-stacked-text__container">
+    <div class="m-stacked-text__left">
+      <div class="m-padding-top-m m-padding-left-s m-padding-right-s">
+        <h2 class="c-header-l">About the gem</h2>
+        <p class="padding-top-s m-padding-top-s margin-none">Conflict free, environmentally friendly, and responsibly lab-made in the USA. Makes a first class gem for engagement rings.</p> 
+        <ul class="c-ul-decoration padding-top-s">
+          <li class="margin-none">Precision laser cut for ideal shaped stones</li>
+          <li class="margin-none">Second hardest gemstone known to man</li>
+        </ul>
+        <div class="c-column-flex-container padding-top-s">
+          <div class="c-column-flex-1">
+            <p class="margin-bottom-xxs"><label>Color</label></p>
+            <p>D-E-F Range</p>
+          </div>
+          <div class="c-column-flex-1">
+            <p class="margin-bottom-xxs"><label>Clarity</label></p>
+            <p>VVS1 - IF Range</p>
+          </div>
+        </div>
+        <div class="padding-top-s m-padding-top-s">
+          <btn class="btn c-secondary-btn"><b>Learn More</b></btn>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-width padding-top-l padding-bottom-l m-padding-top-s m-padding-bottom-m">
+  <div class="c-column-flex-container c-mobile-flex-column">
+    <div class="c-column-flex-2">
+      <img class="js-tab-image active" src="https://cdn.shopify.com/s/files/1/2109/1565/files/plain-wg-front_5ff45045-6ea8-4e2f-9f03-1a57a7c91758.jpg?10385772808429512857"/>
+      <img class="js-tab-image hidden" src="https://cdn.shopify.com/s/files/1/2109/1565/files/plain-yg-front.jpg?12684522907274473923"/>
+      <img class="js-tab-image hidden" src="https://cdn.shopify.com/s/files/1/2109/1565/files/plain-rg-front.jpg?12684522907274473923"/>
+      <img class="js-tab-image hidden" src="https://cdn.shopify.com/s/files/1/2109/1565/files/plain-wg-front.jpg?12684522907274473923"/>
+    </div>
+    <div class="c-column-flex-2 padding-left-l m-padding-left-none">
+      <h2 class="c-header-l">Metal Options</h2>
+      <div class="c-metal-select__tabs padding-top-m padding-bottom-m m-padding-top-s m-padding-bottom-s">
+        <div class="c-metal-select__tablink js-tablink active" data-index=0><label>14K White Gold</label></div>
+        <div class="c-metal-select__tablink js-tablink" data-index=1><label>14K Yellow Gold</label></div>
+        <div class="c-metal-select__tablink js-tablink" data-index=2><label>14K Rose Gold</label></div>
+        <div class="c-metal-select__tablink js-tablink" data-index=3><label>Platinum</label></div>
+      </div>
+      <div class="c-metal-select__tabs-content js-tab-content active">
+        <label>Material</label>
+        <ul class="c-ul-decoration padding-top-xs padding-bottom-s">
+          <li class="margin-none">A blend of 59% natural yellow gold and 41% fine whitening 
+            alloys. The most ideal blend to produce a durable metal for everyday wear.</li>
+          <li class="margin-none padding-top-xs">Includes rhodium clear coat for a scratch resistant surface - metal will maintain its shine for years.</li>
+        </ul>
+        <label>Expected Maintenance</label>
+        <ul class="c-ul-decoration">
+          <li class="margin-none padding-top-xs">Rhodium recoating every 2 - 5 years and redipping in white gold every 5 - 10 years depending on wear.</li>
+        </ul>
+      </div>
+      <div class="c-metal-select__tabs-content js-tab-content hidden">
+        <label>Material</label>
+        <ul class="c-ul-decoration padding-top-xs padding-bottom-s">
+          <li class="margin-none">A blend of 58% natural yellow gold, 41% copper 
+            alloys, and 5% silver. The most balanced blend to produce a perfect blush-rosey hue.</li>
+          <li class="margin-none padding-top-xs">Includes rhodium clear coat for a scratch resistant surface - metal will maintain its shine for years.</li>
+        </ul>
+        <label>Expected Maintenance</label>
+        <ul class="c-ul-decoration">
+          <li class="margin-none padding-top-xs">Redip in Rose gold and repolished every 5 - 10 years depending on wear.</li>
+        </ul>
+      </div>
+      <div class="c-metal-select__tabs-content js-tab-content hidden">
+        <label>Material</label>
+        <ul class="c-ul-decoration padding-top-xs padding-bottom-s">
+          <li class="margin-none">A blend of 59% natural yellow gold, 41% copper 
+            alloys, and 5% silver. The most ideal blend to produce a rose blush hue.</li>
+          <li class="margin-none padding-top-xs">Includes rhodium clear coat for a scratch resistant surface - metal will maintain its shine for years.</li>
+        </ul>
+        <label>Expected Maintenance</label>
+        <ul class="c-ul-decoration">
+          <li class="margin-none padding-top-xs">Rhodium recoating every 2 - 5 years and redipping in white gold every 5 - 10 years depending on wear.</li>
+        </ul>
+      </div>
+      <div class="c-metal-select__tabs-content js-tab-content hidden">
+        <label>Material</label>
+        <ul class="c-ul-decoration padding-top-xs padding-bottom-s">
+          <li class="margin-none">A blend of 59% natural yellow gold, 41% copper 
+            alloys, and 5% silver. The most ideal blend to produce a rose blush hue.</li>
+          <li class="margin-none padding-top-xs">Includes rhodium clear coat for a scratch resistant surface - metal will maintain its shine for years.</li>
+        </ul>
+        <label>Expected Maintenance</label>
+        <ul class="c-ul-decoration">
+          <li class="margin-none padding-top-xs">Rhodium recoating every 2 - 5 years and redipping in white gold every 5 - 10 years depending on wear.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-width margin-bottom-m c-engagement-container">
   <div class="c-section-center c-page-width-s padding-top-m padding-bottom-m">
     <p class="c-mini-header padding-bottom-s">OUR PROMISE</p>
     <h3 class="c-header-l">Free shipping and free returns, always</h3>
     <p class="padding-top-m text-light">
-      We have a 30-day, no-questions-asked return policy for all our 
+      We have a 30-day, no-questions-asked return policy for all our
       jewelry as well as a one-year, no-damage guarantee for our gemstones; 
       we’ll replace your damaged gemstones for free within the first 12 months.
     </p>
   </div>
-</div> -->
+</div>
   
 
 <!-- {% if collection %}
@@ -281,7 +379,12 @@
 
 {% endunless %}
 
-<script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script
+<script src="{{ 'accordion.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'tabs-manager.js' | asset_url }}"></script>
+
+<script>
+  TabsManager.initialize("js-tablink", "js-tab-content", "js-tab-image");
+</script>
 
 
 {% schema %}

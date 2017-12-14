@@ -356,6 +356,7 @@ $input-group-height-small: 42px;
 $color-slate-gray: #494d50;
 $color-light-slate-gray: #808284;
 $color-light-gray: #f2f2f2;
+$color-navy-blue: #2E394F;
 $color-white: #fff;
 
 // Social icons
@@ -1518,6 +1519,12 @@ p {
 /*================ Lists ================*/
 li {
   list-style: none;
+  color: $color-body-text;
+  margin: 0 0 ($section-spacing-small / 1.8);
+
+  @include media-query($small) {
+    font-size: em($font-size-base - 2);
+  }
 }
 
 /*================ Misc styles ================*/
@@ -1707,7 +1714,7 @@ ol {
   }
 
   a:not(.btn) {
-    border-bottom: 1px solid currentColor;
+/*     border-bottom: 1px solid currentColor; */
     padding-bottom: 1px;
   }
 }
@@ -1999,7 +2006,7 @@ input {
 }
 
 label {
-  display: block;
+/*   display: block; */
   margin-bottom: 5px;
   text-transform: uppercase;
   font-size: 12px;
@@ -2317,11 +2324,8 @@ $dropdown-padding: 11px 17px;
   padding: 0;
 /*   text-align: center; */
   margin: 18px 0;
-  font-family: proxima nova;
-  letter-spacing: 2.5px;
-  font-size: 12px;
-  text-transform: uppercase;
-
+  white-space: nowrap;
+  
   a {
     padding: 3px 10px;
   }
@@ -2329,6 +2333,13 @@ $dropdown-padding: 11px 17px;
   li {
     display: inline-block;
   }
+}
+
+.site-nav__font {
+  font-family: Proxima_Nova_Reg;
+  letter-spacing: 2.5px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .site-nav--centered {
@@ -2430,6 +2441,10 @@ $dropdown-padding: 11px 17px;
 .site-nav__childlist-item {
   @include flex(0 1 auto);
   margin-bottom: $section-spacing-small;
+}
+
+.site-nav__child-link {
+  text-transform: none;
 }
 
 .site-nav__child-link--parent {
@@ -3247,7 +3262,7 @@ h1.product-single__title {
 
 @include media-query ($medium-up) {
   .product-single__thumbnails {
-    margin-top: $grid-gutter;
+/*     margin-top: $grid-gutter; */
   }
 }
 
@@ -3788,7 +3803,7 @@ h1.product-single__title {
 
 .site-header__logo-image--centered img {
   margin: 0 auto;
-  padding: 15px;
+/*   padding: 15px; */
   @media only screen and (max-width: 750px) {
     padding: 5px;
   }
@@ -3844,7 +3859,11 @@ h1.product-single__title {
   }
 
   .site-header__account {
-    right: 50px;
+    right: 65px;
+  }
+  
+  .site-header__cart {
+    right: -15px;
   }
 }
 
@@ -5635,7 +5654,7 @@ $toolbar-height-small: 46px;
 }
 
 .collection-grid-item__title {
-  font-family: proxima nova !important;
+  font-family: Proxima_Nova_Reg !important;
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: .1em;
@@ -5926,8 +5945,11 @@ $toolbar-height-small: 46px;
   margin-bottom: 60px;
 }
 
-.margin-top-sm {
-  margin-top: 30px;
+.margin-top-s {
+  margin-top: 20px;
+}
+.margin-top-m {
+  margin-top: 40px;
 }
 .margin-none {
   margin: 0;
@@ -5939,7 +5961,9 @@ $toolbar-height-small: 46px;
 .margin-bottom-s {
   margin-bottom: 20px;
 }
-
+.margin-bottom-m {
+  margin-bottom: 40px;
+}
 .margin-bottom-xs {
   margin-bottom: 10px
 }
@@ -5999,6 +6023,12 @@ $toolbar-height-small: 46px;
   padding-left: 160px;
 }
 
+.m-padding-left-none {
+  @media only screen and (max-width: $grid-medium) {
+    padding-left: 0px !important;
+  }
+}
+
 .padding-right-xxs {
   padding-right: 5px;
 }
@@ -6028,6 +6058,12 @@ $toolbar-height-small: 46px;
 .m-padding-right-s {
   @media only screen and (max-width: $grid-medium) {
     padding-right: 20px;
+  }
+}
+
+.m-padding-left-s {
+  @media only screen and (max-width: $grid-medium) {
+    padding-left: 20px;
   }
 }
 
@@ -6359,6 +6395,7 @@ $toolbar-height-small: 46px;
   position: relative;
   display: block;
 }
+
 .m-stacked-text__container {
   width: 100%;
   display: block;
@@ -6406,12 +6443,19 @@ $toolbar-height-small: 46px;
   }
 }
 
+.c-ul-decoration {
+  li {
+    list-style: disc outside none;
+    list-style-position: inside;
+  }
+}
+
 .c-long-view-height {
   min-height: 70vh;
 }
 
 .c-logo-width {
-  max-width: 110px;
+  max-width: 140px;
   
   @media only screen and (max-width: $grid-medium) {
     max-width: 80px;
@@ -6751,7 +6795,7 @@ $toolbar-height-small: 46px;
   @media only screen and (min-width: $grid-medium) {
     padding-left: 80px;
     padding-right:80px;
-    padding-bottom:80px;
+/*     padding-bottom:80px; */
   }
 }
 
@@ -6768,7 +6812,7 @@ $toolbar-height-small: 46px;
 
 .c-product-description-desktop {
   @media only screen and (min-width: $grid-medium) {
-    padding-bottom: 10vh;
+    padding-bottom: 5vh;
   }
 }
 .product-template__container {
@@ -6781,7 +6825,7 @@ $toolbar-height-small: 46px;
   margin-top: 4px;
   font-size: 14px;
   color: #CDA490;
-  font-family: Proxima nova;
+  font-family: Proxima_Nova_Reg;
 }
 
 .custom-product-text {
@@ -7208,6 +7252,51 @@ input {
 }
 .c-quality {
   padding-right: 0px !important;
+}
+
+.c-metal-select__tabs {
+  display: flex;
+  
+  .c-metal-select__tablink {
+    flex: 1 1 0;
+    border: 1px solid #D9DBDB;
+    border-radius: 100px;
+    cursor: pointer;
+    cursor: hand;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 4px 0px;
+    
+    label {
+      cursor: pointer;
+      cursor: hand;
+    }
+    
+    @media only screen and (max-width: $grid-large) {
+      padding: 0px 0px;
+      
+      label {
+        font-size: 7px;
+      }
+    }
+  }
+  
+  .c-metal-select__tablink:first-child {
+    margin-left: 0px;
+  }
+  
+  .c-metal-select__tablink:last-child {
+    margin-right: 0px;
+  }
+  
+  .c-metal-select__tablink.active {
+    background-color: $color-navy-blue;
+    
+    label {
+      color: $color-white;
+    }
+  }
 }
 
 .c-tabs {
@@ -7813,6 +7902,16 @@ input {
     padding-right: 0;
   }
 }
+.c-landing-6 {
+  height: 38em;
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/clanding6.jpg?10143963654095911339");
+  @media only screen and (max-width: $grid-medium) {
+    height: 20em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/clandingmobile.png?10143963654095911339");
+    background-position: center top;
+    padding-right: 0;
+  }
+}
 
 
 /*text size*/
@@ -7846,7 +7945,7 @@ input {
 #swatchSpan-product-template {
   color: #808284 !important;
   text-transform: lowercase;
-  font-family: proxima nova;
+  font-family: Proxima_Nova_Reg;
   font-size: 15px;
   letter-space: 0px !important;
   font-weight: normal !important;

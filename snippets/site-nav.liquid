@@ -1,9 +1,9 @@
-<ul class="site-nav list--inline {{ nav_alignment }}" id="SiteNav">
+<ul class="site-nav list--inline site-nav__font{{ nav_alignment }}" id="SiteNav">
   {% for link in linklists[section.settings.main_linklist].links %}
     {%- assign child_list_handle = link.title | handleize -%}
 
     {% if linklists[child_list_handle].links != blank %}
-      <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}">
+      <li class="site-nav--has-dropdown site-nav__parent{% if link.active %} site-nav--active{% endif %}">
         <a href="{{ link.url }}" class="site-nav__link site-nav__link--main" aria-has-popup="true" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}">
           {{ link.title }}
 <!--           {% include 'icon-chevron-down' %} -->
