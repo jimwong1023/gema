@@ -1,13 +1,28 @@
 var TabsManager = ({
-  initialize: function(tabsClassName, contentClassName, imagesClassName) {
+  initialize: function(tabsClassName, contentClassName, imagesClassName, dropDownClassName) {
     this.tabsClassName = tabsClassName;
     this.contentClassName = contentClassName;
     this.imagesClassName = imagesClassName;
+    
+    if (dropDownClassName !== undefined) {
+      this.dropDownClassName = dropDownClassName;
+      this.dropDown = document.getElementsByClassName(dropDownClassName)[0];
+      this.bindDropDownChange();
+    }
 
     this.tabs = document.getElementsByClassName(tabsClassName);
     this.tabsContent = document.getElementsByClassName(contentClassName);
     this.tabImages = document.getElementsByClassName(imagesClassName);
     this.bindTabClick();
+  },
+  
+  bindDropDownChange: function() {
+    this.dropDown.addEventListener('change', function (e) {
+      this.deactivateTabContent();
+      var selected = { currentTarget: { dataset: { index: {}}}}
+      selected.currentTarget.dataset.index = e.currentTarget.selectedIndex
+      this.activateTabContent(selected);
+    }.bind(this));
   },
   
   bindTabClick: function() {

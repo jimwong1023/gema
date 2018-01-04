@@ -997,11 +997,7 @@ theme.MobileNav = (function() {
   }
 
   function openMobileNav() {
-//     ORIGINAL
-//     var translateHeaderHeight = cache.$siteHeader.outerHeight() + cache.$siteHeader.offset().top;
-//     FOR FIXED HEADER
-//     var translateHeaderHeight = cache.$siteHeader.css('position') =='fixed' ? 0 : cache.$siteHeader.outerHeight() + cache.$siteHeader.offset().top;
-    var translateHeaderHeight = 52;
+    var translateHeaderHeight = 50;
 
     cache.$mobileNavContainer
       .prepareTransition()
@@ -1011,10 +1007,6 @@ theme.MobileNav = (function() {
       transform: 'translate3d(0, ' + translateHeaderHeight + 'px, 0)',
       'transition': 'opacity 0.25s ease-in-out'
     });
-
-//     cache.$pageContainer.css({
-//       transform: 'translate3d(0, ' + cache.$mobileNavContainer[0].scrollHeight + 'px, 0)'
-//     });
 
     slate.a11y.trapFocus({
       $container: cache.$mobileNav,
