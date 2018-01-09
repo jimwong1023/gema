@@ -997,7 +997,7 @@ theme.MobileNav = (function() {
   }
 
   function openMobileNav() {
-    var translateHeaderHeight = 50;
+    var translateHeaderHeight = 41;
 
     cache.$mobileNavContainer
       .prepareTransition()

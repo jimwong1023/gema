@@ -442,6 +442,11 @@ $transition-image-slideshow: opacity 0.8s cubic-bezier(0.44, 0.13, 0.48, 0.87);
   src: url(./Utopiastd_Semibold.otf);
 }
 
+@font-face {
+  font-family: Avenir;
+  src: url(./Avenir.otf);
+}
+
 {% if settings.type_base_family contains 'Google' %}
   {% assign type_base_parts = settings.type_base_family | split: '_' %}
   {% assign type_base_name = type_base_parts[1] %}
@@ -800,7 +805,7 @@ body {
   padding-top: 65px;
   
   @media only screen and (max-width: $grid-medium) {
-    padding-top: 50px;
+    padding-top: 41px;
   }
 }
 
@@ -2317,12 +2322,12 @@ $dropdown-padding: 11px 17px;
 
 .site-nav {
   position: relative;
-  right: 40px;
-  min-width: 162px;
+/*   right: 40px; */
+/*   min-width: 162px; */
   padding: 0;
-/*   text-align: center; */
+  text-align: center;
   margin: 18px 0;
-  white-space: nowrap;
+/*   white-space: nowrap; */
   
   a {
     padding: 3px 10px;
@@ -2331,12 +2336,25 @@ $dropdown-padding: 11px 17px;
   li {
     display: inline-block;
   }
+  
+  li:last-child {
+    @media only screen and (max-width: 1100px) {
+      display: none;
+    }
+  }
+  
+  li:nth-last-child(2) {
+    @media only screen and (max-width: 780px) {
+      display: none !important;
+    }
+  }
 }
 
 .site-nav__font {
-  letter-spacing: 2.5px;
-  font-size: 12px;
+  letter-spacing: 1.75px;
+  font-size: 13px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .site-nav--centered {
@@ -2392,13 +2410,10 @@ $dropdown-padding: 11px 17px;
 /*   border: 1px solid $color-border; */
   background: $color-bg;
   left: -1px;
-  top: 25px;
   width: 500px;
-  height: 100vh;
     
   .site-nav__link {
-    padding: 4px 30px 4px 0;
-    font-size: 30px;
+    padding: 4px 4px 4px 0;
     line-height: 2em;
   }
 
@@ -6800,6 +6815,7 @@ $toolbar-height-small: 46px;
   @media only screen and (min-width: $grid-medium) {
     padding-bottom: 5vh;
     background-color: #ffffff;
+    min-height: 80vh;
   }
 }
 .product-template__container {
@@ -7247,20 +7263,19 @@ input {
   .c-metal-select__tablink {
     flex: 1 1 0;
     border: 1px solid #D9DBDB;
-    border-radius: 100px;
     cursor: pointer;
     cursor: hand;
     text-align: center;
     margin-left: 5px;
     margin-right: 5px;
-    padding: 4px 0px;
+    padding: 15px 0px;
     
     label {
       cursor: pointer;
       cursor: hand;
       
       @media only screen and (max-width: 1150px) {
-        font-size: 10px;
+        font-size: 13px;
       }
     }
   }
@@ -7857,7 +7872,7 @@ input {
   background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/ourstory-hero-2.png?9546143431429538994");
 }
 .c-landing-2 {
-  height: 38em;
+  height: 70vh;
   background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/Artboard_12.png?9644757936808261929");
   padding-right: 12%;
 
