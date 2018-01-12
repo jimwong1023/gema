@@ -231,12 +231,38 @@
   <div class="hero hero-width c-landing-6">
   </div>
   <div class="m-stacked-text__container">
-    <div class="m-stacked-text__left">
-      <div class="m-padding-top-m m-padding-left-s m-padding-right-s">
+    <div class="m-stacked-text__left c-details">
+      <div class="m-padding-top-m">
         <h2 class="c-header-l">It's All In The Details</h2>
+        <div class="c-details-select__tabs">
+          <div class="c-details-select__tablink js-tablink active" data-index=0><label>Gem Specs</label></div>
+          <div class="c-details-select__tablink js-tablink" data-index=1><label>Metal Specs</label></div>
+        </div>
         <div>
-          <div class="js-tablink active" data-index=0><label>Read the Specs</label></div>
-          <div class="js-tablink" data-index=1><label>See the Style</label></div>
+          <div class="js-tab-content active">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">Color:</span><span class="c-details-row__right">D E F</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Clarity:</span><span class="c-details-row__right">VVS1</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Cut:</span><span class="c-details-row__right">Ideal</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Refractive Index:</span><span class="c-details-row__right">2.65</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Dispersion:</span><span class="c-details-row__right">Very High</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">MOH Hardness:</span><span class="c-details-row__right">9.5/10</span>
+              </div>
+            </div>
+          </div>
+          <div class="js-tab-content hidden">
+          </div>
         </div>
       </div>
     </div>
@@ -363,7 +389,7 @@
   </div>
 </div>
 
-<div class="page-width c-section-center padding-top-xl padding-bottom-xl m-padding-top-l m-padding-bottom-l">
+<!-- <div class="page-width c-section-center padding-top-xl padding-bottom-xl m-padding-top-l m-padding-bottom-l">
   <h3 class="c-header-l text-center">Try Your Engagement Ring Without Risk. <u>Guaranteed</u>.</h3>
   <p class="padding-top-s text-light text-center">
     It's a big decision, and we'll make it as easy as possible for you.
@@ -380,7 +406,7 @@
     <label>DELIVERED INSURED</label>
     <p>Delivered insured and straight to your door. Ring box is protected by a gift box.</p>
   </div>
-</div>
+</div> -->
 
 
 <!-- <div class="page-width margin-bottom-m c-engagement-container">
@@ -421,8 +447,12 @@
 
 <script src="{{ 'tabs-manager.js' | asset_url }}"></script>
 
-<script>
+<!-- <script>
   TabsManager.initialize("js-tablink", "js-tab-content", "js-tab-image", "js-select");
+</script> -->
+
+<script>
+  TabsManager.initialize("js-tablink", "js-tab-content");
 </script>
 
 

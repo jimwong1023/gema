@@ -983,6 +983,9 @@ textarea {
   @include media-query($small) {
     padding-left: $grid-gutter-mobile;
   }
+  @media only screen and (max-width: 450px) {
+    padding-left: 0px;
+  }
 
   &[class*="--push"] {
     position: relative;
@@ -6454,8 +6457,8 @@ $toolbar-height-small: 46px;
 
 .m-stacked-text__left {
   position: relative;
-  left: 8%;
-  width: 30%;
+  left: 5%;
+  width: 40%;
   
   @media only screen and (max-width: $grid-medium) {
     position: static;
@@ -7252,6 +7255,73 @@ input {
 }
 .c-quality {
   padding-right: 0px !important;
+}
+
+.c-details {
+  background-color: $color-white;
+  padding: 20px;
+  
+  h2 {
+    padding-bottom: 10px;
+  }
+}
+
+.c-details-select__tabs {
+  display: flex;
+  padding: 5px 0 10px 0;
+  @media only screen and (max-width: 450px) {
+    padding: 20px 0 20px 0;
+  }
+  
+  .c-details-select__tablink {
+    flex: 1 1 0;
+    border: 1px solid $color-slate-gray;
+    cursor: pointer;
+    cursor: hand;
+    text-align: center;
+    padding: 10px 0px;
+    
+    label {
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+  
+  .c-details-select__tablink.active {
+    background-color: $color-slate-gray;
+    
+    label {
+      color: $color-white;
+    }
+  }
+  
+  .c-details-select__tablink:first-child {
+    margin-right: 5px;
+  }
+  
+  .c-details-select__tablink:last-child {
+    margin-left: 5px;
+  }
+}
+
+.c-details-row {
+  display: flex;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #f2f2f2;
+  @media only screen and (max-width: 450px) {
+      padding: 10px 0 10px 0;
+    }
+  
+
+  .c-details-row__left {
+    width: 50%;
+    text-align: left;
+  }
+  
+  .c-details-row__right {
+    width: 50%;
+    text-align: right;
+  }
 }
 
 .c-metal-select__tabs {

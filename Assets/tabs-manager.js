@@ -12,7 +12,9 @@ var TabsManager = ({
 
     this.tabs = document.getElementsByClassName(tabsClassName);
     this.tabsContent = document.getElementsByClassName(contentClassName);
-    this.tabImages = document.getElementsByClassName(imagesClassName);
+    if (this.imagesClassName !== undefined) {
+      this.tabImages = document.getElementsByClassName(imagesClassName);
+    }
     this.bindTabClick();
   },
   
@@ -38,7 +40,9 @@ var TabsManager = ({
   deactivateTabContent: function() {
     var activeTabs = document.getElementsByClassName(this.tabsClassName + " active");
     var activeContents = document.getElementsByClassName(this.contentClassName + " active");
-    var activeImages = document.getElementsByClassName(this.imagesClassName + " active");
+    if (this.imagesClassName !== undefined) {
+      var activeImages = document.getElementsByClassName(this.imagesClassName + " active");
+    }
     
     for (i=0; i < activeTabs.length; i++) {
       activeTabs[i].classList.remove('active');
@@ -50,21 +54,25 @@ var TabsManager = ({
       el.classList.add('hidden');
     }
     
-    for (i=0; i < activeImages.length; i++) {
-      el = activeImages[i]
-      el.classList.remove('active');
-      el.classList.add('hidden');
+    if (this.imagesClassName !== undefined) {
+      for (i=0; i < activeImages.length; i++) {
+        el = activeImages[i]
+        el.classList.remove('active');
+        el.classList.add('hidden');
+      }
     }
   },
   
   activateTabContent: function(e) {
     var index = e.currentTarget.dataset.index;
     var content = this.tabsContent[index];
-    var image = this.tabImages[index];
+    if (this.imagesClassName !== undefined) {
+      var image = this.tabImages[index];
+    }
 
     this.tabs[index].classList.add('active');
     
-    if (typeof image !== 'undefined') {
+    if (typeof image !== 'undefined' && this.imagesClassName !== undefined) {
       image.classList.remove('hidden');
       image.classList.add('active');
     }

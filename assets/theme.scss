@@ -380,7 +380,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?6790780052823082681'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?1375881940435316913'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -507,7 +507,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?6790780052823082681);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?1375881940435316913);
 }
 
 // Unused intentionally
@@ -968,6 +968,9 @@ textarea {
 
   @include media-query($small) {
     padding-left: $grid-gutter-mobile;
+  }
+  @media only screen and (max-width: 450px) {
+    padding-left: 0px;
   }
 
   &[class*="--push"] {
@@ -6440,8 +6443,8 @@ $toolbar-height-small: 46px;
 
 .m-stacked-text__left {
   position: relative;
-  left: 8%;
-  width: 30%;
+  left: 5%;
+  width: 40%;
   
   @media only screen and (max-width: $grid-medium) {
     position: static;
@@ -7238,6 +7241,73 @@ input {
 }
 .c-quality {
   padding-right: 0px !important;
+}
+
+.c-details {
+  background-color: $color-white;
+  padding: 20px;
+  
+  h2 {
+    padding-bottom: 10px;
+  }
+}
+
+.c-details-select__tabs {
+  display: flex;
+  padding: 5px 0 10px 0;
+  @media only screen and (max-width: 450px) {
+    padding: 20px 0 20px 0;
+  }
+  
+  .c-details-select__tablink {
+    flex: 1 1 0;
+    border: 1px solid $color-slate-gray;
+    cursor: pointer;
+    cursor: hand;
+    text-align: center;
+    padding: 10px 0px;
+    
+    label {
+      cursor: pointer;
+      cursor: hand;
+    }
+  }
+  
+  .c-details-select__tablink.active {
+    background-color: $color-slate-gray;
+    
+    label {
+      color: $color-white;
+    }
+  }
+  
+  .c-details-select__tablink:first-child {
+    margin-right: 5px;
+  }
+  
+  .c-details-select__tablink:last-child {
+    margin-left: 5px;
+  }
+}
+
+.c-details-row {
+  display: flex;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #f2f2f2;
+  @media only screen and (max-width: 450px) {
+      padding: 10px 0 10px 0;
+    }
+  
+
+  .c-details-row__left {
+    width: 50%;
+    text-align: left;
+  }
+  
+  .c-details-row__right {
+    width: 50%;
+    text-align: right;
+  }
 }
 
 .c-metal-select__tabs {
