@@ -960,6 +960,7 @@ theme.MobileNav = (function() {
   var $activeSubNav;
   var $activeTrigger;
   var menuLevel = 1;
+  var translateHeaderHeight = 41;
   // Breakpoints from src/stylesheets/global/variables.scss.liquid
   var mediaQuerySmall = 'screen and (max-width: 749px)';
 
@@ -997,15 +998,16 @@ theme.MobileNav = (function() {
   }
 
   function openMobileNav() {
-    var translateHeaderHeight = 41;
-
     cache.$mobileNavContainer
       .prepareTransition()
       .addClass(classes.navOpen);
 
     cache.$mobileNavContainer.css({
       transform: 'translate3d(0, ' + translateHeaderHeight + 'px, 0)',
-      'transition': 'opacity 0.25s ease-in-out'
+      '-webkit-transition': 'all 0.3s ease-in-out',
+      '-moz-transition': 'all 0.3s ease-in-out',
+      '-o-transition': 'all 0.3s ease-in-out',
+      'transition': 'all 0.3s ease-in-out'
     });
 
     slate.a11y.trapFocus({
@@ -1029,8 +1031,11 @@ theme.MobileNav = (function() {
     cache.$mobileNavContainer.prepareTransition().removeClass(classes.navOpen);
 
     cache.$mobileNavContainer.css({
-      transform: 'translate3d(0, -100%, 0)',
-      'transition': 'opacity 0.25s ease-in-out'
+      transform: 'translate3d(-100%, ' + translateHeaderHeight + 'px, 0)',
+      '-webkit-transition': 'all 0.3s ease-in-out',
+      '-moz-transition': 'all 0.3s ease-in-out',
+      '-o-transition': 'all 0.3s ease-in-out',
+      'transition': 'all 0.3s ease-in-out'
     });
 
     cache.$pageContainer.removeAttr('style');

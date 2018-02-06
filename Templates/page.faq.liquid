@@ -1,6 +1,6 @@
 <div class="pg-bg-primary padding-top-m padding-bottom-m">
-  <div class="c-section-left c-page-width-l">
-    <h3 class="c-header-l">Frequently asked questions</h3>
+  <div class="c-section-left page-width faq-width">
+    <h3 class="c-header-l text-center">Frequently asked questions</h3>
     <div class="custom-about-content padding-top-m">
       <div>
         <h3 class="about-margin">Moissanite History & Facts</h3>
@@ -31,7 +31,7 @@
           </a>
           <div class="js-about-content about-content hidden">
             <p>
-              Moissanite is not a diamond or substitute of a diamond, either scientifically, chemically or emotionally. Moissanite is not a fake diamond but rather a unique clear gemstone (just like white sapphires) with its own set of chemical and optical properties. The properties of a Moissanite exhibit more fire and brilliance than any other gemstone. To an untrained eye, the visual difference between a Moissanite and diamond is undetectable.
+              Moissanite is not a Diamond or substitute of a Diamond, either scientifically, chemically or emotionally. Moissanite is not a fake Diamond but rather a different type of clear gemstone (just like White Sapphires) with its own set of chemical and optical properties. 
             </p>
           </div>
         </div>
@@ -43,7 +43,7 @@
           </a>
           <div class="js-about-content about-content hidden">
             <p>
-              Carat is the traditional unit of measurement for a diamond's weight. Moissanites are not measured in carats because it weighs approximately 10 percent less than diamond. For example, a 6.5mm round diamond would weigh 1.0ct, while a 6.5mm round moissanite would weigh 0.88ct. The two stones would visually be the same size - 6.5mm in diameter. All stones for sale are listed with their size in millimeters and the diamond equivalent weight (DEW) in carats.
+              Carat is the traditional unit of measurement for a Diamond's weight. Moissanites are not measured in carats because it weighs approximately 10 percent less than diamond. For example, a 6.5mm round diamond would weigh 1.0ct, while a 6.5mm round moissanite would weigh 0.88ct. The two stones would visually be the same size - 6.5mm in diameter. All stones for sale are listed with their size in millimeters and the diamond equivalent weight (DEW) in carats.
             </p>  
           </div>
         </div>
@@ -220,42 +220,59 @@
       </div>
     </div>
   </div>
-  <div id="contactUsModal" class="custom-modal">
-    <div class="custom-modal-content">
-      <div class="custom-modal-close contact-us-close">&times;</div>
-      <div class="contact-form form-vertical">
-        {% form 'contact' %}
+</div>
 
-          {% if form.posted_successfully? %}
-            <p class="note form-success">
-              {{ 'contact.form.post_success' | t }}
-            </p>
-          {% endif %}
+<div class=" c-bg-light-gray">
+  <div class="padding-top-l padding-bottom-l page-width faq-width">
+    <div class="grid grid--half-gutters">
+      <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+        <div class="section-header text-center">
+          <h1>Contact Us</h1>
+        </div>
 
-          {{ form.errors | default_errors }}
+        <div class="contact-form form-vertical">
+          {% form 'contact' %}
 
-          <div class="grid grid--half-gutters">
-            <div class="grid__item medium-up--one-half">
-              <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
-              <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+            {% if form.posted_successfully? %}
+              <p class="note form-success">
+                {{ 'contact.form.post_success' | t }}
+              </p>
+            {% endif %}
+
+            {{ form.errors | default_errors }}
+
+            <div class="grid grid--half-gutters">
+              <div class="grid__item">
+                <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+                <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+              </div>
             </div>
-            <div class="grid__item medium-up--one-half">
-              <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}</label>
-              <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
+
+            <div class="grid grid--half-gutters">
+              <div class="grid__item">
+                <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}</label>
+                <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
+              </div>
             </div>
-          </div>
 
-          <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label>
-          <input type="tel" id="ContactFormPhone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
-
-          <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+            <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
           <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
-          <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+            <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
 
-        {% endform %}
+          {% endform %}
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="page-width">
+  <div class="c-section-center text-center padding-top-xl padding-bottom-xl m-padding-top-s m-padding-bottom-s">
+    <h3 class="c-header-xl padding-bottom-s">The world's most practical engagement ring.</h3> 
+    <a href="/collections/engagement-rings" class="btn c-primary-btn">
+      <b>Shop Now</b>
+    </a>
   </div>
 </div>
 

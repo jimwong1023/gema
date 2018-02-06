@@ -371,6 +371,7 @@ $gutter-site-mobile: 22px;
 $section-spacing: 55px;
 $section-spacing-small: 35px;
 $border-radius: 2px;
+$translate-header-height: 41px;
 
 /*================ Z-Index ================*/
 $z-index-dropdown : 7;
@@ -380,7 +381,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?1375881940435316913'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?10570141930765645714'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -460,7 +461,7 @@ $font-size-header: 20px;
 $font-bold-titles: false;
 
 $font-stack-body: Avenir;
-$font-size-base: 16px; // Henseforth known as 1em
+$font-size-base: 15px; // Henseforth known as 1em
 
 $font-stack-cart-notification: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 
@@ -507,7 +508,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?1375881940435316913);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?10570141930765645714);
 }
 
 // Unused intentionally
@@ -2343,7 +2344,6 @@ $dropdown-padding: 11px 17px;
   letter-spacing: 1.75px;
   font-size: 13px;
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 .site-nav--centered {
@@ -2412,6 +2412,7 @@ $dropdown-padding: 11px 17px;
 
   li {
     display: block;
+    letter-spacing: 0;
   }
 }
 // Centered dropdown
@@ -2478,7 +2479,7 @@ $dropdown-padding: 11px 17px;
 hr {
   margin: $gutter-site 0;
   border: 0;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .hr--small {
@@ -3159,7 +3160,6 @@ h1.product-single__title {
   @include flex-wrap(wrap);
   @include align-items(flex-end);
   width: auto;
-  margin: 0 -5px -10px;
 }
 
 .product-form__item {
@@ -3169,6 +3169,7 @@ h1.product-single__title {
   label {
     display: block;
     padding-top: 20px;
+    font-size: 13px;
 
     .product-form--hide-variant-labels & {
       // sass-lint:disable no-important
@@ -3214,6 +3215,9 @@ h1.product-single__title {
   white-space: normal;
   min-height: 50px;
   background-color: #2E394F;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px !important;
 }
 
 @include media-query($medium-up) {
@@ -4374,12 +4378,16 @@ $mobile-nav-button-padding: 15px;
 .subnav__mobile-nav__link {
   display: block;
   width: 100%;
-  padding: 7px 7px 7px 30px;
+  padding: 10px 10px 10px 25px;
   font-size: 13px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f2f2f2;
 }
 
 .mobile-nav__link {
   position: relative;
+  background-color: #f2f2f2;
+  text-transform: uppercase;
 }
 
 .mobile-nav__sublist-link:not(.mobile-nav__sublist-header) {
@@ -4468,7 +4476,7 @@ $mobile-nav-button-padding: 15px;
 
 /*================ Mobile nav wrapper ================*/
 .mobile-nav-wrapper {
-  @include transform(translate3d(0, -100%, 0));
+  @include transform(translate3d(-100%, $translate-header-height, 0));
   position: absolute;
   background-color: $color-body;
   transition: $transition-drawer;
@@ -4482,7 +4490,7 @@ $mobile-nav-button-padding: 15px;
     bottom: 0;
     left: 0;
     right: 0;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $color-light-gray;
   }
 
   &.js-menu--is-open {
@@ -6444,7 +6452,7 @@ $toolbar-height-small: 46px;
 .m-stacked-text__left {
   position: relative;
   left: 5%;
-  width: 40%;
+  width: 35%;
   
   @media only screen and (max-width: $grid-medium) {
     position: static;
@@ -6453,13 +6461,13 @@ $toolbar-height-small: 46px;
   }
 }
 
-.c-hero-width {
+/* .c-hero-width {
   padding-left: 10%;
 
   @media only screen and (max-width: $grid-medium) {
     padding-left: 0;
   }
-}
+} */
 
 .c-ul-decoration {
   li {
@@ -6602,11 +6610,17 @@ $toolbar-height-small: 46px;
 // CHARTS CSS
 .c-color-chart {
   display: block;
+  margin: auto;
+  
   @media only screen and (max-width: $grid-medium) {
     font-size: 12px;
   }
   .c-color-chart-title {
     padding: 10px;
+  }
+  
+  .c-color-chart-gema {
+    font-weight: bold;
   }
   
   .c-color-chart-table {
@@ -6762,9 +6776,8 @@ $toolbar-height-small: 46px;
   }
 }
 
-.c-blog-subheader {
+.c-subheader {
   font-size: 2em;
-  color: white;
   line-height: 1.25em;
   
   @media only screen and (max-width: $grid-medium) {
@@ -6881,6 +6894,7 @@ input {
   
   label {
     cursor: pointer;
+    padding-top: 0;
   }
 
   input {
@@ -6929,9 +6943,15 @@ input {
   padding-top: 5%;
   padding-bottom: 5%;
 }
+
+.faq-width {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 .custom-about-content {
   .about-row {
-    border-top: 1px solid #494d50;
+    border-bottom: 1px solid #f2f2f2;
   }
   
   .about-margin {
@@ -6945,7 +6965,7 @@ input {
     
     .about-icon-right {
       position: absolute;
-      left: 0px;
+      right: 0px;
       top: 58%;
       height: 24px;
       margin-top: -14px;
@@ -6953,7 +6973,7 @@ input {
     
     .about-icon-down {
       position: absolute;
-      left: 0px;
+      right: 0px;
       top: 58%;
       height: 24px;
       margin-top: -14px;
@@ -6962,8 +6982,12 @@ input {
     .about-header4 {
       display: inline-block;
       margin: 0px;
-      padding: 20px 0 20px 25px;
-      font-family: Sofia_Pro_Regular;
+      padding: 35px 25px 35px 0px;
+      font-size: 15px;
+      
+      @media only screen and (max-width: 450px) {
+        padding: 15px 20px 15px 0;
+      }
     }
   }
   
@@ -6972,7 +6996,7 @@ input {
   }
   
   .about-content {
-    padding: 0 0 15px 25px;
+    padding: 0 25px 15px 25px;
   }
 }
 //END ABOUT PAGE CSS
@@ -7188,6 +7212,7 @@ input {
 // HOMEPAGE CSS
 .c-page-width-narrow {
   max-width: 600px;
+  margin: 0 auto;
   
   @include media-query($small) {
     padding-left: $gutter-site-mobile;
@@ -7215,12 +7240,12 @@ input {
   max-width: 750px;
   margin: 0 auto;
   
-  @include media-query($small) {
+/*   @include media-query($small) {
     padding-left: $gutter-site-mobile;
     padding-right: $gutter-site-mobile;
-  }
+  } */
 }
-.c-page-width-narrow-mid {
+.c-page-width-xl {
   max-width: 800px;
   margin: 0 auto;
   
@@ -7243,8 +7268,53 @@ input {
   padding-right: 0px !important;
 }
 
+.c-price-comparison-chart {
+  .c-price-comparison-chart__row {
+    text-align: center;
+    min-height: 30px;
+    max-height: 30px;
+  }
+  
+  .c-price-comparison-chart__gema {
+    border: 1px solid $color-slate-gray;
+  }
+  
+  .c-price-comparison-chart__column {
+    padding: 20px;
+  }
+}
+
+.c-price-comparison-chart__row {
+  @media only screen and (max-width: 450px) {
+    padding-top: 10px;
+  }
+}
+.m-price-comparison-chart__row h2 {
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 0px !important;
+}
+
+.m-price-comparison-chart {
+  .m-price-comparison-chart__row {
+    padding: 20px;
+  }
+  
+  .m-price-comparison-chart__gema {
+    border: 1px solid $color-slate-gray;
+    
+    @media only screen and (max-width: 450px) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.m-price-comparison-chart__other {
+    border: 1px solid lightgrey;
+    
+    @media only screen and (max-width: 450px) {
+      margin-bottom: 20px;
+    }
+}
 .c-details {
-  background-color: $color-white;
   padding: 20px;
   
   h2 {
@@ -7261,7 +7331,7 @@ input {
   
   .c-details-select__tablink {
     flex: 1 1 0;
-    border: 1px solid $color-slate-gray;
+    border: 1px solid $color-navy-blue;
     cursor: pointer;
     cursor: hand;
     text-align: center;
@@ -7274,7 +7344,7 @@ input {
   }
   
   .c-details-select__tablink.active {
-    background-color: $color-slate-gray;
+    background-color: $color-navy-blue;
     
     label {
       color: $color-white;
@@ -7293,7 +7363,7 @@ input {
 .c-details-row {
   display: flex;
   padding: 20px 0 20px 0;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #788188;
   @media only screen and (max-width: 450px) {
       padding: 10px 0 10px 0;
     }
@@ -7819,13 +7889,12 @@ input {
 }
 .c-secondary-btn {
   padding: 15px 20px !important;
-  font-size: 15px !important;
   border-radius: 0;
   background-color: #FFFFFF;
   color: #414b56;
   margin-top: 3%;
   min-width: 190px;
-  border: 1px solid #a1a4a6;
+  border: 2px solid #a1a4a6;
   
   @media only screen and (max-width: 450px) {
     margin-top: 0%;
@@ -7921,7 +7990,23 @@ input {
 }
 .c-our-story-hero {
   height: 35em;
-  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/discover.png?16761988835181898376");
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/grey_box.png?13531950391848746163");
+  @media only screen and (max-width: $grid-medium) {
+    height: 20em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/grey_box.png?13531950391848746163");
+    background-position: center top;
+    padding-right: 0;
+  }
+}
+.c-the-truth-hero {
+  height: 35em;
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/grey_box.png?3993310336051254229");
+  @media only screen and (max-width: $grid-medium) {
+    height: 20em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/jewelers_are_greedy.jpg?18410699060950605128");
+    background-position: center top;
+    padding-right: 0;
+  }
 }
 .c-our-story-hero-1 {
    height: 40em;
@@ -7995,7 +8080,7 @@ input {
 
 /*text size*/
 .text-m {
-  font-size: 1.5em;
+  font-size: 1.35em;
   @media only screen and (max-width: 450px) {
     font-size: 1em;
   }
@@ -8030,4 +8115,9 @@ p {
   @media only screen and (max-width: 450px) {
     color:#676f78 !important;
   }
+}
+.c-label {
+  font-size: 13px !important;
+  text-transform: uppercase;
+  font-weight: bold;
 }
