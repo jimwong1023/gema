@@ -112,7 +112,7 @@
       </table>
 
       <footer class="cart__footer">
-        <div class="grid">
+        <div class="grid grid--half-gutters">
           {% if section.settings.cart_notes_enable %}
             <div class="grid__item medium-up--one-half cart-note">
               <label for="CartSpecialInstructions" class="cart-note__label small--text-center">{{ 'cart.general.note' | t }}</label>
@@ -131,9 +131,9 @@
               </div>
             {% endif %}
             <div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>
-            <a href="collections/engagement-rings" class="btn btn--secondary cart__update cart__continue--large small--hide c-cart-btn-secondary" >{{ 'cart.general.continue_shopping' | t }}</a>
-            <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide c-cart-btn-secondary" value="{{ 'cart.general.update' | t }}">
-            <input type="submit" name="checkout" class="btn btn--small-wide c-cart-btn-primary" value="{{ 'cart.general.checkout' | t }}">
+            <a href="collections/engagement-rings" class="btn btn--secondary cart__update cart__continue--large small--hide c-secondary-btn" >{{ 'cart.general.continue_shopping' | t }}</a>
+            <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide c-secondary-btn" value="{{ 'cart.general.update' | t }}">
+            <input type="submit" name="checkout" class="btn btn--small-wide c-primary-btn" value="{{ 'cart.general.checkout' | t }}">
             {% if additional_checkout_buttons %}
               <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
             {% endif %}
@@ -148,7 +148,7 @@
       <div class="cookie-message">
         <p>{{ 'cart.general.cookies_required' | t }}</p>
       </div>
-      <a href="/" class="btn btn--has-icon-after cart__continue-btn c-cart-btn-primary">{{ 'general.404.link' | t }}</a>
+      <a href="/" class="btn btn--has-icon-after cart__continue-btn c-primary-btn">{{ 'general.404.link' | t }}</a>
     </div>
   {% endif %}
 </div>

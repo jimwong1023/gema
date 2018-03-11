@@ -141,7 +141,7 @@
     {% endif %}
   </header>
 
-  <div class="page-width padding-top-l padding-bottom-l" id="Collection">
+  <div class="page-width padding-top-l padding-bottom-l m-padding-top-none m-padding-bottom-xl" id="Collection">
     {% if section.settings.layout == 'grid' %}
       {% case section.settings.grid %}
       {% when '2' %}
@@ -156,7 +156,7 @@
         {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
       {% endcase %}
 
-      <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      <div class="grid grid--uniform grid--half-gutters {% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
           {% include 'product-card-grid', max_height: max_height %}
         {% else %}

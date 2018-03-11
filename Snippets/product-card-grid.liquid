@@ -11,7 +11,7 @@
     {% for variant in product.variants %}
       {% if found == false and variant.option1 == value %}
         <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-          <div class="grid-view-item{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}">
+          <div class="grid-view-item m-margin-bottom-none{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}">
             <a class="grid-view-item__link grid-view-item__image-container" href="{{ product.url | within: collection | append: "?variant=" | append: variant.id }}">
               {% capture img_id %}ProductCardImage-{{ section.id }}-{{ variant.id }}{% endcapture %}
               {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ variant.id }}{% endcapture %}

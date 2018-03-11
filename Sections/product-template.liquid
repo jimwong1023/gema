@@ -78,7 +78,7 @@
               <span class="icon__fallback-text">{{ 'sections.slideshow.previous_slide' | t }}</span>
             </button>
           {% endif %}
-          <ul class="grid grid--uniform product-single__thumbnails product-single__thumbnails-{{ section.id }}">
+          <ul class="grid grid--uniform product-single__thumbnails grid--half-gutters product-single__thumbnails-{{ section.id }}">
             {% for image in product.images %}
               <li class="grid__item {{ product_thumbnail_width }} product-single__thumbnails-item js">
                 <a href="{{ image.src | img_url: product_image_zoom_size, scale: product_image_scale }}"
@@ -101,9 +101,9 @@
       {% endif %}
     </div>
 
-    <div class="grid__item {{ product_description_width }} c-bg-white padding-top-m padding-left-l padding-right-l m-padding-top-s c-product-template-mobile c-product-description-desktop">
+    <div class="grid__item {{ product_description_width }} c-bg-white padding-top-m padding-left-xl padding-right-xl m-padding-top-s c-product-template-mobile c-product-description-desktop">
       <div class="product-single__meta margin-bottom-s">
-        <div class="custom-product-text m-padding-bottom-s">
+        <div class="custom-product-text padding-bottom-xs m-padding-bottom-xs">
           <h1 itemprop="name" class="product-single__title custom-product-header">{{ product.title }} –</h1>
           <span class="product-price__price product-price__price-{{ section.id }}">
             <span id="ProductPrice-{{ section.id }}" class="custom-product-price"
@@ -117,7 +117,7 @@
             <p itemprop="brand" class="product-single__vendor">{{ product.vendor }}</p>
           {% endif %}
 
-<!--           <h4 id="header-compareable-price" class="custom-product-secondary-header{% if current_variant.metafields.custom_text.compareable_price == blank or current_variant.metafields.custom_text.compareable_price == "" %} visibility-hidden{% endif %}">Diamond Equivalent Price: <span id="variant-compareable-price">{{ current_variant.metafields.custom_text.compareable_price }}</span></h4> -->
+          <h4 id="header-compareable-price" class="custom-product-secondary-header{% if current_variant.metafields.custom_text.compareable_price == blank or current_variant.metafields.custom_text.compareable_price == "" %} hidden{% endif %}">Diamond Equivalent Price: <span id="variant-compareable-price">{{ current_variant.metafields.custom_text.compareable_price }}</span></h4>
         </div>
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           <meta itemprop="priceCurrency" content="{{ shop.currency }}">
@@ -135,7 +135,7 @@
                       <span id="swatchSpan-{{ section.id }}"></span>
                     </label>
                     {% assign optionIndex = forloop.index %}
-                    <div class="metal-swatch-radio-inputs margin-bottom-s single-option-selector-{{ section.id }}" id="SingleOptionSelector-{{ forloop.index0 }}">
+                    <div class="metal-swatch-radio-inputs margin-bottom-xs single-option-selector-{{ section.id }}" id="SingleOptionSelector-{{ forloop.index0 }}">
                       <ul>
                         {% for value in option.values %}
                           <li>
@@ -227,104 +227,102 @@
     </div> -->
 </div>
 
-<div class="c-hero__m-stacked-text">
+<div class="c-hero__m-stacked-text m-padding-top-xs">
   <div class="hero hero-width c-landing-6">
   </div>
   <div class="m-stacked-text__container">
     <div class="m-stacked-text__left c-details">
-      <div class="m-padding-top-s">
-        <div class="c-details-select__tabs">
-          {% if product.tags contains 'wedding band'%}
-            <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Metal Specs</label></div>
-          {% elsif product.tags contains 'loose stone'%}
-            <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Gem Specs</label></div>
-          {% else %}
-            <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Gem Specs</label></div>
-            <div class="c-details-select__tablink js-tablink" data-index=1><label class="c-label">Metal Specs</label></div>
-          {% endif %}
-        </div>
-        <div>
-          {% if product.tags contains 'wedding band'%}
-            <div class="js-tab-content active">
-              <div class="c-details-section">
-                <div class="c-details-row">
-                  <span class="c-details-row__left">White Gold:</span><span class="c-details-row__right">60% Yellow Gold, 25% Palladium, 5% Nickel</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Yellow Gold:</span><span class="c-details-row__right">80% yellow gold, 15% Palladium, 5% Nickel</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Rose Gold:</span><span class="c-details-row__right">50% yellow gold, 25% copper, 25% Palladium</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Platinum:</span><span class="c-details-row__right">99% Platinum, 1% Nickel</span>
-                </div>
+      <div class="c-details-select__tabs">
+        {% if product.tags contains 'wedding band'%}
+          <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Metal Specs</label></div>
+        {% elsif product.tags contains 'loose stone'%}
+          <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Gem Specs</label></div>
+        {% else %}
+          <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Gem Specs</label></div>
+          <div class="c-details-select__tablink js-tablink" data-index=1><label class="c-label">Metal Specs</label></div>
+        {% endif %}
+      </div>
+      <div>
+        {% if product.tags contains 'wedding band'%}
+          <div class="js-tab-content active">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">White Gold:</span><span class="c-details-row__right">60% Yellow Gold, 25% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Yellow Gold:</span><span class="c-details-row__right">80% yellow gold, 15% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Rose Gold:</span><span class="c-details-row__right">50% yellow gold, 25% copper, 25% Palladium</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Platinum:</span><span class="c-details-row__right">99% Platinum, 1% Nickel</span>
               </div>
             </div>
-          {% elsif product.tags contains 'loose stone'%}
-            <div class="js-tab-content active">
-              <div class="c-details-section">
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Color:</span><span class="c-details-row__right">D E F</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Clarity:</span><span class="c-details-row__right">VVS1</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Cut:</span><span class="c-details-row__right">Ideal</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Refractive Index:</span><span class="c-details-row__right">2.65</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Dispersion:</span><span class="c-details-row__right">Very High</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">MOH Hardness Scale:</span><span class="c-details-row__right">9.5/10</span>
-                </div>
+          </div>
+        {% elsif product.tags contains 'loose stone'%}
+          <div class="js-tab-content active">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">Color:</span><span class="c-details-row__right">D E F</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Clarity:</span><span class="c-details-row__right">VVS1</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Cut:</span><span class="c-details-row__right">Ideal</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Refractive Index:</span><span class="c-details-row__right">2.65</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Dispersion:</span><span class="c-details-row__right">Very High</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">MOH Hardness Scale:</span><span class="c-details-row__right">9.5/10</span>
               </div>
             </div>
-          {% else %}
-            <div class="js-tab-content active">
-              <div class="c-details-section">
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Color:</span><span class="c-details-row__right">D E F</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Clarity:</span><span class="c-details-row__right">VVS1</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Cut:</span><span class="c-details-row__right">Ideal</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Refractive Index:</span><span class="c-details-row__right">2.65</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Dispersion:</span><span class="c-details-row__right">Very High</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">MOH Hardness Scale:</span><span class="c-details-row__right">9.5/10</span>
-                </div>
+          </div>
+        {% else %}
+          <div class="js-tab-content active">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">Color:</span><span class="c-details-row__right">D E F</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Clarity:</span><span class="c-details-row__right">VVS1</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Cut:</span><span class="c-details-row__right">Ideal</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Refractive Index:</span><span class="c-details-row__right">2.65</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Dispersion:</span><span class="c-details-row__right">Very High</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">MOH Hardness Scale:</span><span class="c-details-row__right">9.5/10</span>
               </div>
             </div>
-            <div class="js-tab-content hidden">
-              <div class="c-details-section">
-                <div class="c-details-row">
-                  <span class="c-details-row__left">White Gold:</span><span class="c-details-row__right">60% Yellow Gold, 25% Palladium, 5% Nickel</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Yellow Gold:</span><span class="c-details-row__right">80% yellow gold, 15% Palladium, 5% Nickel</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Rose Gold:</span><span class="c-details-row__right">50% yellow gold, 25% copper, 25% Palladium</span>
-                </div>
-                <div class="c-details-row">
-                  <span class="c-details-row__left">Platinum:</span><span class="c-details-row__right">99% Platinum, 1% Nickel</span>
-                </div>
+          </div>
+          <div class="js-tab-content hidden">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">White Gold:</span><span class="c-details-row__right">60% Yellow Gold, 25% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Yellow Gold:</span><span class="c-details-row__right">80% yellow gold, 15% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Rose Gold:</span><span class="c-details-row__right">50% yellow gold, 25% copper, 25% Palladium</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Platinum:</span><span class="c-details-row__right">99% Platinum, 1% Nickel</span>
               </div>
             </div>
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -332,9 +330,9 @@
 
 {% if product.tags contains 'loose stone' or product.tags contains 'engagement ring'%}
   <div class="c-section-left c-page-width-xl">
-    <div class="custom-about-content padding-top-m">
-      <h3 class="c-header-l">Color</h3>
-      <p class="padding-top-s">Highest, absolutely "colorless" grade for the purest, whitest hue.
+    <div class="custom-about-content padding-top-xl m-padding-top-m">
+      <h3 class="c-header-l">COLOR</h3>
+      <p class="padding-top-s m-padding-top-xs">Highest, absolutely "colorless" grade for the purest, whitest hue.
         A grade of D-F will have no discernible color.</p>
       <div class="padding-top-s">
         <div class="c-color-chart c-mobile-hide">
@@ -439,8 +437,8 @@
       </div>
     </div>
 
-    <div class="padding-top-xl">
-      <h3 class="c-header-l">Clarity</h3>
+    <div class="padding-top-l">
+      <h3 class="c-header-l">CLARITY</h3>
       <p class="padding-top-s">Top cut grade. Very, very slight to no inclusions. 
         Characteristics are miniscule and are difficult to see under 10x magnification.</p>
       <div class="padding-top-s">
@@ -546,11 +544,9 @@
       </div>
     </div>
 
-    <div class="padding-top-xl">
-      <h3 class="c-header-l">Cut</h3>
-      <p class="padding-top-s">Highest cut grade. Its proportions produce a beautiful balance of fire and sparkle. 
-        Cut with proper proportions, light is returned out of 
-        the top of the gemstone. If it is cut too shallow, light leaks out of the bottom; too deep and it escapes out of the side.</p>
+    <div class="padding-top-l">
+      <h3 class="c-header-l">CUT</h3>
+      <p class="padding-top-s">Highest cut grade. Its proportions produce a beautiful balance of fire and sparkle and maximum light is returned out of the top of the gemstone.</p>
       <div class="padding-top-s">
         <div class="c-color-chart c-mobile-hide">
           <div class="c-color-chart-legend text-center padding-bottom-s">
@@ -618,11 +614,9 @@
       </div>
     </div>
 
-    <div class="padding-top-xl">
-      <h3 class="c-header-l">Carat</h3>
+    <div class="padding-top-l">
+      <h3 class="c-header-l">CARAT</h3>
       <p class="padding-top-s">Carat is a unit measurement specifically used for Diamonds.
-        Moissanite have a different chemical makeup than Diamond and naturally weigh lighter.
-        A 1.00ct Diamond would translate to a weight of .88ct in Moissanite.
         Moissanites' size is referenced using millimeters or Diamond equivalent weight (i.e. 6.5mm or Diamond 
         equivalent weight of 1.00ct).
       </p>
@@ -705,9 +699,9 @@
   </div>
 {% endif %}
 
-<div class="page-width c-section-center padding-top-m padding-bottom-xl m-padding-top-l m-padding-bottom-l">
+<div class="page-width c-section-center padding-top-xl padding-bottom-xl m-padding-top-l m-padding-bottom-l">
   <h3 class="c-header-l text-center">Free Shipping And Free Returns, Always.</h3>
-  <p class="padding-top-s text-light text-center padding-bottom-m">
+  <p class="padding-top-s padding-bottom-s text-center">
     It's a big decision, and we'll make it as easy as possible for you.
   </p>
   <div class="grid__item grid__item--collection-template small--one-whole medium-up--one-third m-padding-top-s">

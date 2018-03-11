@@ -1,3 +1,161 @@
+<div class="c-page-width-m pg-bg-primary padding-top-m padding-bottom-l">
+  <h3 class="c-header-l text-center">Lab Grown Gems FAQ</h3>
+  <div class="custom-about-content padding-top-m">
+    <div>
+      <p>Lab grown gemstones have the same physical, chemical, and optical properties 
+        as mined gems do. A controlled environment is created so that 
+        crystals can grow naturally: recreating the conditions in which gems grow 
+        in the earth.
+      </p>
+      <p>The process of growing gem crystals in a laboratory rather than mining 
+        them is a bit like making ice in your freezer instead of finding it in a lake.
+      </p>
+      <div class="about-row">
+        <a href="#what-are-moissanites" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">Are lab created gemstones real or artificial?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>
+            Lab-grown gemstones are cultured just like you would 
+            culture a pearl. Natural ingredients are placed in an environment 
+            created to duplicate nature. Once the required combination of chemical 
+            and environmental factors is created, gemstone crystals grow over the 
+            course of about a year (the exact length of time depends on the variety). 
+            As a result, the crystals we grow have physical, chemical, and optical 
+            properties that are identical to those found in nature.
+          </p>
+        </div>
+      </div>
+      <div class="about-row">
+        <a href="#is-moissanite-a-diamond" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">Can I tell the difference between created gemstones and mined gemstones?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>
+            Unless you’re a certified gemologist with a powerful microscope, you 
+            won’t be able to tell the difference between lab created and mined 
+            gemstones.
+          </p>
+        </div>
+      </div>
+      <div class="about-row">
+        <a href="#why-are-moissanites-sold-by-millimeter" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">Do lab created gemstones look better than their mined counterparts?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>Under laboratory conditions, computers control temperatures, while 
+            foreign materials found in the earth are eliminated from our starting 
+            chemicals. This makes our crystal growth more predictable and consistent. 
+            Only the best qualities and colors make it to the retail market.
+            Lower qualities will not make it past quality control and are not released for sale.
+		  </p>  
+        </div>
+      </div>
+    </div>
+    <div class="about-row padding-top-m">
+      <div class="about-row">
+        <a href="#will-moissanite-color-fade" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">Are these stones enhanced or color treated?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>
+            No. All gemstones are grown in a lab under a controlled 
+            environment producing the most purse color possible. 
+            The chemical structure and coloring agents are the same as its mined counterparts.
+          </p>  
+        </div>
+      </div>
+      <div class="about-row">
+        <a href="#do-moissanites-have-inclusions" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">Are lab-grown gemstones as durable as mined gemstones?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>Yes. In fact, you will find that lab created stones are more durable 
+            because they have fewer inclusions than most of their mined counterparts.
+            This is because 80% of our rough is cut away to deliver near “flawless” 
+            pieces. The hardness of lab created stones are exactly the same as their mined counterparts. 
+            In addition, a Lifetime Warranty is offered to back our promise of quality, 
+            which is something uncommon for any mined gemstone.
+		  </p>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class=" c-bg-light-gray">
+  <div class="padding-top-l padding-bottom-l page-width c-page-width-m">
+    <div class="grid grid--half-gutters">
+      <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+        <div class="section-header text-center">
+          <h1>Questions? Contact Us</h1>
+        </div>
+
+        <div class="contact-form form-vertical">
+          {% form 'contact' %}
+
+            {% if form.posted_successfully? %}
+              <p class="note form-success">
+                {{ 'contact.form.post_success' | t }}
+              </p>
+            {% endif %}
+
+            {{ form.errors | default_errors }}
+
+            <div class="grid grid--half-gutters">
+              <div class="grid__item">
+                <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+                <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+              </div>
+            </div>
+
+            <div class="grid grid--half-gutters">
+              <div class="grid__item">
+                <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}</label>
+                <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
+              </div>
+            </div>
+
+            <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+          <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+            <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+
+          {% endform %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-width">
+  <div class="c-section-center text-center padding-top-xl padding-bottom-xl m-padding-top-s m-padding-bottom-s">
+    <h3 class="c-header-xl padding-bottom-s">The world's most practical engagement ring.</h3> 
+    <a href="/collections/engagement-rings" class="btn c-primary-btn">
+      <b>Shop Now</b>
+    </a>
+  </div>
+</div>
+
+<script src="{{ 'contact-us.js' | asset_url }}"></script>
+
+
+
+
+
+
+
+
 <div class="shopify-section index-section">
   <div class="page-width c-split-screen c-4c">
     <div class="c-one-split c-4c__main">
@@ -904,6 +1062,84 @@
       jewelry as well as a one-year, no-damage guarantee for our gemstones; 
       we’ll replace your damaged gemstones for free within the first 12 months.
     </p>
+  </div>
+</div>
+
+<hr>
+<div class="page-width">
+  <div class="c-section-center text-center padding-top-s padding-bottom-l m-padding-top-s m-padding-bottom-s">
+    <h3 class="c-header-xl padding-bottom-s">Three months salary not required</h3> 
+    <a href="/collections/engagement-rings" class="btn c-primary-btn">
+      <b>Shop Now</b>
+    </a>
+  </div>
+</div>
+
+
+<div class="page-width padding-top-l padding-bottom-xl m-padding-top-s">
+  <div class="c-section-center c-page-width-s padding-top-m">
+    <p class="c-mini-header padding-bottom-s">HERE'S THE CRUCIAL BIT</p>
+    <h3 class="c-header-xl">The Moissanite gemstone</h3>
+    <p class="padding-top-m text-light">
+      Moissanite is a rare gemstone that originates from space meteorites and is 
+      a clear gemstone with the same look and durability as Diamond. It's not following traditions, sure, 
+      but we think its for the better. It's the new way of doing things. We call it a Practical Engagement.
+    </p>
+  </div>
+</div> -->
+
+
+<!-- <div class="c-hero__m-stacked-text">
+  <div class="hero hero-width c-landing-3">
+  </div>
+  <div class="m-stacked-text__container text-white text-center">
+    <div class="m-stacked-text__left">
+      <div class="m-padding-top-m padding-left-s padding-right-s">
+        <h2 class="c-header-xl">The Timeless Engagement</h2>
+        <p class="padding-top-s m-padding-top-s margin-none text-white">Shapes and sizes galore—starting at $500, including gold or platinum ring setting.</p> 
+        <div class="padding-top-s m-padding-top-s">
+          <a href="/collections/engagement-rings"><btn class="btn c-secondary-btn"><b>Shop engagement</b></btn></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="c-hero__m-stacked-text padding-top-m">
+  <div class="split-screen__image-container">
+    <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/blog-hero-1_85db1a77-a6ef-4471-9598-9b687ac6c72a.png?1831599432067432610" alt="Moissanite Secret">
+  </div>
+  <div class="m-stacked-text__container">
+    <div class="m-stacked-text__right text-center">
+      <div class="m-padding-top-m padding-left-s padding-right-s">
+        <h2 class="c-header-xl">The secret is out</h2>
+        <p class="padding-top-s m-padding-top-s text-light margin-none">Jewelers kept Moissanite away from consumers for decades. Until now.</p> 
+        <div class="padding-top-s m-padding-top-s">
+          <a href="/pages/the-truth"><btn class="btn c-secondary-btn"><b>The truth</b></btn></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="c-hero__m-stacked-text padding-top-m">
+  <div class="hero hero-width c-landing-5">
+  </div>
+  <div class="m-stacked-text__container text-white text-center">
+    <div class="m-stacked-text__left">
+      <div class="m-padding-top-m padding-left-s padding-right-s">
+        <h2 class="c-header-xl">Home Try-On</h2>
+        <p class="padding-top-s m-padding-top-s margin-none text-white">Want to try before you buy?<br>Get a free trial.</p> 
+        <div class="padding-top-s m-padding-top-s">
+          <btn class="btn c-secondary-btn"><b>Learn More</b></btn>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="c-hero__m-stacked-text m-padding-top-m">
+  <div class="hero hero-width c-landing-4">
   </div>
 </div>
     

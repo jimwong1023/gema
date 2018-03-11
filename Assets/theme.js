@@ -960,7 +960,6 @@ theme.MobileNav = (function() {
   var $activeSubNav;
   var $activeTrigger;
   var menuLevel = 1;
-  var translateHeaderHeight = 41;
   // Breakpoints from src/stylesheets/global/variables.scss.liquid
   var mediaQuerySmall = 'screen and (max-width: 749px)';
 
@@ -998,6 +997,8 @@ theme.MobileNav = (function() {
   }
 
   function openMobileNav() {
+    var translateHeaderHeight = ($('.announcement-bar').height() + $('.c-site-header-padding').height()) || 0;
+
     cache.$mobileNavContainer
       .prepareTransition()
       .addClass(classes.navOpen);
@@ -1028,6 +1029,8 @@ theme.MobileNav = (function() {
   }
 
   function closeMobileNav() {
+    var translateHeaderHeight = ($('.announcement-bar').height() + $('.c-site-header-padding').height()) || 0;
+    
     cache.$mobileNavContainer.prepareTransition().removeClass(classes.navOpen);
 
     cache.$mobileNavContainer.css({
@@ -2829,3 +2832,14 @@ theme.init = function() {
 };
 
 $(theme.init);
+
+$(document).ready(function() {
+  if ($(".announcement-bar__message").length) {
+    $("body").addClass("body__announcement-bar");
+    $(".mobile-nav-wrapper").addClass("mobile-nav-wrapper__announcement-bar");
+  }
+  else {
+    $("body").addClass("body__no-announcement-bar");
+    $(".mobile-nav-wrapper").addClass("mobile-nav-wrapper__no-announcement-bar");
+  }
+});
