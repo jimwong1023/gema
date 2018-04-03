@@ -1,11 +1,11 @@
 {% paginate blog.articles by 12 %}
 
-<h3 class="c-header-xl text-center padding-top-m">In the blog</h3>
+<h3 class="c-header-l text-center padding-top-m">In the blog</h3>
 
-  <div class="page-width padding-top-l m-padding-top-s">
+  <div class="page-width c-page-width-xl padding-top-m m-padding-top-s">
     {% for article in blog.articles %}
-      <div class="c-column-flex-container c-mobile-flex-column padding-top-m padding-bottom-m c-article-line">
-        {% if article.image %}
+      <div class="c-column-flex-container c-mobile-flex-column padding-top-m padding-bottom-m m-padding-top-s m-padding-bottom-s c-article-line">
+<!--         {% if article.image %}
           <div id="{{ img_wrapper_id }}" class="c-column-flex-1 js c-blog-image">
             <a href="{{ article.url }}" class="">
               <img id="{{ img_id }}"
@@ -23,9 +23,9 @@
               {{ article | img_url: '345x345', scale: 2 | img_tag: article.title, 'article__grid-image' }}
             </a>
           </noscript>
-        {% endif %}
-        <div class="c-column-flex-2 padding-top-m padding-bottom-m m-padding-top-s m-padding-bottom-none">
-          <h2 class="c-header-l">
+        {% endif %} -->
+        <div class="c-column-flex-2 padding-top-s padding-bottom-s m-padding-top-none m-padding-bottom-none">
+          <h2 class="c-header-m">
             <a href="{{ article.url }}">{{ article.title }}</a>
           </h2>
           <div class="padding-top-s">

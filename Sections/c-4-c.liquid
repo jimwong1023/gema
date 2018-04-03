@@ -1,3 +1,495 @@
+<div class="c-bg-light-gray">
+  <div class="page-width padding-top-l padding-bottom-l m-padding-top-m m-padding-bottom-m">
+    <div class="c-section-center c-page-width-m">
+      <h3 class="c-header-xl text-center">We're here to help</h3>
+      <p class="text-m text-center padding-top-s">Give us a call: 1-888-616-2872<br>
+        Mon - Fri 9am - 6pm EST<br>
+      <u>support@gemaandco.com</u>
+      </p>
+      <ul class="list--inline site-footer__social-icons social-icons text-center margin-none">
+        {% if settings.social_facebook_link != blank %}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
+              {% include 'icon-facebook' %}
+              <span class="icon__fallback-text">Facebook</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.social_twitter_link != blank %}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
+              {% include 'icon-twitter' %}
+              <span class="icon__fallback-text">Twitter</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.social_instagram_link != blank %}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+              {% include 'icon-instagram' %}
+              <span class="icon__fallback-text">Instagram</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="vl text-center"></div>
+</div>
+
+<div class="page-width padding-top-m">
+  <div class="spec-container">
+    <div class="c-column-flex-container padding-top-m text-center">
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Moissanite</span></div></div>
+      </div>
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Lab Created Gems</span></div></div>
+      </div>
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Engraving</span></div></div>
+      </div>
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Sizing</span></div></div>
+      </div>
+    </div>
+    <div class="c-column-flex-container padding-top-m text-center">
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Care & Repair</span></div></div>
+      </div>
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Gifts</span></div></div>
+      </div>
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Shipping & Returns</span></div></div>
+      </div>
+      <div class='square-box'>
+        <div class='square-content'><div>
+        <span>Warranty</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 class="c-header-l padding-top-l padding-bottom-l m-padding-top-none m-padding-bottom-s text-center">Frequently Asked Questions</h3>
+<hr>
+<div class="page-width">
+  <div class="custom-about-content padding-top-m m-padding-top-none c-section-left c-page-width-l">
+      <div class="about-row">
+        <a href="#what-are-moissanites" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">What Are Moissanites?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>
+            Moissanite is composed of silicon carbide and is a rare mineral that originates from space meteorites. 
+            Moissanites were first discovered by chemist Dr. Henri Moissan at the site of a massive meteorite strike 
+            in Arizona, USA. This new stone was named 'Moissanite' in his 
+            honor as Dr. Moissan spent the rest of his life attempting to recreate 
+            this rare mineral in his laboratory.</p>
+          <p>It wasn't until the late 80's 
+             where scientists developed the innovative 
+            thermal growing process to produce Moissanites in labs that made this gem more widely available to consumers.
+          </p>
+        </div>
+      </div>
+      <div class="about-row">
+        <a href="#is-moissanite-a-diamond" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">Is Moissanite a brand of Diamond or simulated Diamond?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>
+            Moissanite is not a Diamond or substitute of a Diamond, either scientifically, chemically or emotionally. 
+            Moissanite is not a fake Diamond but rather a different clear gemstone with its own set of chemical and optical properties. 
+            The properties of a Moissanite exhibit more fire and brilliance than any other 
+            gemstone. To an untrained eye, the visual difference between a Moissanite and Diamond is undetectable.
+          </p>
+        </div>
+      </div>
+      <div class="about-row">
+        <a href="#why-are-moissanites-sold-by-millimeter" class="js-about-content-link">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          <h4 class="about-header4">Why are Moissanites sold by millimeter rather than carats?</h4>
+        </a>
+        <div class="js-about-content about-content hidden">
+          <p>
+            Carat is the traditional unit of measurement for a Diamond's weight. 
+            Moissanites are not measured in carats because it weighs approximately 
+            10 percent less than Diamond. For example, a 6.5mm round Diamond would weigh 1.0ct, 
+            while a 6.5mm round moissanite would weigh 0.88ct. The two stones would 
+            visually be the same size - 6.5mm in diameter. All stones for sale are 
+            listed with their size in millimeters and the Diamond equivalent weight (DEW) 
+            in carats.
+          </p>  
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-width">
+  <div class="c-column-flex-container c-mobile-flex-column padding-top-l m-padding-top-s">
+    <div class="c-column-flex-1">
+      <div class="padding-right-m m-padding-right-none">
+        <h2 class="c-header-l padding-bottom-s">Color</h2>
+        <p class="m-padding-top-s m-padding-bottom-s">Color refers to the natural body 
+          color of a gemstone and not to the reflection of spectral colors that 
+          flash when it moves. The less color a diamond exhibits, the higher the rarity, and therefore the 
+          higher the value. 
+        </p>
+        <p>The standard GIA diamond color grading scale was never designed to rate moissanite. 
+          Unlike diamonds, which range from colorless to brownish to fancy yellow, moissanite 
+          can carry undertones across the board from green to yellow to gray. It’s a beautiful, 
+          brilliant and highly dispersive jewel that stands on its own, creating a unique jewelry 
+          category unto itself. Only near-colorless moissanite, graded as "VG–Very Good," is 
+          available for sale.
+        </p>
+      </div>
+    </div>
+    <div class="c-column-flex-1">
+      <div class="padding-left-m m-padding-left-none">
+        <div class="four-cs-content">
+          <div class="four-c-content js-tab-content-color active">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/D-F_color.jpg?16132644565189766013">
+          </div>
+          <div class="four-c-content js-tab-content-color hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/D-F_color.jpg?16132644565189766013">
+          </div>
+          <div class="four-c-content js-tab-content-color hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/D-F_color.jpg?16132644565189766013">
+          </div>
+          <div class="four-c-content js-tab-content-color hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/G_color.jpg?16132644565189766013">
+          </div>
+          <div class="four-c-content js-tab-content-color hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/H_color.jpg?16132644565189766013">
+          </div>
+          <div class="four-c-content js-tab-content-color hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/I_color.jpg?16132644565189766013">
+          </div>
+        </div>
+        <div class="four-cs-select">
+          <ul>
+            <li>
+              <div class="four-c-select js-tablink-color active" data-index=0>
+              </div>
+              <label>D</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-color" data-index=1>
+              </div>
+              <label>E</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-color" data-index=2>
+              </div>
+              <label>F</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-color" data-index=3>
+              </div>
+              <label>G</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-color" data-index=4>
+              </div>
+              <label>H</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-color" data-index=5>
+              </div>
+              <label>I</label>
+            </li>
+          </ul>
+          <div class="strike-bar"></div>
+        </div>
+        <div class="four-cs-chart">
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>D</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Absolutely colorless or icy white
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>E</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Colorless with miniscule traces of color under 10x magnification
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>F</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Colorless with slight traces of color under 10x magnification
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>G</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Near-colorless with some traces of color noticeable
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>H</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Near-colorless with slight color noticeable
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>I</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Near-colorless with visibly detected color
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-padding-top-m">
+    <div class="c-column-flex-container c-mobile-flex-column">
+      <div class="c-column-flex-1">
+        <div class="padding-right-m m-padding-right-none">
+          <h2 class="c-header-l padding-bottom-s">Clarity</h2>
+          <p class="m-padding-top-s m-padding-bottom-s">Clarity refers to how clean or clear
+            a gemstone is with respect to natural microscopic characteristics that were 
+            trapped within while the gemstone was forming. Internal characteristics 
+            are known as inclusions, and characteristics on the surface of the gem are 
+            known as blemishes.
+          </p>
+          <p>Since Charles & Colvard® moissanite is essentially lab-created using natural 
+            elements, Charles & Colvard (the sole manufacturer of moissanite) is able to control 
+            the entire process and ensure the highest quality gemstone with the greatest care 
+            in regards to “Clarity.”
+          </p>
+        </div>
+      </div>
+      <div class="c-column-flex-1">
+        <div class="padding-left-m m-padding-left-none">
+          <div class="four-cs-content">
+            <div class="four-c-content js-tab-content-clarity active">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/FL-IF.png?15194827371846435228">
+            </div>
+            <div class="four-c-content js-tab-content-clarity hidden">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VVS1-VVS2.jpg?631151962736553495">
+            </div>
+            <div class="four-c-content js-tab-content-clarity hidden">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VS1-VS2.jpg?2622491702304126006">
+            </div>
+            <div class="four-c-content js-tab-content-clarity hidden">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/SI1-SI2.jpg?631151962736553495">
+            </div>
+          </div>
+          <div class="four-cs-select">
+            <ul>
+              <li>
+                <div class="four-c-select js-tablink-clarity active" data-index=0>
+                </div>
+                <label>FL-IF</label>
+              </li>
+              <li>
+                <div class="four-c-select js-tablink-clarity" data-index=1>
+                </div>
+                <label>VVS1-VVS2</label>
+              </li>
+              <li>
+                <div class="four-c-select js-tablink-clarity" data-index=2>
+                </div>
+                <label>VS1-VS2</label>
+              </li>
+              <li>
+                <div class="four-c-select js-tablink-clarity" data-index=3>
+                </div>
+                <label>SI1-SI2</label>
+              </li>
+            </ul>
+            <div class="strike-bar"></div>
+          </div>
+          <div class="four-cs-chart">
+            <div class="c-column-flex-container">
+              <div class="c-column-flex-1">
+                <strong>FL-IF</strong>
+              </div>
+              <div class="c-column-flex-4">
+                Flawless to internally flawless
+              </div>
+            </div>
+            <div class="c-column-flex-container">
+              <div class="c-column-flex-1">
+                <strong>VVS1-VVS2</strong>
+              </div>
+              <div class="c-column-flex-4">
+                Very very slight inclusions
+              </div>
+            </div>
+            <div class="c-column-flex-container">
+              <div class="c-column-flex-1">
+                <strong>VS1-VS2</strong>
+              </div>
+              <div class="c-column-flex-4">
+                Very slight inclusions
+              </div>
+            </div>
+            <div class="c-column-flex-container">
+              <div class="c-column-flex-1">
+                <strong>SI1-SI2</strong>
+              </div>
+              <div class="c-column-flex-4">
+                Slightly included
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="c-column-flex-container c-mobile-flex-column m-padding-top-m">
+    <div class="c-column-flex-1">
+      <div class="padding-right-m m-padding-right-none">
+        <h2 class="c-header-l padding-bottom-s">Cut</h2>
+        <p class="m-padding-top-s m-padding-bottom-s">Cut refers not 
+          to the shape, but to the balance of proportion, symmetry and polish achieved 
+          by the gemstone cutter. The extent of how well a gemstone is cut is directly 
+          related to its overall beauty. When correctly cut, the gemstone's ability to reflect and refract light is greatly enhanced. 
+        </p>
+        <p>Every Charles & Colvard Created Moissanite® jewel is precisely calibrated and hand-cut 
+          by a master technician to create maximum brilliance and spark the ultimate fire. While 
+          standard round brilliant continues to be the most popular cut for moissanite, 
+          fancy cuts are also available in limited quantities.
+        </p>
+      </div>
+    </div>
+    <div class="c-column-flex-1">
+      <div class="padding-left-m m-padding-left-none">
+        <div class="four-cs-content">
+          <div class="four-c-content js-tab-content-cut hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/Ideal_923e4615-b35e-4f9d-995a-304a47d01a20.png?1826726763178891845">
+          </div>
+          <div class="four-c-content js-tab-content-cut hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/v_good.jpg?14837505122209618426">
+          </div>
+          <div class="four-c-content js-tab-content-cut active">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/good.jpg?14837505122209618426">
+          </div>
+          <div class="four-c-content js-tab-content-cut hidden">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/fair.jpg?14837505122209618426">
+          </div>
+        </div>
+        <div class="four-cs-select">
+          <ul>
+            <li>
+              <div class="four-c-select js-tablink-cut active" data-index=0>
+              </div>
+              <label>Ideal</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-cut" data-index=1>
+              </div>
+              <label>Very Good</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-cut" data-index=2>
+              </div>
+              <label>Good</label>
+            </li>
+            <li>
+              <div class="four-c-select js-tablink-cut" data-index=3>
+              </div>
+              <label>Fair</label>
+            </li>
+          </ul>
+          <div class="strike-bar"></div>
+        </div>
+        <div class="four-cs-chart">
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>Ideal</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Exquisite quality cut that reflects nearly all light that enters the gemstone.
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>Very Good</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Quality cut that reflects slightly less light as the ideal cut.
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>Good</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Average cut that reflects decent amount of light.
+            </div>
+          </div>
+          <div class="c-column-flex-container">
+            <div class="c-column-flex-1">
+              <strong>Fair</strong>
+            </div>
+            <div class="c-column-flex-4">
+              Below average cut that reflects some light.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="m-padding-top-m">
+    <div class="c-column-flex-container c-mobile-flex-column">
+      <div class="c-column-flex-1">
+        <div class="padding-right-m m-padding-right-none">
+          <h2 class="c-header-l padding-bottom-s">Carat</h2>
+          <p class="m-padding-top-s m-padding-bottom-s">Clarity refers to how clean or clear
+            a gemstone is with respect to natural microscopic characteristics that were 
+            trapped within while the gemstone was forming. Internal characteristics 
+            are known as inclusions, and characteristics on the surface of the gem are 
+            known as blemishes.
+          </p>
+          <p>Since Charles & Colvard® moissanite is essentially lab-created using natural 
+            elements, Charles & Colvard (the sole manufacturer of moissanite) is able to control 
+            the entire process and ensure the highest quality gemstone with the greatest care 
+            in regards to “Clarity.”
+          </p>
+        </div>
+      </div>
+      <div class="c-column-flex-1">
+      </div>
+    </div>
+</div>
+
+<script src="{{ 'tabs-manager-v2.js' | asset_url }}"></script>
+<script>
+  var colorTabs = new TabsManagerV2("js-tablink-color", "js-tab-content-color");
+  var clarityTabs = new TabsManagerV2("js-tablink-clarity", "js-tab-content-clarity");
+  var cutTabs = new TabsManagerV2("js-tablink-cut", "js-tab-content-cut");
+</script>
+
 <div class="c-page-width-m pg-bg-primary padding-top-m padding-bottom-l">
   <h3 class="c-header-l text-center">Lab Grown Gems FAQ</h3>
   <div class="custom-about-content padding-top-m">
@@ -592,6 +1084,10 @@
   </div>
 </div>
 
+
+
+
+
 <div class="c-page-width-narrow-mid padding-top-md">
   <h3 class="custom-product-text h1 text-center">Moissanite Specifications</h3>
   <h3 class="custom-product-text h1 padding-top-md">Color: D-E-F</h3>
@@ -603,35 +1099,35 @@
       <div class="c-column-flex-10">
         <div class="c-color-chart-table">
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/D-F_color.jpg?16132644565189766013">
             <p>D</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/D-F_color.jpg?16132644565189766013">
             <p>E</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/D-F_color.jpg?16132644565189766013">
             <p>F</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/g.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/G_color.jpg?16132644565189766013">
             <p>G</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/h.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/H_color.jpg?16132644565189766013">
             <p>H</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/i.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/I_color.jpg?16132644565189766013">
             <p>I</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/j.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/J_color.jpg?16132644565189766013">
             <p>J</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/k.png?15185396925974111">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/K_color.jpg?16132644565189766013">
             <p>K</p>
           </div>
         </div>
@@ -663,7 +1159,7 @@
       <div class="c-column-flex-10">
         <div class="c-color-chart-table">
           <div class="c-column-flex-1 c-color-cell">
-            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/FL.png?12958213320461595773">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/clarity-if.png?15276389783757768317">
             <p>FL</p>
           </div>
           <div class="c-column-flex-1 c-color-cell">
@@ -823,44 +1319,142 @@
 <div class="page-width padding-top-xl">
   <div class="spec-container">
     <div class="align--center">
-      <h3 class="c-section-header-md">Specifications</h3>
+      <h3 class="c-header-m padding-bottom-m">Specifications</h3>
     </div>
-    <div class="c-column-flex-container padding-top-l">
-      <div class="c-column-flex-1 padding-right-s">
+    <div class="c-column-flex-container padding-top-m">
+      <div class="c-column-flex-1">
         <p class="margin-bottom-xxs">RING DETAILS</p>
-        <hr class="c-hr margin-none">
+        <hr class="margin-none">
         <p class="padding-top-xs"><strong>Style:</strong> Solitaire</p>
-        <p><strong>Metal:</strong> 14k Gold</p>
-        <p><strong>Average Width:</strong> 1.5mm</p>
+        <p><strong>Metal:</strong> 14K Gold or Platinum</p>
+        <p><strong>Band Width:</strong> 1.7mm</p>
         <p><strong>Rhodium Finish:</strong> White Gold only</p>
         <p><strong>Setting:</strong> Six prong</p>
       </div>
-      <div class="c-column-flex-1 padding-right-s">
+      <div class="c-column-flex-1">
         <p class="margin-bottom-xxs">STONE DETAILS</p>
-        <hr class="c-hr margin-none">
+        <hr class="margin-none">
         <p class="padding-top-xs"><strong>Gemstone:</strong> Moissanite</p>
         <p><strong>Shape:</strong> Round Brilliant</p>
         <p><strong>Average Color:</strong> D/E/F</p>
-        <p><strong>Average Clarity:</strong> IF/VVS1</p>
-        <p><strong>Average Cut:</strong> Excellent</p>
+        <p><strong>Average Clarity:</strong> VVS1</p>
+        <p><strong>Average Cut:</strong> Ideal</p>
       </div> 
-      <div class="c-column-flex-1 padding-right-s">
+      <div class="c-column-flex-1">
         <p class="margin-bottom-xxs">STONE DETAILS</p>
-        <hr class="c-hr margin-none">
-        <p class="padding-top-xs "><strong>Polish:</strong> Excellent</p>
-        <p><strong>Symmetry:</strong> Excellent</p>
-        <p><strong>Warranty:</strong><br>1 year warranty. See <strong>gemanewyork.com/legal</strong>
-        </p>
-        <p>Support at support@gemanewyork.com</p>
+        <hr class="margin-none">
+        <p class="padding-top-xs "><strong>Hardness:</strong> 9.5</p>
+        <p><strong>Refractive Index:</strong> 2.65-2.96</p>
+        <p><strong>Specific Gravity:</strong> 3.21–3.22</p>
+        <p><strong>Melting Point:</strong> 2730 °C </p>
+        <p><strong>Polish:</strong> Excellent</p>
       </div>
-      <div class="c-column-flex-1 padding-right-s">
-        <p class="margin-bottom-xxs">ETHICAL STANDARDS</p>
-        <hr class="c-hr margin-none">
-        <p class="padding-top-xs">Beyond conflict free</p>
-        <p>Responsibly lab crafted</p>
-        <p>SCS certified recycled precious metals</p>
-        <p>Fair pricing commitment</p>
-        <p>Made in the USA</p>
+      <div class="c-column-flex-1">
+        <p class="margin-bottom-xxs">CARE</p>
+        <hr class="margin-none">
+        <p class="padding-top-xs">Cleaning Solution: Non-abrasive</p>
+        <p>Steamer Reaction: Usually safe</p>
+        <p>Ultrasonic Reaction: Usually safe</p>
+        <p>Gem Manufacturer: Charles&Colvard</p>
+        <p>Gemstone Warranty: Lifetime</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-width padding-top-m {% if product.metafields.product_specs.shape == blank or product.metafields.product_specs.shape == "" %} hidden{% endif %}">
+  <div class="c-tablet-or-smaller-hide">
+    <div class="align--center">
+      <h3 class="c-header-m padding-top-m padding-bottom-m">Product Details</h3>
+    </div>
+    <div class="c-column-flex-container c-mobile-flex-column padding-top-s">
+      <div class="c-column-flex-1 {% if product.metafields.product_specs.setting == blank or product.metafields.product_specs.setting == "" %} hidden{% endif %}">
+        <p class="margin-bottom-xxs c-label">Setting Details</p>
+        <hr class="margin-none padding-top-xs">
+        <p class="padding-top-xs">Style: Solitaire</p>
+        <p>Metal: 14K Gold or Platinum</p>
+        <p>Band Width: 1.7mm</p>
+        <p>Rhodium Finish: White Gold only</p>
+        <p>Prongs: {{ product.metafields.product_specs.setting }}</p>
+      </div>
+      <div class="c-column-flex-1">
+        <p class="margin-bottom-xxs c-label">Gemstone Details</p>
+        <hr class="margin-none padding-top-xs">
+        <p class="padding-top-xs">Gemstone: Moissanite</p>
+        <p>Shape: {{ product.metafields.product_specs.shape }}</p>
+        <p>Average Color: D/E/F</p>
+        <p>Average Clarity: VVS1</p>
+        <p>Average Cut: Ideal</p>
+      </div> 
+      <div class="c-column-flex-1">
+        <p class="margin-bottom-xxs c-label">Gemstone Details</p>
+        <hr class="margin-none padding-top-xs">
+        <p class="padding-top-xs ">Hardness: 9.5</p>
+        <p>Refractive Index: 2.65-2.96</p>
+        <p>Specific Gravity: 3.21–3.22</p>
+        <p>Polish: Excellent</p>
+        <p>Symmetry: Excellent</p>
+      </div>
+      <div class="c-column-flex-1">
+        <p class="margin-bottom-xxs c-label">Care</p>
+        <hr class="margin-none padding-top-xs">
+        <p class="padding-top-xs">Cleaning Solution: Non-abrasive</p>
+        <p>Steamer Reaction: Usually safe</p>
+        <p>Ultrasonic Reaction: Usually safe</p>
+        <p>Gem Manufacturer: Charles&Colvard</p>
+        <p>Gemstone Warranty: Lifetime</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="custom-about-content c-tablet-bigger-hide">
+    <hr>
+    <div class="about-row {% if product.metafields.product_specs.setting == blank or product.metafields.product_specs.setting == "" %} hidden{% endif %}">
+      <a href="#what-are-moissanites" class="js-about-content-link">
+        <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+        <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+        <h4 class="about-header4 c-label">Setting Details</h4>
+      </a>
+      <div class="js-about-content about-content hidden">
+        <p class="padding-top-xs">Style: Solitaire</p>
+        <p>Metal: 14K Gold or Platinum</p>
+        <p>Band Width: 1.7mm</p>
+        <p>Rhodium Finish: White Gold only</p>
+        <p>Prongs: {{ product.metafields.product_specs.setting }}</p>
+      </div>
+    </div>
+    <div class="about-row">
+      <a href="#is-moissanite-a-diamond" class="js-about-content-link">
+        <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+        <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+        <h4 class="about-header4 c-label">Gemstone Details</h4>
+      </a>
+      <div class="js-about-content about-content hidden">
+        <p class="padding-top-xs">Gemstone: Moissanite</p>
+        <p>Shape: {{ product.metafields.product_specs.shape }}</p>
+        <p>Average Color: D/E/F</p>
+        <p>Average Clarity: VVS1</p>
+        <p>Average Cut: Ideal</p>
+        <p>Hardness: 9.5</p>
+        <p>Refractive Index: 2.65-2.96</p>
+        <p>Specific Gravity: 3.21–3.22</p>
+        <p>Melting Point: 2730 °C </p>
+        <p>Polish: Excellent</p>
+        <p>Symmetry: Excellent</p>
+      </div>
+    </div>
+    <div class="about-row">
+      <a href="#why-are-moissanites-sold-by-millimeter" class="js-about-content-link">
+        <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+        <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+        <h4 class="about-header4 c-label">Care</h4>
+      </a>
+      <div class="js-about-content about-content hidden">
+        <p class="padding-top-xs">Cleaning Solution: Non-abrasive</p>
+        <p>Ultrasonic Reaction: Usually safe</p>
+        <p>Steamer Reaction: Usually safe</p>
+        <p>Gem Manufacturer: Charles&Colvard</p>
+        <p>Gemstone Warranty: Lifetime</p>
       </div>
     </div>
   </div>
@@ -1075,6 +1669,861 @@
   </div>
 </div>
 
+<div class="c-hero__m-stacked-text m-padding-top-xs">
+  <div class="hero hero-width c-landing-6">
+  </div>
+  <div class="m-stacked-text__container">
+    <div class="m-stacked-text__left c-details">
+      <div class="c-details-select__tabs">
+        {% if product.tags contains 'wedding band'%}
+          <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Metal Specs</label></div>
+        {% elsif product.tags contains 'loose stone'%}
+          <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Gem Specs</label></div>
+        {% else %}
+          <div class="c-details-select__tablink js-tablink active" data-index=0><label class="c-label">Gem Specs</label></div>
+          <div class="c-details-select__tablink js-tablink" data-index=1><label class="c-label">Metal Specs</label></div>
+        {% endif %}
+      </div>
+      <div>
+        {% if product.tags contains 'wedding band'%}
+          <div class="js-tab-content active">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">White Gold:</span><span class="c-details-row__right">60% Yellow Gold, 25% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Yellow Gold:</span><span class="c-details-row__right">80% yellow gold, 15% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Rose Gold:</span><span class="c-details-row__right">50% yellow gold, 25% copper, 25% Palladium</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Platinum:</span><span class="c-details-row__right">99% Platinum, 1% Nickel</span>
+              </div>
+            </div>
+          </div>
+        {% elsif product.tags contains 'loose stone'%}
+          <div class="js-tab-content active">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">Color:</span><span class="c-details-row__right">D E F</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Clarity:</span><span class="c-details-row__right">VVS1</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Cut:</span><span class="c-details-row__right">Ideal</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Refractive Index:</span><span class="c-details-row__right">2.65</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Dispersion:</span><span class="c-details-row__right">Very High</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">MOH Hardness Scale:</span><span class="c-details-row__right">9.5/10</span>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="js-tab-content active">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">Color:</span><span class="c-details-row__right">D E F</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Clarity:</span><span class="c-details-row__right">VVS1</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Cut:</span><span class="c-details-row__right">Ideal</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Refractive Index:</span><span class="c-details-row__right">2.65</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Dispersion:</span><span class="c-details-row__right">Very High</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">MOH Hardness Scale:</span><span class="c-details-row__right">9.5/10</span>
+              </div>
+            </div>
+          </div>
+          <div class="js-tab-content hidden">
+            <div class="c-details-section">
+              <div class="c-details-row">
+                <span class="c-details-row__left">White Gold:</span><span class="c-details-row__right">60% Yellow Gold, 25% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Yellow Gold:</span><span class="c-details-row__right">80% yellow gold, 15% Palladium, 5% Nickel</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Rose Gold:</span><span class="c-details-row__right">50% yellow gold, 25% copper, 25% Palladium</span>
+              </div>
+              <div class="c-details-row">
+                <span class="c-details-row__left">Platinum:</span><span class="c-details-row__right">99% Platinum, 1% Nickel</span>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="pg-bg-primary padding-top-m">
+  <div class="page-width">
+    <div class="c-section-left c-page-width-m">
+      <div class="custom-about-content padding-top-m">
+        <h3 class="c-header-l">Color: D-E-F</h3>
+        <p class="padding-top-s">Color greatly impacts a gem's appearance because it’s what the eye notices next after a gem's sparkle.
+        Lab created Moissanites' color fall within the highest range of the color scale (D-F) and has any icy bright white color.</p>
+        <div class="padding-top-s">
+          <div class="c-color-chart c-mobile-hide">
+            <div class="c-color-chart-legend text-center padding-bottom-s">
+              <div class="c-column-flex-3">
+                <p class="secondary-font">Moissanite</p>
+              </div>
+              <div class="c-column-flex-5">
+              </div>
+            </div>
+            <div class="c-color-chart-table">
+              <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+                <div class="c-color-left-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/d-f_color.jpg?3812802842487268918">
+                <p>D</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-top c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/d-f_color.jpg?3812802842487268918">
+                <p>E</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-right-corner-border-top c-color-center-border-bottom">
+                <div class="c-color-right-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/d-f_color.jpg?3812802842487268918">
+                <p>F</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/g_color.jpg?3812802842487268918">
+                <p>G</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/h_color.jpg?3812802842487268918">
+                <p>H</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/i_color.jpg?3812802842487268918">
+                <p>I</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-left-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/j_color.jpg?3812802842487268918">
+                <p>J</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-right-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/k_color.jpg?3812802842487268918">
+                <p>K</p>
+              </div>
+            </div>
+            <div class="c-color-chart-legend padding-top-s text-center">
+              <div class="c-column-flex-3">
+                <p class="secondary-font">Colorless</p>
+              </div>
+              <div class="c-column-flex-3">
+                <p class="secondary-font">Near Colorless</p>
+              </div>
+              <div class="c-column-flex-2">
+                <p class="secondary-font">Faint</p>
+              </div>
+            </div>
+          </div>
+          <div class="c-color-chart c-desktop-hide">
+            <div class="c-color-chart-legend text-center padding-bottom-s">
+              <div class="c-column-flex-1">
+                <p class="secondary-font">Gema Moissanites</p>
+              </div>
+              <div class="c-column-flex-1">
+              </div>
+              <div class="c-column-flex-1">
+              </div>
+            </div>
+            <div class="c-color-chart-table">
+              <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+                <div class="c-color-left-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+                <p>D-F</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-left-side-border-top"></div>
+                <div class="c-color-left-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/i.png?15185396925974111">
+                <p>G-I</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-left-side-border-bottom"></div>
+                <div class="c-color-right-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/k.png?15185396925974111">
+                <p>J-L</p>
+              </div>
+            </div>
+            <div class="c-color-chart-legend padding-top-s text-center">
+              <div class="c-column-flex-1">
+                <p class="secondary-font">Colorless</p>
+              </div>
+              <div class="c-column-flex-1">
+                <p class="secondary-font">Near Colorless</p>
+              </div>
+              <div class="c-column-flex-1">
+                <p class="secondary-font">Faint</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-padding-top-l">
+        <h3 class="c-header-l">Clarity: IF-VVS1</h3>
+        <p class="padding-top-s">Clarity refers to a gemstone's relative absence of 
+          tiny, natural characteristics known as blemishes and inclusions.
+          Many of these characteristics are microscopic and do not affect a gemstone's beauty 
+          in any discernible way. Moissanites may have very, very slight to no inclusions.</p>
+        <div class="padding-top-s">
+          <div class="c-color-chart c-mobile-hide">
+            <div class="c-color-chart-legend text-center padding-bottom-s">
+              <div class="c-column-flex-2">
+                <p class="secondary-font">Moissanite</p>
+              </div>
+              <div class="c-column-flex-6">
+              </div>
+            </div>
+            <div class="c-color-chart-table">
+              <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+                <div class="c-color-left-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/FL.png?12958213320461595773">
+                <p>FL</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-right-corner-border-top c-color-center-border-bottom">
+                <div class="c-color-right-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/IF.png?12958213320461595773">
+                <p>IF</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VVS1.png?12958213320461595773">
+                <p>VVS1</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VVS2.png?12958213320461595773">
+                <p>VVS2</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VS1.png?12958213320461595773">
+                <p>VS1</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-right-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VS2.png?12958213320461595773">
+                <p>VS2</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/SI1.png?12958213320461595773">
+                <p>SI1</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-right-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/SI2.png?12958213320461595773">
+                <p>SI2</p>
+              </div>
+            </div>
+            <div class="c-color-chart-legend padding-top-25 text-center">
+              <div class="c-column-flex-2">
+                <p class="secondary-font">Flawless</p>
+              </div>
+              <div class="c-column-flex-4">
+                <p class="secondary-font">(Very) Very Slightly Inclusions</p>
+              </div>
+              <div class="c-column-flex-2">
+                <p class="secondary-font">Slight Inclusions</p>
+              </div>
+            </div>
+          </div>
+          <div class="c-color-chart c-desktop-hide">
+            <div class="c-color-chart-legend text-center padding-bottom-s">
+              <div class="c-column-flex-1">
+                <p class="secondary-font">Moissanite</p>
+              </div>
+              <div class="c-column-flex-1">
+              </div>
+              <div class="c-column-flex-1">
+              </div>
+            </div>
+            <div class="c-color-chart-table">
+              <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+                <div class="c-color-left-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/FL.png?12958213320461595773">
+                <p>FL-IF</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-left-side-border-top"></div>
+                <div class="c-color-left-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VS2.png?12958213320461595773">
+                <p>VVS1-VS2</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+                <div class="c-color-left-side-border-bottom"></div>
+                <div class="c-color-right-side-border-bottom"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/SI2.png?12958213320461595773">
+                <p>SI1-SI2</p>
+              </div>
+            </div>
+            <div class="c-color-chart-legend padding-top-s text-center">
+              <div class="c-column-flex-1">
+                Flawless
+              </div>
+              <div class="c-column-flex-1">
+                (Very) Very Slight Inclusions
+              </div>
+              <div class="c-column-flex-1">
+                Slight Inclusions
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-padding-top-l">
+        <h3 class="c-header-l">Cut: Ideal-Very Good</h3>
+        <p class="padding-top-s">The cut grade is used to measure a gemstone's light 
+          performance. Cut with proper proportions, maximum light will be reflected out 
+          of the top of the gemstone. Cut too shallow, light leaks out of the bottom; too 
+          deep and it escapes out of the side. Moissanites have the ideal cut with 
+          proportions to produce a beautiful fire and sparkle.</p>
+        <div class="padding-top-s">
+          <div class="c-color-chart c-mobile-hide">
+            <div class="c-color-chart-legend text-center padding-bottom-s">
+              <div class="c-column-flex-2"></div>
+              <div class="c-column-flex-1">
+                <p class="secondary-font">Moissanite</p>
+              </div>
+              <div class="c-column-flex-3"></div>
+            </div>
+            <div class="c-color-chart-table">
+              <div class="c-column-flex-1 c-color-cell">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_shallow.png?4213248195509878693">
+                <p>Very Shallow</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/shallow.png?4213248195509878693">
+                <p>Shallow</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell c-color-center-border-top">
+                <div class="c-color-right-side-border-top"></div>
+                <div class="c-color-left-side-border-top"></div>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/Ideal.png?4213248195509878693">
+                <p>Ideal</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_good.png?4213248195509878693">
+                <p>Very Good</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/deep.png?4213248195509878693">
+                <p>Deep</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_deep.png?4213248195509878693">
+                <p>Very Deep</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-color-chart c-desktop-hide">
+          <div class="c-color-chart-legend text-center padding-bottom-s">
+            <div class="c-column-flex-1">
+            </div>
+            <div class="c-column-flex-1">
+              <p class="secondary-font">Moissanite</p>
+            </div>
+            <div class="c-column-flex-1">
+            </div>
+          </div>
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_shallow.png?4213248195509878693">
+              <p>Shallow</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/Ideal.png?4213248195509878693">
+              <p>Ideal</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <div class="c-color-left-side-border-top"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_deep.png?4213248195509878693">
+              <p>Deep</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-padding-top-l padding-bottom-l">
+        <h3 class="c-header-l">Carat</h3>
+        <p class="padding-top-s">Carat is a unit measurement specifically used for Diamonds.
+          Moissanite have a different chemical makeup than Diamond and naturally weigh lighter.
+          A 1.00ct Diamond would translate to a weight of .88ct in Moissanite.
+          Moissanites' size is referenced using millimeters or Diamond equivalent weight (i.e. 6.5mm or Diamond 
+          equivalent weight of 1.00ct).
+        </p>
+        <div class="padding-top-s padding-bottom-m">
+          <div class="c-color-chart c-mobile-hide">
+            <div class="c-color-chart-table">
+              <div class="c-column-flex-1 c-color-cell">
+                <p>.23ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/23.png?7004022191881242067">
+                <p>4mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>.50ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/5.png?7004022191881242067">
+                <p>5mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>.80ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/8.png?7004022191881242067">
+                <p>6mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>1.00ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.00.png?6082700097070147131">
+                <p>6.5mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>1.20ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.2.png?7004022191881242067">
+                <p>7mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>1.50ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.5.png?7004022191881242067">
+                <p>7.5mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>1.90ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.9.png?7004022191881242067">
+                <p>8mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>2.20ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/2.2.png?7004022191881242067">
+                <p>8.5mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>2.70ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/2.7.png?7004022191881242067">
+                <p>9mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>3.10ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/3.1.png?7004022191881242067">
+                <p>9.5mm</p>
+              </div>
+            </div>
+          </div>
+          <div class="c-color-chart c-desktop-hide">
+            <div class="c-color-chart-table">
+              <div class="c-column-flex-1 c-color-cell">
+                <p>.23ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/23.png?7004022191881242067">
+                <p>4mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>1.20ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.2.png?7004022191881242067">
+                <p>7mm</p>
+              </div>
+              <div class="c-column-flex-1 c-color-cell">
+                <p>3.10ct</p>
+                <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/3.1.png?7004022191881242067">
+                <p>9.5mm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% if product.tags contains 'loose stone' or product.tags contains 'engagement ring'%}
+  <div class="c-section-left c-page-width-xl">
+    <div class="custom-about-content padding-top-xl m-padding-top-m">
+      <h3 class="c-header-l">Color</h3>
+      <p class="padding-top-s m-padding-top-xs">Highest, absolutely "colorless" grade for the purest, whitest hue.
+        A grade of D-F will have no discernible color.</p>
+      <div class="padding-top-s">
+        <div class="c-color-chart c-mobile-hide">
+          <div class="c-color-chart-legend text-center padding-bottom-s">
+            <div class="c-column-flex-3 c-color-chart-gema">
+              Gema Moissanites
+            </div>
+            <div class="c-column-flex-5">
+            </div>
+          </div>
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+              <div class="c-color-left-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+              <p>D</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-top c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+              <p>E</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-right-corner-border-top c-color-center-border-bottom">
+              <div class="c-color-right-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+              <p>F</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/g.png?15185396925974111">
+              <p>G</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/h.png?15185396925974111">
+              <p>H</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/i.png?15185396925974111">
+              <p>I</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-left-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/j.png?15185396925974111">
+              <p>J</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-right-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/k.png?15185396925974111">
+              <p>K</p>
+            </div>
+          </div>
+          <div class="c-color-chart-legend padding-top-s text-center">
+            <div class="c-column-flex-3">
+              Colorless
+            </div>
+            <div class="c-column-flex-3">
+              Near Colorless
+            </div>
+            <div class="c-column-flex-2">
+              Faint
+            </div>
+          </div>
+        </div>
+        <div class="c-color-chart c-desktop-hide">
+          <div class="c-color-chart-legend text-center padding-bottom-s">
+            <div class="c-column-flex-1 c-color-chart-gema">
+              Gema Moissanites
+            </div>
+            <div class="c-column-flex-1">
+            </div>
+            <div class="c-column-flex-1">
+            </div>
+          </div>
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+              <div class="c-color-left-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/circle.png?15185396925974111">
+              <p>D-F</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-left-side-border-top"></div>
+              <div class="c-color-left-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/i.png?15185396925974111">
+              <p>G-I</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-left-side-border-bottom"></div>
+              <div class="c-color-right-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/k.png?15185396925974111">
+              <p>J-L</p>
+            </div>
+          </div>
+          <div class="c-color-chart-legend padding-top-s text-center">
+            <div class="c-column-flex-1">
+              Colorless
+            </div>
+            <div class="c-column-flex-1">
+              Near Colorless
+            </div>
+            <div class="c-column-flex-1">
+              Faint
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding-top-l">
+      <h3 class="c-header-l">Clarity</h3>
+      <p class="padding-top-s">Top cut grade. Very, very slight to no inclusions. 
+        Characteristics are miniscule and are difficult to see under 10x magnification.</p>
+      <div class="padding-top-s">
+        <div class="c-color-chart c-mobile-hide">
+          <div class="c-color-chart-legend text-center padding-bottom-s">
+            <div class="c-column-flex-2 c-color-chart-gema">
+              Gema Moissanites
+            </div>
+            <div class="c-column-flex-6">
+            </div>
+          </div>
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+              <div class="c-color-left-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/FL.png?12958213320461595773">
+              <p>FL</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-right-corner-border-top c-color-center-border-bottom">
+              <div class="c-color-right-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/IF.png?12958213320461595773">
+              <p>IF</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VVS1.png?12958213320461595773">
+              <p>VVS1</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VVS2.png?12958213320461595773">
+              <p>VVS2</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VS1.png?12958213320461595773">
+              <p>VS1</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-right-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VS2.png?12958213320461595773">
+              <p>VS2</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/SI1.png?12958213320461595773">
+              <p>SI1</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-right-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/SI2.png?12958213320461595773">
+              <p>SI2</p>
+            </div>
+          </div>
+          <div class="c-color-chart-legend padding-top-25 text-center">
+            <div class="c-column-flex-2">
+              Flawless
+            </div>
+            <div class="c-column-flex-4">
+              (Very) Very Slightly Inclusions
+            </div>
+            <div class="c-column-flex-2">
+              Slight Inclusions
+            </div>
+          </div>
+        </div>
+        <div class="c-color-chart c-desktop-hide">
+          <div class="c-color-chart-legend text-center padding-bottom-s">
+            <div class="c-column-flex-1 c-color-chart-gema">
+              Gema Moissanites
+            </div>
+            <div class="c-column-flex-1">
+            </div>
+            <div class="c-column-flex-1">
+            </div>
+          </div>
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top c-color-center-border-bottom">
+              <div class="c-color-left-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/FL.png?12958213320461595773">
+              <p>FL-IF</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-left-side-border-top"></div>
+              <div class="c-color-left-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/VS2.png?12958213320461595773">
+              <p>VVS1-VS2</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-bottom">
+              <div class="c-color-left-side-border-bottom"></div>
+              <div class="c-color-right-side-border-bottom"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/SI2.png?12958213320461595773">
+              <p>SI1-SI2</p>
+            </div>
+          </div>
+          <div class="c-color-chart-legend padding-top-s text-center">
+            <div class="c-column-flex-1">
+              Flawless
+            </div>
+            <div class="c-column-flex-1">
+              (Very) Very Slight Inclusions
+            </div>
+            <div class="c-column-flex-1">
+              Slight Inclusions
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding-top-l">
+      <h3 class="c-header-l">Cut</h3>
+      <p class="padding-top-s">Highest cut grade. Its proportions produce a beautiful balance of fire and sparkle and maximum light is returned out of the top of the gemstone.</p>
+      <div class="padding-top-s">
+        <div class="c-color-chart c-mobile-hide">
+          <div class="c-color-chart-legend text-center padding-bottom-s">
+            <div class="c-column-flex-2"></div>
+            <div class="c-column-flex-1 c-color-chart-gema">
+              Gema Moissanites
+            </div>
+            <div class="c-column-flex-3"></div>
+          </div>
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_shallow.png?4213248195509878693">
+              <p>Very Shallow</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/shallow.png?4213248195509878693">
+              <p>Shallow</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell c-color-center-border-top">
+              <div class="c-color-right-side-border-top"></div>
+              <div class="c-color-left-side-border-top"></div>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/Ideal.png?4213248195509878693">
+              <p>Ideal</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_good.png?4213248195509878693">
+              <p>Very Good</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/deep.png?4213248195509878693">
+              <p>Deep</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_deep.png?4213248195509878693">
+              <p>Very Deep</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-color-chart c-desktop-hide">
+        <div class="c-color-chart-legend text-center padding-bottom-s">
+          <div class="c-column-flex-1">
+          </div>
+          <div class="c-column-flex-1 c-color-chart-gema">
+            Gema Moissanites
+          </div>
+          <div class="c-column-flex-1">
+          </div>
+        </div>
+        <div class="c-color-chart-table">
+          <div class="c-column-flex-1 c-color-cell">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_shallow.png?4213248195509878693">
+            <p>Shallow</p>
+          </div>
+          <div class="c-column-flex-1 c-color-cell c-color-left-corner-border-top">
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/Ideal.png?4213248195509878693">
+            <p>Ideal</p>
+          </div>
+          <div class="c-column-flex-1 c-color-cell">
+            <div class="c-color-left-side-border-top"></div>
+            <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/very_deep.png?4213248195509878693">
+            <p>Deep</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding-top-l">
+      <h3 class="c-header-l">Carat</h3>
+      <p class="padding-top-s">Carat is a unit measurement specifically used for Diamonds.
+        Moissanites' size is referenced using millimeters or Diamond equivalent weight (i.e. 6.5mm or Diamond 
+        equivalent weight of 1.00ct).
+      </p>
+      <div class="padding-top-s">
+        <div class="c-color-chart c-mobile-hide">
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell">
+              <p>.23ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/23.png?7004022191881242067">
+              <p>4mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>.50ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/5.png?7004022191881242067">
+              <p>5mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>.80ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/8.png?7004022191881242067">
+              <p>6mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>1.00ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.00.png?6082700097070147131">
+              <p>6.5mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>1.20ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.2.png?7004022191881242067">
+              <p>7mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>1.50ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.5.png?7004022191881242067">
+              <p>7.5mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>1.90ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.9.png?7004022191881242067">
+              <p>8mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>2.20ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/2.2.png?7004022191881242067">
+              <p>8.5mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>2.70ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/2.7.png?7004022191881242067">
+              <p>9mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>3.10ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/3.1.png?7004022191881242067">
+              <p>9.5mm</p>
+            </div>
+          </div>
+        </div>
+        <div class="c-color-chart c-desktop-hide">
+          <div class="c-color-chart-table">
+            <div class="c-column-flex-1 c-color-cell">
+              <p>.23ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/23.png?7004022191881242067">
+              <p>4mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>1.20ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/1.2.png?7004022191881242067">
+              <p>7mm</p>
+            </div>
+            <div class="c-column-flex-1 c-color-cell">
+              <p>3.10ct</p>
+              <img src="https://cdn.shopify.com/s/files/1/2109/1565/files/3.1.png?7004022191881242067">
+              <p>9.5mm</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
 
 <div class="page-width padding-top-l padding-bottom-xl m-padding-top-s">
   <div class="c-section-center c-page-width-s padding-top-m">
@@ -1086,8 +2535,8 @@
       but we think its for the better. It's the new way of doing things. We call it a Practical Engagement.
     </p>
   </div>
-</div> -->
-
+</div>
+<script src="{{ 'contact-us.js' | asset_url }}"></script>
 
 <!-- <div class="c-hero__m-stacked-text">
   <div class="hero hero-width c-landing-3">
@@ -1146,7 +2595,7 @@
 <script src="{{ 'tabs-manager.js' | asset_url }}"></script>
 <script>
   TabsManager.initialize("js-tablink", "js-tab-content", "js-tab-image");
-</script>
+</script> -->
 
 {% schema %}
   {

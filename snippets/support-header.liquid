@@ -1,0 +1,36 @@
+<div class="c-bg-light-gray">
+  <div class="page-width padding-top-l padding-bottom-l m-padding-top-m m-padding-bottom-m">
+    <div class="c-section-center c-page-width-m">
+      <h3 class="c-header-xl text-center">We're here to help</h3>
+      <p class="text-m text-center padding-top-xs">
+        <u>support@gemaandco.com</u>
+      </p>
+      <ul class="list--inline site-footer__social-icons social-icons text-center margin-none">
+        {% if settings.social_facebook_link != blank %}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
+              {% include 'icon-facebook' %}
+              <span class="icon__fallback-text">Facebook</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.social_twitter_link != blank %}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
+              {% include 'icon-twitter' %}
+              <span class="icon__fallback-text">Twitter</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if settings.social_instagram_link != blank %}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
+              {% include 'icon-instagram' %}
+              <span class="icon__fallback-text">Instagram</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

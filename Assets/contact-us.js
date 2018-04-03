@@ -51,24 +51,27 @@
 
 (function() {
   var btn = document.getElementById("contactBtn");
-  var modal = document.getElementById('contactUsModal');
-  var span = document.getElementsByClassName("custom-modal-close")[0];
-  var body = document.body
+  
+  if (btn) {
+    var modal = document.getElementById('contactUsModal');
+    var span = document.getElementsByClassName("custom-modal-close")[0];
+    var body = document.body
 
-  btn.onclick = function() {
-    modal.style.display = "block";
-    body.className += " custom-modal-open";
-  }
+    btn.onclick = function() {
+      modal.style.display = "block";
+      body.className += " custom-modal-open";
+    }
 
-  span.onclick = function() {
-    modal.style.display = "none";
-    body.className -= " custom-modal-open";
-  }
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
+    span.onclick = function() {
       modal.style.display = "none";
       body.className -= " custom-modal-open";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        body.className -= " custom-modal-open";
+      }
     }
   }
 })();

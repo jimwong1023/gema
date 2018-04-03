@@ -68,24 +68,26 @@
           {% endif %}
         {% endfor %}
         {% if shop.customer_accounts_enabled %}
-          {% if customer %}
-            <li class="mobile-nav__item border-bottom">
-              <a href="/account" class="mobile-nav__link">
-                <span>{{ 'layout.customer.account' | t }}</span>
-              </a>
-            </li>
-          {% else %}
-            <li class="mobile-nav__item border-bottom">
-              <a href="/account/login" class="mobile-nav__link">
-                <span>{{ 'layout.customer.log_in' | t }}</span>
-              </a>
-            </li>
-          {% endif %}
+          <div class="c-mobile-hide">
+            {% if customer %}
+              <li class="mobile-nav__item border-bottom">
+                <a href="/account" class="mobile-nav__link">
+                  <span>{{ 'layout.customer.account' | t }}</span>
+                </a>
+              </li>
+            {% else %}
+              <li class="mobile-nav__item border-bottom">
+                <a href="/account/login" class="mobile-nav__link">
+                  <span>{{ 'layout.customer.log_in' | t }}</span>
+                </a>
+              </li>
+            {% endif %}
+          </div>
         {% endif %}
       </ul>
       <div class="text-center">
         <div class="h2 site-header__logo" itemscope itemtype="http://schema.org/Organization">
-          <a href="/" itemprop="url" class="site-header__logo-image">
+<!--           <a href="/" itemprop="url" class="site-header__logo-image">
             {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
             <img class="lazyload js c-logo-width"
                  src="{{ section.settings.logo | img_url: '300x300' }}"
@@ -102,10 +104,7 @@
                    itemprop="logo"
                    style="max-width: {{ section.settings.logo_max_width }}px;">
             </noscript>
-          </a>
-          <div class="padding-top-s m-padding-bottom-s">
-            <a href="mailto:support@gemaandco.com">support@gemaandco.com</a>
-          </div>
+          </a> -->
           <div class="c-social">
 <!--             <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-facebook" viewBox="0 0 20 20"><path fill="#444" d="M18.05.811q.439 0 .744.305t.305.744v16.637q0 .439-.305.744t-.744.305h-4.732v-7.221h2.415l.342-2.854h-2.757v-1.83q0-.659.293-1t1.073-.342h1.488V3.762q-.976-.098-2.171-.098-1.634 0-2.635.964t-1 2.72V9.47H7.951v2.854h2.415v7.221H1.413q-.439 0-.744-.305t-.305-.744V1.859q0-.439.305-.744T1.413.81H18.05z"/></svg>
             <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-twitter" viewBox="0 0 20 20"><path fill="#444" d="M19.551 4.208q-.815 1.202-1.956 2.038 0 .082.02.255t.02.255q0 1.589-.469 3.179t-1.426 3.036-2.272 2.567-3.158 1.793-3.963.672q-3.301 0-6.031-1.773.571.041.937.041 2.751 0 4.911-1.671-1.284-.02-2.292-.784T2.456 11.85q.346.082.754.082.55 0 1.039-.163-1.365-.285-2.262-1.365T1.09 7.918v-.041q.774.408 1.773.448-.795-.53-1.263-1.396t-.469-1.864q0-1.019.509-1.997 1.487 1.854 3.596 2.924T9.81 7.184q-.143-.509-.143-.897 0-1.63 1.161-2.781t2.832-1.151q.815 0 1.569.326t1.284.917q1.345-.265 2.506-.958-.428 1.386-1.732 2.18 1.243-.163 2.262-.611z"/></svg>
@@ -192,6 +191,9 @@
             {% endif %}
           </div>
         </div>
+        <div class="padding-top-s m-padding-top-xs">
+          <a href="mailto:support@gemaandco.com">support@gemaandco.com</a>
+        </div>
       </div>
     </nav>
     {% if section.settings.message %}
@@ -264,7 +266,7 @@
             </button>
           {% endunless %}
         </div>
-        <div class="grid__item small--one-half {{ logo_classes }}">
+        <div class="grid__item small--one-half">
           {% comment %}
             Use the uploaded logo from theme settings if enabled.
             Site name gets precedence with H1 tag on homepage, div on other pages.

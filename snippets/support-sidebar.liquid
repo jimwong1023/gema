@@ -1,0 +1,38 @@
+{% assign pages_titles = "FAQ|Shipping|Returns|Payment Options|Warranty|Contact Us" | split: "|" %}
+{% assign links = "/pages/frequently-asked-questions|/pages/shipping|/pages/returns|/pages/payment-options|/pages/warranty|/pages/contact-us" | split: "|" %}
+
+<ul class="c-mobile-hide">
+  {% for title in pages_titles %}
+    <li class="{% if curr_page == title %}selected-sidebar{% endif %}">
+      <a href="{{ links[forloop.index0] }}">{{ title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="c-desktop-hide padding-bottom-s">
+  <div class="dropdown-row support-dropdown">
+    <div class="js-content-link dropdown-link">
+      <span class="dropdown-icon-right">{% include "icon-chevron-right-small" %}</span>
+      <span class="dropdown-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+      {% for title in pages_titles %}
+        {% if curr_page == title %}<h4 class="c-header-m">{{ title }}</h4>{% endif %}
+      {% endfor %}
+    </div>
+    <div class="support-dropdown-content js-dropdown-content hidden">
+      <ul>
+        {% for title in pages_titles %}
+          {% unless curr_page == title %}
+            <li>
+              <a href="{{ links[forloop.index0] }}">{{ title }}</a>
+            </li>
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'dropdowns.js' | asset_url }}"></script>
+<script>
+  Dropdowns.initialize('js-content-link');
+</script>

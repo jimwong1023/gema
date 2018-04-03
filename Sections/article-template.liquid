@@ -12,15 +12,16 @@
   {% endif %}
 </div>
 
-<div class="rte padding-bottom-m" itemprop="articleBody">
+<div class="padding-bottom-m c-blog-font" itemprop="articleBody">
   {{ article.content }}
 </div>
 
-
-
 {% if section.settings.show_share_buttons %}
-  {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+  <div class="padding-bottom-m">
+    {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+  <div>
 {% endif %}
+
 
 {% schema %}
   {
