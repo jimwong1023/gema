@@ -178,7 +178,11 @@
               {% endfor %}
             </select>
             
-            {% if product.tags contains 'ring' %} {% include 'ring-size-select' %} {% endif %}
+            {% if product.tags contains 'ring' %}
+              {% unless product.tags contains 'sample sale' %}
+                {% include 'ring-size-select' %}
+              {% endunless %}
+            {% endif %}
 
             {% if section.settings.show_quantity_selector %}
               <div class="product-form__item product-form__item--quantity">
@@ -221,7 +225,7 @@
   </div>
 </div>
 
-<div class="page-width padding-top-m padding-bottom-l m-padding-top-xs m-padding-bottom-none {% if product.metafields.product_specs.shape == blank or product.metafields.product_specs.shape == "" %}hidden{% endif %}">
+<div class="page-width padding-top-m padding-bottom-m m-padding-top-xs m-padding-bottom-none {% if product.metafields.product_specs.shape == blank or product.metafields.product_specs.shape == "" %}hidden{% endif %}">
   <div class="c-tablet-or-smaller-hide">
     <div class="align--center">
       <h3 class="c-header-m padding-top-m padding-bottom-m">Product Details</h3>
@@ -269,9 +273,9 @@
   <div class="custom-about-content c-tablet-bigger-hide">
     <hr>
     <div class="about-row {% if product.metafields.product_specs.setting == blank or product.metafields.product_specs.setting == "" %}hidden{% endif %}">
-      <a href="#what-are-moissanites" class="js-about-content-link">
+      <a href="#" class="js-about-content-link">
         <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
-        <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+        <span class="about-icon-down hidden">{% include "icon-chevron-up-small" %}</span>
         <h4 class="about-header4 c-label">Setting Details</h4>
       </a>
       <div class="js-about-content product-specs padding-bottom-xs hidden">
@@ -283,7 +287,7 @@
       </div>
     </div>
     <div class="about-row">
-      <a href="#is-moissanite-a-diamond" class="js-about-content-link">
+      <a href="#" class="js-about-content-link">
         <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
         <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
         <h4 class="about-header4 c-label">Gemstone Details</h4>
@@ -303,7 +307,7 @@
       </div>
     </div>
     <div class="about-row">
-      <a href="#why-are-moissanites-sold-by-millimeter" class="js-about-content-link">
+      <a href="#" class="js-about-content-link">
         <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
         <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
         <h4 class="about-header4 c-label">Care</h4>
@@ -319,28 +323,35 @@
   </div>
 </div>
 
-<div class="page-width c-page-width-l m-padding-top-none m-padding-bottom-none">
+<div class="page-width padding-bottom-s m-padding-top-none m-padding-bottom-none">
   <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
 </div>
 
-
 <div class="c-bg-light-gray">
-  <div class="page-width c-section-center padding-top-l padding-bottom-l m-padding-top-l m-padding-bottom-l">
-    <h3 class="c-header-l text-center">Free Shipping And Free Returns, Always.</h3>
-    <p class="padding-top-s padding-bottom-s text-center">
-      It's a big decision, and we'll make it as easy as possible for you.
-    </p>
-    <div class="grid__item grid__item--collection-template small--one-whole medium-up--one-third m-padding-top-s">
-      <label>30-Day Return</label>
-      <p class="padding-top-xs">If for whatever reason it doesn't work out, we offer a 100% refund on your purchase.</p>
+  <div class="page-width padding-top-l padding-bottom-l m-padding-top-m m-padding-bottom-m text-center">
+    <div class="c-section-center c-page-width-m">
+      <h3 class="c-header-l padding-bottom-xs m-padding-bottom-s">Free Shipping And Easy Returns</h3>
+      <p>It's a big decision, and we're here to help make this process as easy as possible for you.</p>
     </div>
-    <div class="grid__item grid__item--collection-template small--one-whole medium-up--one-third m-padding-top-s">
-      <label>Lifetime Warranty</label>
-      <p class="padding-top-xs">Our gemstones were created to last. We back it up with an honest, life-time warranty.</p>
-    </div>
-    <div class="grid__item grid__item--collection-template small--one-whole medium-up--one-third m-padding-top-s">
-      <label>Delivered Insured</label>
-      <p class="padding-top-xs">Delivered insured and straight to your door. Ring box is protected by a gift box.</p>
+    <div class="c-column-flex-container c-mobile-flex-column padding-top-s">
+      <div class="c-column-flex-1 padding-right-m padding-top-m m-padding-right-none">
+        <img style="height: 50px; padding-bottom:5px;" src="https://cdn.shopify.com/s/files/1/2109/1565/files/001-interface.png?7115324211093493132">
+        <p class="c-x-mini-header margin-none padding-top-xs padding-bottom-xs">EASY RETURNS</p>
+        <p>We accept returns within one month of receiving your order for unworn items. 
+        </p>
+      </div>
+      <div class="c-column-flex-1 padding-right-m padding-top-m m-padding-right-none">
+        <img style="height: 50px; padding-bottom:5px;" src="https://cdn.shopify.com/s/files/1/2109/1565/files/006-luxury.png?7115324211093493132">
+        <p class="c-x-mini-header margin-none padding-top-xs padding-bottom-xs">WARRANTY</p>
+        <p>Each Moissanite gemstone is backed by an honest limited life-time warranty.
+        </p>
+      </div>
+      <div class="c-column-flex-1 padding-right-m padding-top-m m-padding-right-none">
+        <img style="height: 50px; padding-bottom:5px;" src="https://cdn.shopify.com/s/files/1/2109/1565/files/005-box.png?7115324211093493132">
+        <p class="c-x-mini-header margin-none padding-top-xs padding-bottom-xs">DELIVERED INSURED</p>
+        <p>Delivered insured and straight to your door. Ring box is protected by a gift box.
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -355,6 +366,7 @@
 {% endif %} -->
 
 
+<script src="{{ 'contact-us.js' | asset_url }}"></script>
 
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">
@@ -368,14 +380,6 @@
   </script>
 
 {% endunless %}
-
-<script src="{{ 'contact-us.js' | asset_url }}"></script>
-<script src="{{ 'tabs-manager.js' | asset_url }}"></script>
-
-<script>
-  TabsManager.initialize("js-tablink", "js-tab-content");
-</script>
-
 
 {% schema %}
   {

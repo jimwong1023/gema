@@ -2,15 +2,15 @@
 
 <h3 class="c-header-l text-center padding-top-m">In the blog</h3>
 
-  <div class="page-width c-page-width-xl padding-top-m m-padding-top-s">
+  <div class="page-width padding-top-m m-padding-top-s">
     {% for article in blog.articles %}
       <div class="c-column-flex-container c-mobile-flex-column padding-top-m padding-bottom-m m-padding-top-s m-padding-bottom-s c-article-line">
-<!--         {% if article.image %}
+        {% if article.image %}
           <div id="{{ img_wrapper_id }}" class="c-column-flex-1 js c-blog-image">
             <a href="{{ article.url }}" class="">
               <img id="{{ img_id }}"
                    class="lazyload"
-                   src="{{ article.image | img_url: '300x300' }}"
+                   src="{{ article.image | img_url: '540x540' }}"
                    data-src="{{ img_url }}"
                    data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
                    data-aspectratio="{{ article.image.aspect_ratio }}"
@@ -23,16 +23,19 @@
               {{ article | img_url: '345x345', scale: 2 | img_tag: article.title, 'article__grid-image' }}
             </a>
           </noscript>
-        {% endif %} -->
-        <div class="c-column-flex-2 padding-top-s padding-bottom-s m-padding-top-none m-padding-bottom-none">
-          <h2 class="c-header-m">
+        {% endif %}
+        <div class="c-column-flex-1 d-padding-left-m">
+          <h2 class="c-header-l m-padding-top-s">
             <a href="{{ article.url }}">{{ article.title }}</a>
           </h2>
+          <div class="padding-top-s">
+            By Liz Weaver | {{ article.published_at | date: "%b %d, %y" }}
+          </div>
           <div class="padding-top-s">
             {% if article.excerpt.size > 0 %}
               {{ article.excerpt }}
             {% else %}
-              {{ article.content | strip_html | truncate: 200 }}
+              {{ article.content | strip_html | truncate: 300 }}
             {% endif %}
           </div>
 
@@ -45,9 +48,9 @@
           {% endif %}
           <ul class="list--inline padding-top-m m-padding-top-s">
             <li>
-              <a href="{{ article.url }}" class="c-link">
+              <a href="{{ article.url }}" class="c-link secondary-font">
                 {{ 'blogs.article.read_more' | t }}
-              </a>
+                </a>
             </li>
 
             {% if blog.comments_enabled? and article.comments_count > 0 %}

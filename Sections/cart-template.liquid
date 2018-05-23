@@ -1,4 +1,4 @@
-<div class="page-width c-page-width-xl padding-top-l padding-bottom-l" data-section-id="{{ section.id }}" data-section-type="cart-template">
+<div class="page-width padding-top-l padding-bottom-l" data-section-id="{{ section.id }}" data-section-type="cart-template">
 
   {% if cart.item_count > 0 %}
     <div class="text-center">
@@ -121,8 +121,8 @@
           {% endif %}
           <div class="grid__item text-right small--text-center{% if section.settings.cart_notes_enable %} medium-up--one-half{% endif %}">
             <div>
-              <span class="cart__subtotal-title">{{ 'cart.general.subtotal' | t }}</span>
-              <span class="cart__subtotal">{{ cart.total_price | money }}</span>
+              <span class="cart__subtotal-title"><strong>{{ 'cart.general.subtotal' | t }}</strong></span>
+              <span class="cart__subtotal"><strong>{{ cart.total_price | money }}</strong></span>
             </div>
             {% if cart.total_discounts > 0 %}
               <div class="cart__savings">
@@ -133,10 +133,10 @@
             <div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>
             <a href="collections/engagement-rings" class="btn btn--secondary cart__update cart__continue--large small--hide c-secondary-btn" >{{ 'cart.general.continue_shopping' | t }}</a>
             <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide c-secondary-btn" value="{{ 'cart.general.update' | t }}">
-            <input type="submit" name="checkout" class="btn btn--small-wide c-primary-btn" value="{{ 'cart.general.checkout' | t }}">
-            {% if additional_checkout_buttons %}
+            <input type="submit" name="checkout" class="btn btn--small-wide cart-checkout c-primary-btn" value="{{ 'cart.general.checkout' | t }}">
+<!--             {% if additional_checkout_buttons %}
               <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
-            {% endif %}
+            {% endif %} -->
           </div>
         </div>
       </footer>

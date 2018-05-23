@@ -16,11 +16,10 @@
 {% endif %}
 <footer class="site-footer" role="contentinfo">
   <div class="page-width c-footer">
-    <div class="grid grid--no-gutters">
-
+    <div>
       {% if section.settings.footer_newsletter_enable %}
-        <div class="grid__item medium-up--one-half m-padding-bottom-s c-desktop-hide">
-          <div class="site-footer__newsletter c-site-footer__newsletter">
+        <div class="c-column-flex-container m-padding-bottom-xs c-desktop-hide">
+          <div class="site-footer__newsletter c-site-footer__newsletter text-center">
             {% form 'customer' %}
               {{ form.errors | default_errors }}
               {% if form.posted_successfully? %}
@@ -50,7 +49,7 @@
       {% endif %}
       
       {% if social_icons %}
-        <div class="grid__item m-padding-bottom-s c-desktop-hide{% if section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-center{% endif %}">
+        <div class="c-column-flex-container c-vertical-align m-padding-bottom-m c-desktop-hide text-center">
           <ul class="list--inline site-footer__social-icons social-icons">
             {% if settings.social_facebook_link != blank %}
               <li>
@@ -128,62 +127,98 @@
         </div>
       {% endif %}
 
-      <div class="c-footer-ul grid__item{% if section.settings.footer_newsletter_enable and section.settings.footer_linklist_two != blank %} medium-up--one-quarter{% elsif section.settings.footer_linklist_two == blank and section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-center{% endif %}">
-        {%- assign footer_linklist = section.settings.footer_linklist -%}
-        {% if linklists[footer_linklist].links.size > 0 %}
-		  <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
-            {% for link in linklists[footer_linklist].links %}	
-              <li class="site-footer__linklist-item c-site-footer__linklist-item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
+      <div class="c-column-flex-container">
+        <div class="c-column-flex-container c-tablet-flex-column c-column-flex-2">
+          <div class="c-footer-ul c-column-flex-1">
+            {%- assign footer_linklist = section.settings.footer_linklist -%}
+            {% if linklists[footer_linklist].links.size > 0 %}
+              <h4 class="c-footer-label secondary-font">{{ linklists[footer_linklist].title }}</h4>
+              <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
+                {% for link in linklists[footer_linklist].links %}	
+                  <li class="site-footer__linklist-item c-site-footer__linklist-item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
 
-      <div class="c-footer-ul grid__item{% if section.settings.footer_newsletter_enable and section.settings.footer_linklist != blank %} medium-up--one-quarter{% elsif section.settings.footer_linklist == blank and section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-center{% endif %}">
-        {%- assign footer_linklist_two = section.settings.footer_linklist_two -%}
-        {% if linklists[footer_linklist_two].links.size > 0 %}
-          <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
-            {% for link in linklists[footer_linklist_two].links %}
-              <li class="site-footer__linklist-item c-site-footer__linklist-item">
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </div>
-
-      {% if section.settings.footer_newsletter_enable %}
-        <div class="grid__item medium-up--one-half m-padding-bottom-s c-mobile-hide">
-          <div class="site-footer__newsletter c-site-footer__newsletter">
-            {% form 'customer' %}
-              {{ form.errors | default_errors }}
-              {% if form.posted_successfully? %}
-                <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
-              {% else %}
-                <label for="Email" class="mailing-list-header">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
-                <div class="input-group">
-                  <input type="hidden" name="contact[tags]" value="newsletter">
-                  <input type="email"
-                    name="contact[email]"
-                    id="Email"
-                    class="input-group__field newsletter__input c-newsletter-input"
-                    value="{% if customer %}{{ customer.email }}{% endif %}"
-                    placeholder="Enter your email"
-                    autocorrect="off"
-                    autocapitalize="off">
-                  <span class="input-group__btn">
-                    <button type="submit" class="btn newsletter__submit c-submit" name="commit" id="Subscribe">
-                      <span class="newsletter__submit-text--large">Submit</span>
-                    </button>
-                  </span>
-                </div>
-              {% endif %}
-            {% endform %}
+          <div class="c-footer-ul c-column-flex-1">
+            {%- assign footer_linklist_two = section.settings.footer_linklist_two -%}
+            {% if linklists[footer_linklist_two].links.size > 0 %}
+              <h4 class="c-footer-label secondary-font">{{ linklists[footer_linklist_two].title }}</h4>
+              <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
+                {% for link in linklists[footer_linklist_two].links %}
+                  <li class="site-footer__linklist-item c-site-footer__linklist-item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </div>
         </div>
-      {% endif %}
+        
+        <div class="c-column-flex-container c-tablet-flex-column c-column-flex-2">
+          <div class="c-footer-ul c-column-flex-1">
+            {%- assign footer_linklist_three = section.settings.footer_linklist_three -%}
+            {% if linklists[footer_linklist_three].links.size > 0 %}
+              <h4 class="c-footer-label secondary-font">{{ linklists[footer_linklist_three].title }}</h4>
+              <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
+                {% for link in linklists[footer_linklist_three].links %}
+                  <li class="site-footer__linklist-item c-site-footer__linklist-item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+
+          <div class="c-footer-ul c-column-flex-1">
+            {%- assign footer_linklist_four = section.settings.footer_linklist_four -%}
+            {% if linklists[footer_linklist_four].links.size > 0 %}
+              <h4 class="c-footer-label secondary-font">{{ linklists[footer_linklist_four].title }}</h4>
+              <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
+                {% for link in linklists[footer_linklist_four].links %}
+                  <li class="site-footer__linklist-item c-site-footer__linklist-item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if section.settings.footer_newsletter_enable %}
+          <div class="c-column-flex-3 m-padding-bottom-s c-mobile-hide">
+            <div class="site-footer__newsletter c-site-footer__newsletter">
+              {% form 'customer' %}
+                {{ form.errors | default_errors }}
+                {% if form.posted_successfully? %}
+                  <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+                {% else %}
+                  <label for="Email" class="mailing-list-header">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+                  <div class="input-group">
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <input type="email"
+                      name="contact[email]"
+                      id="Email"
+                      class="input-group__field newsletter__input c-newsletter-input"
+                      value="{% if customer %}{{ customer.email }}{% endif %}"
+                      placeholder="Enter your email"
+                      autocorrect="off"
+                      autocapitalize="off">
+                    <span class="input-group__btn">
+                      <button type="submit" class="btn newsletter__submit c-submit" name="commit" id="Subscribe">
+                        <span class="newsletter__submit-text--large">Submit</span>
+                      </button>
+                    </span>
+                  </div>
+                {% endif %}
+              {% endform %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
     </div>
 
     <div class="grid grid--no-gutters">
@@ -292,6 +327,18 @@
       {
         "type": "link_list",
         "id": "footer_linklist_two",
+        "label": "Additional menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_three",
+        "label": "Additional menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_four",
         "label": "Additional menu",
         "default": "main-menu"
       },
