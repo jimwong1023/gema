@@ -44,7 +44,9 @@
                   <div class="grid-view-item__vendor">{{ product.vendor }}</div>
                 {% endif %}
                 <div class="grid-view-item__meta">
-                  <span class="starting-at"><i>Starting at</i></span>
+                  {% unless product.compare_at_price > product.price %}
+                    <span class="starting-at"><i>Starting at</i></span>
+                  {% endunless %}
                   {% include 'product-price' %}
                 </div>
               </div>
@@ -90,7 +92,9 @@
             <div class="grid-view-item__vendor">{{ product.vendor }}</div>
           {% endif %}
           <div class="grid-view-item__meta">
-            <span class="starting-at"><i>Starting at</i></span>
+            {% unless product.compare_at_price > product.price %}
+              <span class="starting-at"><i>Starting at</i></span>
+            {% endunless %}
             {% include 'product-price' %}
           </div>
         </div>

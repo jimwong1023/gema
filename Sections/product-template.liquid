@@ -208,12 +208,8 @@
 
         <div class="product-single__description rte" itemprop="description">         	
           <label class="c-label">Description</label>
-          <div class="padding-top-xs">  
-            {% if product.tags contains 'loose stone' %}
-              {% include 'loose-stone-description' %}
-            {% else %}
-              {{ product.description }}
-            {% endif %}
+          <div class="padding-top-xs">
+            {{ product.description }}
           </div>
         </div>
 

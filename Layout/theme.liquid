@@ -72,6 +72,17 @@
 
   {{ content_for_header }}
   <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  
+  <!-- Reddit Conversion Pixel -->
+  <script>
+  var i=new Image();i.src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAAAxGWZTTAA==&s=Rl0oedaItMr8lexGdbwtkVr0VVRTGd9wSX38luP2k0g=";
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAAAxGWZTTAA==&s=Rl0oedaItMr8lexGdbwtkVr0VVRTGd9wSX38luP2k0g="/>
+  </noscript>
+  <!-- DO NOT MODIFY -->
+  <!-- End Reddit Conversion Pixel -->
 </head>
 
 <body class="template-{{ template | split: '.' | first }}">
@@ -109,8 +120,31 @@
     {% section 'footer' %}
 
   </div>
+  
 
-{% include 'swymSnippet' %}
+
+  <!-- Global site tag (gtag.js) - Google AdWords: 842160637 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-842160637"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-842160637');
+
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-842160637/ACPfCL_zmIQBEP2zyZED',
+          'event_callback': callback
+      });
+      return false;
+    }
+  </script>
 
 </body>
 </html>

@@ -133,7 +133,7 @@
             <div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>
             <a href="collections/engagement-rings" class="btn btn--secondary cart__update cart__continue--large small--hide c-secondary-btn" >{{ 'cart.general.continue_shopping' | t }}</a>
             <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide c-secondary-btn" value="{{ 'cart.general.update' | t }}">
-            <input type="submit" name="checkout" class="btn btn--small-wide cart-checkout c-primary-btn" value="{{ 'cart.general.checkout' | t }}">
+            <input type="submit" onclick="ga('send', 'event', 'checkout', 'proceed to checkout');" name="checkout" class="btn btn--small-wide cart-checkout c-primary-btn" value="{{ 'cart.general.checkout' | t }}">
 <!--             {% if additional_checkout_buttons %}
               <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
             {% endif %} -->
