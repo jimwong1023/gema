@@ -840,7 +840,8 @@ theme.Header = (function() {
 
   var config = {
     activeClass: 'site-nav--active-dropdown',
-    childLinkClass: 'site-nav__child-link'
+    childLinkClass: 'site-nav__child-link',
+    mouseoverDropdown: false
   };
 
   var cache = {};
@@ -855,14 +856,19 @@ theme.Header = (function() {
         showDropdown($el);
       }
     });
+    
+    $(selectors.siteNavDropdowns).mouseenter(function() {
+      config.mouseoverDropdown = true;
+    });
 
     // check when we're leaving a dropdown and close the active dropdown
     $(selectors.siteNavDropdowns).mouseleave(function() {
+      config.mouseoverDropdown = false;
       hideDropdown(cache.$activeDropdown);
     });
     
     $(selectors.siteNavHasDropdown).mouseleave(function() {
-      hideDropdown(cache.$activeDropdown);
+      setTimeout(function() { if (config.mouseoverDropdown === false) { hideDropdown(cache.$activeDropdown) } }, 1);
     });
     
     // close dropdowns when on top level nav
@@ -890,15 +896,14 @@ theme.Header = (function() {
 
   function showDropdown($el) {
     $el.addClass(config.activeClass);
+    var dropDown = $el.data('controlId');
+    $("#" + dropDown).addClass('active');
 
     // close open dropdowns
     if (cache.$activeDropdown.length) {
       hideDropdown(cache.$activeDropdown);
     }
     cache.$activeDropdown = $el;
-
-    // set expanded on open dropdown
-    $el.find(selectors.siteNavLinkMain).attr('aria-expanded', 'true');
 
     setTimeout(function() {
       $(window).on('keyup.siteNav', function(evt) {
@@ -914,8 +919,8 @@ theme.Header = (function() {
   }
 
   function hideDropdown($el) {
-    // remove aria on open dropdown
-    $el.find(selectors.siteNavLinkMain).attr('aria-expanded', 'false');
+    var dropDown = $el.data('controlId');
+    $("#" + dropDown).removeClass('active');
     $el.removeClass(config.activeClass);
 
     // reset active dropdown
@@ -944,6 +949,7 @@ window.theme = window.theme || {};
 
 theme.MobileNav = (function() {
   var classes = {
+    bodyOverlay: 'body-overlay',
     mobileNavOpenIcon: 'mobile-nav--open',
     mobileNavCloseIcon: 'mobile-nav--close',
     subNavLink: 'mobile-nav__sublist-link',
@@ -987,6 +993,8 @@ theme.MobileNav = (function() {
 
   function cacheSelectors() {
     cache = {
+      $body: $('body'),
+      $bodyOverlay: $('<div class="body-overlay"> </div>'),
       $pageContainer: $('#PageContainer'),
       $siteHeader: $('.site-header'),
       $mobileNavToggle: $('.js-mobile-nav-toggle'),
@@ -1002,6 +1010,9 @@ theme.MobileNav = (function() {
     cache.$mobileNavContainer
       .prepareTransition()
       .addClass(classes.navOpen);
+    
+    cache.$body.css({overflow: 'hidden'});
+    cache.$bodyOverlay.appendTo(cache.$body);
 
     cache.$mobileNavContainer.css({
       transform: 'translate3d(0, ' + translateHeaderHeight + 'px, 0)',
@@ -1032,6 +1043,9 @@ theme.MobileNav = (function() {
     var translateHeaderHeight = ($('.announcement-bar').height() + $('.c-site-header-padding').height()) || 0;
     
     cache.$mobileNavContainer.prepareTransition().removeClass(classes.navOpen);
+    
+    cache.$body.css({overflow: ''});
+    $("." + classes.bodyOverlay).remove();
 
     cache.$mobileNavContainer.css({
       transform: 'translate3d(-100%, ' + translateHeaderHeight + 'px, 0)',

@@ -46,7 +46,24 @@
         {% for link in linklists[section.settings.main_linklist].links %}
           {%- assign child_list_handle = link.title | handleize -%}
 
-          {% if linklists[child_list_handle].links != blank %}
+          {% if linklists[child_list_handle].links != blank and link.title != "Shop" %}
+            <li class="mobile-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
+              <div class="about-row">
+                <a href="#" class="mobile-nav__link js-mobile-nav-dropdown">
+                  <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+        		  <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+                  {{ link.title }}
+                </a>
+                <div class="mobile-nav__item js-dropdown-content about-content hidden{% unless forloop.last %} border-bottom{% endunless %}">
+                  {% for childlink in linklists[child_list_handle].links %}
+                    <a href="{{ childlink.url }}" class="subnav__mobile-nav__link">
+                      {{ childlink.title }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </li>
+          {% elsif linklists[child_list_handle].links != blank and link.title == "Shop" %}
             <li class="mobile-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
               <a href="{{ link.url }}" class="mobile-nav__link">
                 {{ link.title }}
@@ -68,21 +85,19 @@
           {% endif %}
         {% endfor %}
         {% if shop.customer_accounts_enabled %}
-          <div class="c-mobile-hide">
-            {% if customer %}
-              <li class="mobile-nav__item border-bottom">
-                <a href="/account" class="mobile-nav__link">
-                  <span>{{ 'layout.customer.account' | t }}</span>
-                </a>
-              </li>
-            {% else %}
-              <li class="mobile-nav__item border-bottom">
-                <a href="/account/login" class="mobile-nav__link">
-                  <span>{{ 'layout.customer.log_in' | t }}</span>
-                </a>
-              </li>
-            {% endif %}
-          </div>
+          {% if customer %}
+            <li class="mobile-nav__item border-bottom">
+              <a href="/account" class="mobile-nav__link">
+                <span>{{ 'layout.customer.account' | t }}</span>
+              </a>
+            </li>
+          {% else %}
+            <li class="mobile-nav__item border-bottom">
+              <a href="/account/login" class="mobile-nav__link">
+                <span>{{ 'layout.customer.log_in' | t }}</span>
+              </a>
+            </li>
+          {% endif %}
         {% endif %}
       </ul>
       <div class="text-center">
@@ -238,18 +253,12 @@
     {% endif %}
     <div class="c-site-header-padding">
       <div class="grid grid--no-gutters grid--table">
-<!--         {% if section.settings.align_logo == 'center' %}
+        {% if section.settings.align_logo == 'center' %}
           <div class="grid__item small--hide medium-up--one-quarter">
             <div class="site-header__search">
               {% include 'search-form' %}
             </div>
           </div>
-        {% endif %} -->
-        
-        {% if section.settings.align_logo == 'center' %}
-          <nav class="grid__item small--one-half medium-up--one-quarter text-left small--hide" id="AccessibleNav" role="navigation">
-            {% include 'site-nav' %}
-          </nav>
         {% endif %}
 
         {% if section.settings.align_logo == 'center' %}
@@ -257,7 +266,7 @@
         {% else %}
           {%- assign logo_classes = 'medium-up--one-quarter logo-align--left' -%}
         {% endif %}
-        <div class="grid__item small--one-half c-desktop-hide">
+        <div class="grid__item small--one-half medium-up--hide">
           {% unless linklists[section.settings.main_linklist] == blank %}
             <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
               {% include 'icon-hamburger2' %}
@@ -306,38 +315,34 @@
           {% endif %}
         </div>
 
-        {% if section.settings.align_logo == 'left' %}
-          <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
-            {% include 'site-nav' %}
-          </nav>
-        {% endif %}
-
-        <div class="grid__item small--one-half medium-up--one-quarter text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
-          <div class="site-header__icons-wrapper site-nav__font">
-  <!--           {% if section.settings.align_logo == 'left' %}
-              <div class="site-header__search small--hide">
-                {% include 'search-form' %}
+        <div class="grid__item small--one-half medium-up--one-half site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
+          <div class="site-header__icons-wrapper c-column-flex-container site-nav__font">
+            {% if section.settings.align_logo == 'left' %}
+              <div class="site-header__search c-column-flex-4 small--hide align--top-right">
+<!--                 {% include 'search-form' %} -->
               </div>
             {% endif %}
 
-            <button type="button" class="btn--link site-header__search-toggle js-drawer-open-top medium-up--hide">
-              {% include 'icon-search' %}
-              <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
-            </button> -->
-
+<!--             REMOVE WHEN YOU WANT SEARCH -->
+            <button type="button" class="btn--link c-column-flex-1 medium-up--hide align--top-right">
+<!--             <button type="button" class="btn--link site-header__search-toggle js-drawer-open-top c-column-flex-1 medium-up--hide align--top-right"> -->
+<!--               {% include 'icon-search' %}
+              <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span> -->
+            </button>
+            
             {% if shop.customer_accounts_enabled %}
               {% if customer %}
-                <a href="/account" class="site-header__account">
+                <a href="/account" class="site-header__account c-column-flex-2 align--top-middle c-vertical-align">
                   <span>{{ 'layout.customer.account' | t }}</span>
                 </a>
               {% else %}
-                <a href="/account/login" class="site-header__account">
+                <a href="/account/login" class="site-header__account c-column-flex-2 align--top-middle c-vertical-align">
                   <span>{{ 'layout.customer.log_in' | t }}</span>
                 </a>
               {% endif %}
             {% endif %}
 
-            <a href="/cart" class="site-header__cart">
+            <a href="/cart" class="site-header__cart c-column-flex-1 c-vertical-align">
               {% include 'icon-cart3' %}
 <!--               <div class="site-nav__link--main" {% if template != 'index' %}style="color: #808284"{% endif %}>Cart</div> -->
               <span class="visually-hidden">{{ 'layout.cart.title' | t }}</span>
@@ -350,12 +355,21 @@
               {% endif %}
             </a>
           </div>
-
         </div>
+      </div>
+      <div>
+        <nav id="AccessibleNav" role="navigation">
+          {% include 'site-nav' %}
+        </nav>
       </div>
     </div>
   </header>
 </div>
+
+<script src="{{ 'dropdowns.js' | asset_url }}"></script>
+<script>
+  Dropdowns.initialize('js-mobile-nav-dropdown')
+</script>
 
 {% schema %}
   {
