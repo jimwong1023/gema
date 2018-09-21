@@ -355,6 +355,7 @@ $input-group-height-small: 42px;
 // Hex Colors
 $color-slate-gray: #494d50;
 $color-light-slate-gray: #808284;
+$color-metallic-gray: #d4d4d4;
 $color-light-gray: #f9f9f9;
 $color-gray: #ebebeb;
 $color-navy-blue: #2E394F;
@@ -383,7 +384,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?15726580107559489391'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ico-select.svg?17699538695420754832'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -492,7 +493,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?15726580107559489391);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/1/assets/ajax-loader.gif?17699538695420754832);
 }
 
 // Unused intentionally
@@ -1340,6 +1341,10 @@ select {
   font-family: $font-stack-body;
   color: $color-text;
   line-height: 1.8;
+  
+  @include media-query($medium-down) {
+    font-size: $font-size-base - 1px;
+  }
 }
 
 // Prevent zoom on touch devices in active inputs
@@ -3314,6 +3319,9 @@ h1.product-single__title {
 /*     top: 30px; */
     text-align: center;
 /*     margin-bottom: 30px; */
+    @media only screen and (max-width: $grid-medium) {
+      display: none !important;
+    }
   }
 
   .thumbnails-slider__btn {
@@ -3755,9 +3763,9 @@ h1.product-single__title {
   position: relative;
   z-index: $z-index-announcement-bar;
   
-/*   @media only screen and (max-width: $grid-medium) {
-    display: none;
-  } */
+  @media only screen and (max-width: $grid-medium) {
+    background-color: $color-black;
+  }
 }
 
 .announcement-bar--link {
@@ -3773,6 +3781,7 @@ h1.product-single__title {
   padding: 8px $gutter-site-mobile;
 
   @include media-query($medium-up) {
+    color: $color-white;
     padding: 10px $gutter-site;
   }
 }
@@ -6473,6 +6482,44 @@ $toolbar-height-small: 46px;
 }
 // END ACCORDIAN
 
+// PRODUCT IMAGE BULLETS
+
+.product-bullets-container {
+  @media only screen and (min-width: $grid-medium) {
+    display: none !important;
+  }
+}
+
+.js-product-bullets {
+  padding-right: 20px;
+  padding-left: 11% !important;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  display: inline-flex;
+  list-style: none;
+  transform: translateX(-50%);
+}
+
+.product-bullet {
+  background-color: transparent;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid $color-black;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+  margin: 0 0.25em;
+}
+
+.product-bullet.active {
+  background-color: $color-black;
+}
+
+// END PRODUCT IMAGE BULLETS
+
 // REVIEWS
 .spr-container {
   padding: 0 !important;
@@ -6595,14 +6642,6 @@ $toolbar-height-small: 46px;
     text-align: center;
   }
 }
-
-/* .c-hero-width {
-  padding-left: 10%;
-
-  @media only screen and (max-width: $grid-medium) {
-    padding-left: 0;
-  }
-} */
 
 .c-ul-decoration {
   li {
@@ -6988,14 +7027,17 @@ $toolbar-height-small: 46px;
 
 .custom-product-text {
    @media only screen and (max-device-width: $grid-medium) {
-     text-align: center;
-     padding: 5px 5px 15px 5px;
+     padding: 5px 5px 15px 0px;
    }
   
   h1 {
     font-size: 1.25em;
     font-family: Brandon_Text_Regular;
   }
+}
+
+.c-custom-compareable-price {
+  font-size: 0.933333em;
 }
 
 .custom-product-form {
@@ -7056,8 +7098,8 @@ input {
   }
   
   input[type="radio"]:checked + .swatch {
-    box-shadow: 0 0 0 2px #d4d4d4;
-    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px $color-black;
+    border: 3px solid $color-white;
   }
   
   .swatch {
@@ -7066,7 +7108,7 @@ input {
     height: 25px;
     width:25px;
     margin: 10px 5px -5px 0 ;
-    border: 1px solid #d4d4d4;
+    border: 3px solid $color-white;
     border-radius: 25px;
   }
   

@@ -65,6 +65,11 @@
         {% capture product_image_size %}{{ height }}x{% endcapture %}
         <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: {{ height }}px;">
       </noscript>
+      
+      <div class="product-bullets-container">
+        <div class="js-product-bullets">
+        </div>
+      </div>
 
       {% if product.images.size > 1 %}
         {% if product.images.size > 3 %}
@@ -117,7 +122,7 @@
             <p itemprop="brand" class="product-single__vendor">{{ product.vendor }}</p>
           {% endif %}
 
-          <h4 id="header-compareable-price" class="custom-product-secondary-header{% if current_variant.metafields.custom_text.compareable_price == blank or current_variant.metafields.custom_text.compareable_price == "" %} hidden{% endif %}">Diamond Equivalent Price – <span id="variant-compareable-price">{{ current_variant.metafields.custom_text.compareable_price }}</span></h4>
+          <h4 id="header-compareable-price" class="custom-product-secondary-header c-custom-compareable-price{% if current_variant.metafields.custom_text.compareable_price == blank or current_variant.metafields.custom_text.compareable_price == "" %} hidden{% endif %}">Diamond Equivalent Price – <span id="variant-compareable-price">{{ current_variant.metafields.custom_text.compareable_price }}</span></h4>
           <div class="reviews-top">
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           </div>
