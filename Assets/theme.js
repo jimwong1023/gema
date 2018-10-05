@@ -862,20 +862,13 @@ theme.Header = (function() {
     });
 
     // check when we're leaving a dropdown and close the active dropdown
-    $(selectors.siteNavDropdowns).mouseleave(function() {
+    $(selectors.siteNavDropdowns).mouseleave(function(evt) {
       config.mouseoverDropdown = false;
       hideDropdown(cache.$activeDropdown);
     });
     
-    $(selectors.siteNavHasDropdown).mouseleave(function() {
+    $(selectors.siteNavHasDropdown).mouseleave(function(evt) {
       setTimeout(function() { if (config.mouseoverDropdown === false) { hideDropdown(cache.$activeDropdown) } }, 1);
-    });
-    
-    // close dropdowns when on top level nav
-    cache.$topLevel.on('focus.siteNav', function() {
-      if (cache.$activeDropdown.length) {
-        hideDropdown(cache.$activeDropdown);
-      }
     });
 
     cache.$subMenuLinks.on('click.siteNav', function(evt) {
@@ -904,18 +897,6 @@ theme.Header = (function() {
       hideDropdown(cache.$activeDropdown);
     }
     cache.$activeDropdown = $el;
-
-    setTimeout(function() {
-      $(window).on('keyup.siteNav', function(evt) {
-        if (evt.keyCode === 27) {
-          hideDropdown($el);
-        }
-      });
-
-      $(selectors.body).on('click.siteNav', function() {
-        hideDropdown($el);
-      });
-    }, 250);
   }
 
   function hideDropdown($el) {
@@ -925,9 +906,6 @@ theme.Header = (function() {
 
     // reset active dropdown
     cache.$activeDropdown = $(selectors.siteNavActiveDropdown);
-
-    $(selectors.body).off('click.siteNav');
-    $(window).off('keyup.siteNav');
   }
 
   function unload() {
