@@ -29,15 +29,15 @@ $grid-breakpoint-has-push: ($small, $medium-up);
 /*================ Color Variables ================*/
 
 // Text colors
-$color-text: #000000;
+$color-text: #58595c;
 $color-text-shadow: rgba(0, 0, 0, 0.1);
-$color-body-text: #000000;
-$color-sale-text: #000000;
+$color-body-text: #58595c;
+$color-sale-text: #58595c;
 $color-small-button: #000000;
 $color-small-button-text: #ffffff;
 $color-text-field: #fff;
 $color-text-field-text: #adadad;
-$color-navigation-text: #000000;
+$color-navigation-text: #58595c;
 
 // Button colors
 $color-btn-primary: #000000;
@@ -52,7 +52,7 @@ $transition-link-hover: 0.1s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 $color-body: #ffffff;
 $color-bg: #ffffff;
 $color-drawer-background: rgba(0, 0, 0, 0.6);
-$color-newsletter-background: rgba(0, 0, 0, 0.1);
+$color-newsletter-background: rgba(88, 89, 92, 0.1);
 
 // Overlays
 $color-overlay-title-text: #fff;
@@ -101,7 +101,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/13/assets/ico-select.svg?14156910410365848022'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/15/assets/ico-select.svg?5362860040384378717'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -125,13 +125,13 @@ $transition-image-slideshow: opacity 0.8s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 
-$font-stack-header: Brandon_Text_Light;
+$font-stack-header: Maison_Neue_Medium;
 $font-weight-header: 400;
 $font-size-header: 20px;
 $font-bold-titles: false;
 
-$font-stack-body: Brandon_Text_Light;
-$font-size-base: 15px; // Henseforth known as 1em
+$font-stack-body: Maison_Neue_Light;
+$font-size-base: 13px; // Henseforth known as 1em
 
 $font-stack-cart-notification: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 

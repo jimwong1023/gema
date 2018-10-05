@@ -1,8 +1,8 @@
 <nav class="mobile-nav-wrapper" role="navigation">
   <ul id="MobileNav" class="mobile-nav">
-    <li class="mobile-nav__item">
+    <li class="mobile-nav__item margin-bottom-none">
       <div>
-        <a href="#" class="mobile-nav__link js-mobile-nav-dropdown">
+        <a href="#" class="mobile-nav__link  margin-bottom-none c-label js-mobile-nav-dropdown">
           <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
           <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
           Moissanite
@@ -41,24 +41,24 @@
         </div>
       </div>
     </li>
-    <li class="mobile-nav__item">
-      <a href="/collections/engagement-rings" class="mobile-nav__link">
+    <li class="mobile-nav__item margin-bottom-none">
+      <a href="/collections/engagement-rings" class="mobile-nav__link c-label">
         Engagement Rings
       </a>
     </li>
-    <li class="mobile-nav__item">
-      <a href="/collections/wedding-bands" class="mobile-nav__link">
+    <li class="mobile-nav__item margin-bottom-none">
+      <a href="/collections/wedding-bands" class="mobile-nav__link c-label">
         Wedding Bands
       </a>
     </li>
-    <li class="mobile-nav__item">
-      <a href="/pages/frequently-asked-questions" class="mobile-nav__link">
+    <li class="mobile-nav__item margin-bottom-none">
+      <a href="/pages/frequently-asked-questions" class="mobile-nav__link c-label">
         FAQ
       </a>
     </li>
-    <li class="mobile-nav__item">
+    <li class="mobile-nav__item margin-bottom-none">
       <div>
-        <a href="#" class="mobile-nav__link js-mobile-nav-dropdown">
+        <a href="#" class="mobile-nav__link c-label js-mobile-nav-dropdown">
           <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
           <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
           About
@@ -78,14 +78,14 @@
     </li>
     {% if shop.customer_accounts_enabled %}
       {% if customer %}
-        <li class="mobile-nav__item border-bottom">
-          <a href="/account" class="mobile-nav__link">
+        <li class="mobile-nav__item margin-bottom-none border-bottom">
+          <a href="/account" class="mobile-nav__link c-label">
             <span>{{ 'layout.customer.account' | t }}</span>
           </a>
         </li>
       {% else %}
-        <li class="mobile-nav__item border-bottom">
-          <a href="/account/login" class="mobile-nav__link">
+        <li class="mobile-nav__item margin-bottom-none border-bottom">
+          <a href="/account/login" class="mobile-nav__link c-label">
             <span>{{ 'layout.customer.log_in' | t }}</span>
           </a>
         </li>
@@ -175,7 +175,7 @@
         {% endif %}
       </div>
     </div>
-    <div class="padding-top-s m-padding-top-xs">
+    <div class="padding-top-s m-padding-top-s">
       <a href="mailto:support@gemaandco.com">support@gemaandco.com</a>
     </div>
   </div>
