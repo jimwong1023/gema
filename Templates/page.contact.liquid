@@ -8,8 +8,8 @@
     <div class="padding-bottom-l m-padding-bottom-m">
       <div class="grid grid--half-gutters">
         <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
-          <div class="padding-bottom-m m-padding-bottom-s">
-            <h3 class="c-header-l">{{ page.title }}</h3>
+          <div class="padding-bottom-s m-padding-bottom-s">
+            <h3 class="c-header-l c-accent-color">{{ page.title }}</h3>
           </div>
 
           {% if page.content.size > 0 %}
@@ -31,22 +31,22 @@
 
               <div class="grid grid--half-gutters">
                 <div class="grid__item">
-                  <label for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+                  <label class="c-contact-form-label" for="ContactFormName">{{ 'contact.form.name' | t }}</label>
                   <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
                 </div>
               </div>
 
               <div class="grid grid--half-gutters">
                 <div class="grid__item">
-                  <label for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}</label>
+                  <label class="c-contact-form-label" for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}</label>
                   <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
                 </div>
               </div>
 
-              <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
+              <label class="c-contact-form-label" for="ContactFormMessage">{{ 'contact.form.message' | t }}</label>
             <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
-              <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+              <input type="submit" class="btn c-contact-form-label" value="{{ 'contact.form.submit' | t }}">
 
             {% endform %}
           </div>

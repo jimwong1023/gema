@@ -4,7 +4,7 @@
 <ul class="c-mobile-hide">
   {% for title in pages_titles %}
     <li class="{% if curr_page == title %}selected-sidebar{% endif %}">
-      <a href="{{ links[forloop.index0] }}">{{ title }}</a>
+      <a class="c-support-sidebar-label" href="{{ links[forloop.index0] }}">{{ title }}</a>
     </li>
   {% endfor %}
 </ul>

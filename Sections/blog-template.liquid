@@ -1,6 +1,6 @@
 {% paginate blog.articles by 12 %}
 
-<h3 class="c-header-l text-center padding-top-m">In the blog</h3>
+<h3 class="c-header-xl text-center padding-top-m">In the blog</h3>
 
   <div class="page-width padding-top-m m-padding-top-s">
     {% for article in blog.articles %}
@@ -28,7 +28,7 @@
           <h2 class="c-header-l m-padding-top-s">
             <a href="{{ article.url }}">{{ article.title }}</a>
           </h2>
-          <div class="padding-top-s">
+          <div class="padding-top-s m-padding-top-xs">
             By Liz Weaver | {{ article.published_at | date: "%b %d, %y" }}
           </div>
           <div class="padding-top-s">
@@ -48,7 +48,7 @@
           {% endif %}
           <ul class="list--inline padding-top-m m-padding-top-s">
             <li>
-              <a href="{{ article.url }}" class="c-link secondary-font">
+              <a href="{{ article.url }}" class="c-link c-label">
                 {{ 'blogs.article.read_more' | t }}
                 </a>
             </li>
