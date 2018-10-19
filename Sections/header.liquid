@@ -164,11 +164,11 @@
             {% if shop.customer_accounts_enabled %}
               {% if customer %}
                 <a href="/account" class="site-header__account c-column-flex-2 c-column-flex-container c-flex-align-right">
-                  <span>{{ 'layout.customer.account' | t }}</span>
+                  <span class="site-header__account-text">{{ 'layout.customer.account' | t }}</span>
                 </a>
               {% else %}
                 <a href="/account/login" class="site-header__account c-column-flex-2 c-column-flex-container c-flex-align-right">
-                  <span>{{ 'layout.customer.log_in' | t }}</span>
+                  <span class="site-header__account-text">{{ 'layout.customer.log_in' | t }}</span>
                 </a>
               {% endif %}
             {% endif %}
