@@ -983,7 +983,7 @@ theme.MobileNav = (function() {
   }
 
   function openMobileNav() {
-    var translateHeaderHeight = ($('.announcement-bar').height() + $('.c-site-header-padding').height()) || 0;
+    var translateHeaderHeight = ($('.announcement-bar').height() + $('.c-site-header-padding').height() - 1) || 0;
 
     cache.$mobileNavContainer
       .prepareTransition()
@@ -991,6 +991,7 @@ theme.MobileNav = (function() {
     
     cache.$body.css({overflow: 'hidden'});
     cache.$bodyOverlay.appendTo(cache.$body);
+    $("." + classes.bodyOverlay).on('click', toggleMobileNav);
 
     cache.$mobileNavContainer.css({
       transform: 'translate3d(0, ' + translateHeaderHeight + 'px, 0)',
