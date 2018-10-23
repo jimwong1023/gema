@@ -388,7 +388,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/16/assets/ico-select.svg?11537978112091255838'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/18/assets/ico-select.svg?13359633461379125066'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -510,7 +510,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/16/assets/ajax-loader.gif?11537978112091255838);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/18/assets/ajax-loader.gif?13359633461379125066);
 }
 
 // Unused intentionally
@@ -3314,6 +3314,20 @@ h1.product-single__title {
   width: 100%;
 }
 
+.custom-finance {
+  margin-top: 15px;
+  margin-bottom: 0;
+  
+  img {
+    height: 18px;
+  }
+  
+  a {
+    margin: 0 5px;
+    text-decoration: underline;
+  }
+}
+
 // Prevent reflow when image loads
 .product-single__photo {
   margin: 0 auto;
@@ -4388,8 +4402,8 @@ $mobile-nav-button-padding: 15px;
 /*================ Mobile Site Nav ================*/
 .mobile-nav {
   margin-top: 10px;
-  padding-bottom: 250px;
-  margin-bottom: -250px;
+  padding-bottom: 300px;
+  margin-bottom: -300px;
   display: block;
   @include transform(translate3d(0, 0, 0));
   transition: $transition-drawer;
@@ -4447,10 +4461,10 @@ $mobile-nav-button-padding: 15px;
 }
 
 .mobile-nav__contact-btn-left {
-  margin: 10px 5px 10px 20px;
+  margin: 15px 5px 10px 20px;
 }
 .mobile-nav__contact-btn-right {
-  margin: 10px 20px 10px 5px;
+  margin: 15px 20px 10px 5px;
 }
 
 .mobile-nav__contact, .mobile-nav__social-ul {
@@ -7089,7 +7103,7 @@ $toolbar-height-small: 46px;
   }
 }
 
-.c-product-template-mobile {
+.c-product-image__mobile-padding {
   @media only screen and (max-width: $grid-medium) {
     padding-right: 20px;
     padding-left: 11% !important;
@@ -7100,9 +7114,18 @@ $toolbar-height-small: 46px;
   color: $color-light-slate-gray;
 }
 
-.c-product-description-desktop {
+.c-product-description {
+  @media only screen and (max-width: $grid-medium) {
+    padding-top: 22px;
+    padding-right: 20px;
+    padding-left: 11% !important;
+  }
+
   @media only screen and (min-width: $grid-medium) {
+    padding-top: 50px;
     padding-bottom: 5vh;
+    padding-left: 10%;
+    padding-right: 10%;
     background-color: #ffffff;
     min-height: 94vh;
   }

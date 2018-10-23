@@ -36,7 +36,7 @@
   {% endcase %}
 
   <div class="grid product-single">
-    <div id='js-hidden-product-images' class="visibility-hidden grid__item product-single__photos {{ product_image_width }}{% if section.settings.image_size == 'full' %} product-single__photos--full{% endif %} c-product-template-mobile c-product-photos-desktop">
+    <div id='js-hidden-product-images' class="visibility-hidden grid__item product-single__photos {{ product_image_width }}{% if section.settings.image_size == 'full' %} product-single__photos--full{% endif %} c-product-image__mobile-padding c-product-photos-desktop">
       {%- assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image -%}
       {% for image in product.images %}
         {% capture img_id %}FeaturedImage-{{ section.id }}-{{ image.id }}{% endcapture %}
@@ -106,7 +106,7 @@
       {% endif %}
     </div>
 
-    <div class="grid__item {{ product_description_width }} c-bg-white padding-top-m padding-left-l padding-right-l m-padding-top-s c-product-template-mobile c-product-description-desktop">
+    <div class="grid__item {{ product_description_width }} c-bg-white c-product-description">
       <div class="product-single__meta margin-bottom-s">
         <div class="custom-product-text padding-bottom-xs m-padding-bottom-xs">
           <h1 itemprop="name" class="product-single__title custom-product-header">{{ product.title }} –</h1>
@@ -206,7 +206,7 @@
                   {% endunless %}
                 </span>
               </button>
-<!--               <p class="custom-finance">Monthly Financing available with Affirm at checkout</p> -->
+              <p class="custom-finance">No Interest if paid in full in 6 months using <a target="_blank" href="https://www.paypal.com/us/webapps/mpp/paypal-credit"><img src="https://cdn.shopify.com/s/files/1/2109/1565/files/paypal-logo.png?7744322486139905394"></a><a class="custom-finance__link" href="https://www.paypal.com/us/webapps/mpp/paypal-credit">Learn More</a></p>
             </div>
           </form>
         </div>
