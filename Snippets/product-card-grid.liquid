@@ -1,17 +1,14 @@
 {% assign METAL = "Metal" %}
+{% assign DEFAULT_METAL = "14K ROSE GOLD" %}
 {% if product.options contains METAL %}
   {% assign option = product.options_with_values | where:"name", METAL | first %}
-  {% for value in option.values %}
-    {% if value == "Platinum" %}
-      {% assign found = true %}
-    {% else %}
+  <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+    {% for value in option.values %}
       {% assign found = false %}
-    {% endif %}
-
-    {% for variant in product.variants %}
-      {% if found == false and variant.option1 == value %}
-        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-          <div class="grid-view-item m-margin-bottom-none{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}">
+      {% assign upcased_value = value | upcase %}
+      {% for variant in product.variants %}
+        {% if found == false and variant.option1 == value %}
+          <div id="product-metal-{{product.id}}-{{value | handleize }}" class="{% unless upcased_value == DEFAULT_METAL %}hidden {% endunless %} product-{{product.id}} m-margin-bottom-none{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}">
             <a class="grid-view-item__link grid-view-item__image-container" href="{{ product.url | within: collection | append: "?variant=" | append: variant.id }}">
               {% capture img_id %}ProductCardImage-{{ section.id }}-{{ variant.id }}{% endcapture %}
               {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ variant.id }}{% endcapture %}
@@ -52,11 +49,34 @@
               </div>
             </a>
           </div>
-         </div>
-        {% assign found = true %}
+          {% assign found = true %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    {% for option in product.options_with_values %}
+      {% assign optionName = option.name | downcase %}
+      {% if optionName == 'metal' %}
+        <div class="collection-product-swatch">
+          <div class="metal-swatch-radio-inputs margin-bottom-xs single-option-swatch-selector-{{ section.id }}">
+            <ul>
+              {% for value in option.values %}
+                {% assign upcased_value = value | upcase %}
+                <li>
+                  <label>
+                    <input type="radio" name="metal-swatch-{{product.id}}" value="{{ value | escape }}" {% if upcased_value == DEFAULT_METAL %}checked{% endif %} data-product-id="{{product.id}}" data-metal="{{value | handleize }}">
+                    <span class="collection-swatch color-{{ value | handleize }}"></span>
+                  </label>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <label class="swatch-label {% if option.name == 'default' %}label--hidden{% endif %}" for="metal-swatch-{{product.id}}">
+            <span id="swatch-span-{{product.id}}">{% for value in option.values %}{% assign upcased_value = value | upcase %}{% if upcased_value == DEFAULT_METAL %}{{ value | downcase | titleize }}{% endif %}{% endfor %}</span>
+          </label>
+        </div>
       {% endif %}
     {% endfor %}
-  {% endfor %}
+   </div>
 {% else %}
   <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
     <div class="grid-view-item{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}">

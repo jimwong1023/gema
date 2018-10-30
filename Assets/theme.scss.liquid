@@ -7212,6 +7212,17 @@ input {
   font-size: 1.4em;
 }
 
+.collection-product-swatch {
+  text-align: center;
+  margin-top: -25px;
+}
+
+.swatch-label {
+  padding-top: 5px;
+  text-transform: capitalize;
+  color: $color-light-slate-gray;
+}
+
 .metal-swatch-radio-inputs {
   ul {
     list-style:none; padding:0; margin: 0;
@@ -7221,7 +7232,12 @@ input {
   }
   
   li {
-    margin: 0 10px 0 0; display: inline-block;
+    margin: 0 10px 0 0;
+    display: inline-block;
+  }
+  
+  li:last-child {
+    margin: 0;
   }
   
   label {
@@ -7238,14 +7254,29 @@ input {
     border: 2px solid $color-white;
   }
   
-  .swatch {
+  input[type="radio"]:checked + .collection-swatch {
+    box-shadow: 0 0 0 1px $color-medium-grey;
+    border: 2px solid $color-light-gray;
+  }
+  
+  .swatch, .collection-swatch {
     display:inline-block;
     vertical-align: middle;
+    margin: 10px 5px -5px 0;
+  }
+  
+  .swatch {
     height: 25px;
     width:25px;
-    margin: 10px 5px -5px 0 ;
-    border: 3px solid $color-white;
     border-radius: 25px;
+    border: 3px solid $color-white;
+  }
+  
+  .collection-swatch {
+    height: 20px;
+    width:20px;
+    border-radius: 20px;
+    border: 1px solid $color-gray;
   }
   
   .color-14k-white-gold {

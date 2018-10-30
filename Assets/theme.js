@@ -2330,6 +2330,42 @@ function gm_authFailure() {
   $('.map-section__overlay').after('<div class="errors text-center">' + theme.strings.authError + '</div>');
 }
 
+theme.SwatchSelect = (function() {
+  function SwatchSelect(container) {
+    var $container = this.$container = $(container);
+    var sectionId = $container.attr('data-section-id');
+    var defaultSwatch = "14k-white-gold";
+    
+    this.selectors = {
+      swatchSelector: '.single-option-swatch-selector-' + sectionId,
+      defaultSwatchSelector: '.color-' + defaultSwatch,
+      swatchInitHackSelector: '.swatch-checked'
+    }
+
+    $(this.selectors.swatchSelector, this.$container).on('change', this._onSelectChange.bind(this));
+  }
+  
+  SwatchSelect.prototype = _.assignIn({}, SwatchSelect.prototype, {
+    _onSelectChange: function(evt) {
+      var productId = evt.target.dataset.productId;
+      var metalValue = evt.target.dataset.metal;
+
+      this._updateSelectedMetal({ productId: productId, metalValue: metalValue });
+    },
+    
+    _updateSelectedMetal(evt) {
+      var productId = evt.productId;
+      var metalValue = evt.metalValue;
+
+      $("#swatch-span-" + productId).text(metalValue.replace(/\-/g, ' '));
+      $(".product-" + productId).addClass("hidden");
+      $("#product-metal-" + productId + "-" + metalValue).removeClass("hidden");
+    }
+  });
+  
+  return SwatchSelect;
+})();
+
 /* eslint-disable no-new */
 theme.Product = (function() {
   function Product(container) {
@@ -2875,6 +2911,7 @@ $(document).ready(function() {
   sections.register('map', theme.Maps);
   sections.register('slideshow-section', theme.SlideshowSection);
   sections.register('quotes', theme.Quotes);
+  sections.register('collection-template', theme.SwatchSelect);
 });
 
 theme.init = function() {
