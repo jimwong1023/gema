@@ -274,12 +274,12 @@
   <div class="custom-about-content c-tablet-bigger-hide">
     <hr>
     <div class="about-row {% if product.metafields.product_specs.setting == blank or product.metafields.product_specs.setting == "" %}hidden{% endif %}">
-      <a href="#" class="js-about-content-link">
+      <a href="#" class="js-dropdown-content-link">
         <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
         <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
         <h4 class="about-header4 c-label">Setting Details</h4>
       </a>
-      <div class="js-about-content product-specs padding-bottom-xs hidden">
+      <div class="js-dropdown-content product-specs padding-bottom-xs hidden">
         <div>Style: Solitaire</div>
         <div>Metal: 14K Gold or Platinum</div>
         <div>Band Width: 1.7mm | 1.9mm</div>
@@ -288,12 +288,12 @@
       </div>
     </div>
     <div class="about-row">
-      <a href="#" class="js-about-content-link">
+      <a href="#" class="js-dropdown-content-link">
         <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
         <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
         <h4 class="about-header4 c-label">Gemstone Details</h4>
       </a>
-      <div class="js-about-content product-specs padding-bottom-xs hidden">
+      <div class="js-dropdown-content product-specs padding-bottom-xs hidden">
         <div>Gemstone: Moissanite</div>
         <div>Shape: {{ product.metafields.product_specs.shape }}</div>
         <div>Average Color: D/E/F</div>
@@ -308,12 +308,12 @@
       </div>
     </div>
     <div class="about-row">
-      <a href="#" class="js-about-content-link">
+      <a href="#" class="js-dropdown-content-link">
         <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
         <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
         <h4 class="about-header4 c-label">Care</h4>
       </a>
-      <div class="js-about-content product-specs padding-bottom-xs hidden">
+      <div class="js-dropdown-content product-specs padding-bottom-xs hidden">
         <div>Cleaning Solution: Non-abrasive</div>
         <div>Ultrasonic Reaction: Usually safe</div>
         <div>Steamer Reaction: Usually safe</div>
@@ -366,8 +366,9 @@
   </div>
 {% endif %} -->
 
-
-<script src="{{ 'contact-us.js' | asset_url }}"></script>
+<script defer="defer">
+  GemaDropdowns.initialize('js-dropdown-content-link');
+</script>
 
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">

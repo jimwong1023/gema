@@ -446,7 +446,6 @@
   </div>
 </div>
 
-<script src="{{ 'tabs-manager.js' | asset_url }}"></script>
 <script>
-  TabsManager.initialize("js-tablink", "js-tab-content");
+  var tabs = new TabsManagerV2("js-tablink", "js-tab-content");
 </script>

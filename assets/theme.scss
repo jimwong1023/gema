@@ -388,7 +388,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/19/assets/ico-select.svg?8743852659276930002'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/20/assets/ico-select.svg?3947199632964375646'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -510,7 +510,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/19/assets/ajax-loader.gif?8743852659276930002);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/20/assets/ajax-loader.gif?3947199632964375646);
 }
 
 // Unused intentionally
@@ -8509,15 +8509,27 @@ input {
 }
 
 .c-landing-2 {
-  height: 90vh;
-  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/DSCF4154_4.jpg?10739104541439440699");
+  height: 80vh;
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/oval_halo_pave_moissanite_desktop1.jpg?10063246831733097646");
 
   @media only screen and (max-width: $grid-medium) {
-    height: 28em;
-    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/DSCF4154_2.jpg?778638527949498931");
+    height: 38em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/oval_halo_pave_moissanite_mobile1.jpg?10063246831733097646");
     top: 0;
     center: 50%;
     padding-right: 0;
+  }
+}
+
+.c-landing-2-text {
+  position: relative;
+  display: table-cell;
+  padding: 250px 0 0 0;
+  z-index: 2;
+  
+  @media only screen and (max-width: $grid-medium) {
+    vertical-align: baseline;
+    padding: 265px 0 0 0;
   }
 }
 .c-landing-3 {
@@ -8561,13 +8573,13 @@ input {
     padding-right: 0;
   }
 }
-.c-landing-oval-brown-sweater {
-  height: 90vh;
-  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/gema_oval-moissanite_brown-sweater_desk.jpg?6267622082238031002");
+.c-landing-oval-halo-pave {
+  height: 80vh;
+  background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/oval_halo_pave_moissanite_desktop.jpg?10063246831733097646");
 
   @media only screen and (max-width: $grid-medium) {
-    height: 28em;
-    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/gema_oval-moissanite_brown-sweater_mob.jpg?6267622082238031002");
+    height: 38em;
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/oval_halo_pave_moissanite_mobile.jpg?10063246831733097646");
     top: 0;
     center: 50%;
     padding-right: 0;
