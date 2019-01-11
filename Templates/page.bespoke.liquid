@@ -1,0 +1,87 @@
+<div class="page-width c-page-width-l padding-top-m m-padding-top-m m-padding-bottom-none">
+  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Design your own</h3>
+  <p class="m-padding-top-none">
+    Whether you’ve already got a design idea in your mind or have been inspired by a jewelry piece 
+    that you have already seen, but would like to adapt it to suit your own tastes, 
+    we can create your very own personalized piece using our bespoke design service.
+  </p>
+  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">The Custom Process</h3>
+  <p>Our custom process allows you to walk through the entire bespoke process with us. You help
+    select the stone(s) and all the details before the piece gets put into production.
+  </p>
+  <ul>
+    <li>1. Initial consultation to discuss your needs, style, and timeline.</li>
+    <li>2. Select the stone(s) desired for the envisioned piece.</li>
+    <li>3. Collaborate on your custom jewelry piece.</li>
+    <li>4. Your jewelry piece goes into custom fabrication.</li>
+  </ul>
+</div>
+  
+<div class="page-width c-page-width-l c-column-flex-container c-mobile-flex-column padding-bottom-m m-padding-top-none m-padding-bottom-none">
+  <div class="c-column-flex-7 padding-top-s">
+    <div class="padding-bottom-l m-padding-bottom-m">
+      <div class="grid grid--half-gutters">
+        <div class="grid__item">
+          <div class="padding-bottom-s m-padding-bottom-s">
+            <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Contact us</h3>
+            <p>If interested in creating a custom design, please fill out the form below and we will be in touch
+              shortly.</p>
+          </div>
+
+          {% if page.content.size > 0 %}
+            <div class="rte">
+              {{ page.content }}
+            </div>
+          {% endif %}
+
+          <div class="contact-form form-vertical">
+            {% form 'contact' %}
+
+              {% if form.posted_successfully? %}
+                <p class="note form-success">
+                  {{ 'contact.form.post_success' | t }}
+                </p>
+              {% endif %}
+
+              {{ form.errors | default_errors }}
+
+              <div class="grid grid--half-gutters">
+                <div class="grid__item">
+                  <label class="c-contact-form-label" for="ContactFormName">{{ 'contact.form.name' | t }}</label>
+                  <input type="text" id="ContactFormName" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                </div>
+              </div>
+
+              <div class="grid grid--half-gutters">
+                <div class="grid__item">
+                  <label class="c-contact-form-label" for="ContactFormEmail" class="{% if form.errors contains 'email' %}label--error{% endif %}">{{ 'contact.form.email' | t }}</label>
+                  <input type="email" id="ContactFormEmail" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" class="{% if form.errors contains 'email' %}input--error{% endif %}">
+                </div>
+              </div>
+            
+              <div class="grid grid--half-gutters">
+                <div class="grid__item">
+                  <label class="c-contact-form-label" for="ContactFormWhat">What can we help you with?</label>
+                  <select class="padding-left-xs" id="ContactFormWhat" name="contact[what]">
+                    <option>Ring</option>
+                    <option>Necklace</option>
+                    <option>Earrings</option>
+                    <option>Bracelet</option>
+                    <option>Something Else</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <label class="c-contact-form-label" for="ContactFormMessage">Share details about your vision</label>
+              <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+              <input type="submit" class="btn c-contact-form-label" value="{{ 'contact.form.submit' | t }}">
+
+            {% endform %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

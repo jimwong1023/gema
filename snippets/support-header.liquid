@@ -1,39 +1,15 @@
 <div class="c-bg-light-gray">
   <div class="page-width padding-top-m padding-bottom-m m-padding-top-m m-padding-bottom-m">
     <div class="c-section-center c-page-width-m">
-      <h3 class="c-header-xl text-center">We're here to help</h3>
-      <p class="text-center margin-bottom-xs m-padding-bottom-xs m-margin-bottom-none padding-top-xs">
-        <u>support@gemaandco.com</u>
+      <h3 class="c-header-xl padding-top-s text-center">We're here to help</h3>
+      <p class="text-center padding-top-m margin-bottom-m m-padding-bottom-xs m-margin-bottom-none">
+        <a>support@gemaandco.com</a><br>
+        <span class="text-light">Estimated response time: 24 HR</span>
       </p>
-      <p class="text-center margin-bottom-xs m-padding-bottom-xs m-margin-bottom-none">
-        (650) 206-9682
+      <p class="text-center padding-bottom-s margin-bottom-xs m-padding-bottom-xs m-margin-bottom-none">
+        Text us: (650) 206-9682<br>
+        <span class="text-light">Hours | Monday-Friday (9am-5pm PST)</span>
       </p>
-      <ul class="list--inline site-footer__social-icons social-icons text-center margin-none">
-        {% if settings.social_facebook_link != blank %}
-          <li>
-            <a class="social-icons__link" href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
-              {% include 'icon-facebook' %}
-              <span class="icon__fallback-text">Facebook</span>
-            </a>
-          </li>
-        {% endif %}
-        {% if settings.social_twitter_link != blank %}
-          <li>
-            <a class="social-icons__link" href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
-              {% include 'icon-twitter' %}
-              <span class="icon__fallback-text">Twitter</span>
-            </a>
-          </li>
-        {% endif %}
-        {% if settings.social_instagram_link != blank %}
-          <li>
-            <a class="social-icons__link" href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
-              {% include 'icon-instagram' %}
-              <span class="icon__fallback-text">Instagram</span>
-            </a>
-          </li>
-        {% endif %}
-      </ul>
     </div>
   </div>
 </div>

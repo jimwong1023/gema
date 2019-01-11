@@ -41,7 +41,7 @@
         </div>
       </div>
     </li>
-    <li class="mobile-nav__item margin-bottom-none">
+<!--     <li class="mobile-nav__item margin-bottom-none">
       <a href="/collections/engagement-rings" class="mobile-nav__link c-label">
         Engagement Rings
       </a>
@@ -50,10 +50,32 @@
       <a href="/collections/wedding-bands" class="mobile-nav__link c-label">
         Wedding Bands
       </a>
+    </li> -->
+    <li class="mobile-nav__item margin-bottom-none">
+      <div>
+        <a href="#" class="mobile-nav__link c-label js-mobile-nav-dropdown">
+          <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+          <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+          Engagement
+        </a>
+        <div class="mobile-nav__item  mobile-nav__item-dropdown js-dropdown-content hidden">
+          <a href="/collections/engagement-rings" class="subnav__mobile-nav__link">
+            Engagement Rings
+          </a>
+          <a href="/collections/wedding-bands" class="subnav__mobile-nav__link">
+            Wedding Bands
+          </a>
+        </div>
+      </div>
     </li>
     <li class="mobile-nav__item margin-bottom-none">
-      <a href="/pages/frequently-asked-questions" class="mobile-nav__link c-label">
-        FAQ
+      <a href="/collections/jewelry" class="mobile-nav__link c-label">
+        Earrings
+      </a>
+    </li>
+    <li class="mobile-nav__item margin-bottom-none">
+      <a href="/pages/bespoke" class="mobile-nav__link c-label">
+        Design Your Own
       </a>
     </li>
     <li class="mobile-nav__item margin-bottom-none">
@@ -67,6 +89,9 @@
           <a href="/pages/our-story" class="subnav__mobile-nav__link">
             Our Mission
           </a>
+          <a href="/pages/frequently-asked-questions" class="subnav__mobile-nav__link">
+            FAQ
+          </a>
           <a href="/pages/gemstone" class="subnav__mobile-nav__link">
             Materials and Care
           </a>
@@ -79,13 +104,13 @@
     {% if shop.customer_accounts_enabled %}
       {% if customer %}
         <li class="mobile-nav__item margin-bottom-none border-bottom">
-          <a href="/account" class="mobile-nav__link c-label">
+          <a href="/account" class="mobile-nav__link text-light c-label">
             <span>{{ 'layout.customer.account' | t }}</span>
           </a>
         </li>
       {% else %}
         <li class="mobile-nav__item margin-bottom-none border-bottom">
-          <a href="/account/login" class="mobile-nav__link c-label">
+          <a href="/account/login" class="mobile-nav__link text-light c-label">
             <span>{{ 'layout.customer.log_in' | t }}</span>
           </a>
         </li>
