@@ -22,11 +22,6 @@
     {% if current_page != 1 %}
       &ndash; {{ 'general.meta.page' | t: page: current_page }}
     {% endif %}
-    {% unless page_title contains shop.name %}
-      {% assign words = shop.name | split: ' ' %}
-      {% capture titlecase %}{% for word in words %}{{ word | downcase | capitalize }} {% endfor %}{% endcapture %}
-      &ndash; {{ titlecase }}
-    {% endunless %}
   {% endcapture %}
   <title>{{ seo_title }}</title>
 
@@ -88,6 +83,10 @@
 </head>
 
 <body class="template-{{ template | split: '.' | first }}">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2JPPX6"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
@@ -147,6 +146,5 @@
       return false;
     }
   </script>
-
 </body>
 </html>

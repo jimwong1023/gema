@@ -127,8 +127,8 @@
         </div>
       {% endif %}
 
-      <div class="c-column-flex-container">
-        <div class="c-column-flex-container c-tablet-flex-column c-column-flex-2">
+      <div class="c-column-flex-container c-flex-wrap">
+        <div class="c-column-flex-container c-column-flex-2 c-tablet-flex-fullwidth padding-bottom-s c-mobile-border-bottom">
           <div class="c-footer-ul c-column-flex-1">
             {%- assign footer_linklist = section.settings.footer_linklist -%}
             {% if linklists[footer_linklist].links.size > 0 %}
@@ -142,7 +142,9 @@
               </ul>
             {% endif %}
           </div>
-
+        </div>
+        
+		<div class="c-column-flex-container c-column-flex-2 m-padding-top-m">
           <div class="c-footer-ul c-column-flex-1">
             {%- assign footer_linklist_two = section.settings.footer_linklist_two -%}
             {% if linklists[footer_linklist_two].links.size > 0 %}
@@ -156,9 +158,7 @@
               </ul>
             {% endif %}
           </div>
-        </div>
-        
-        <div class="c-column-flex-container c-tablet-flex-column c-column-flex-2">
+          
           <div class="c-footer-ul c-column-flex-1">
             {%- assign footer_linklist_three = section.settings.footer_linklist_three -%}
             {% if linklists[footer_linklist_three].links.size > 0 %}
@@ -172,7 +172,9 @@
               </ul>
             {% endif %}
           </div>
-
+        </div>       
+          
+<!-- 		<div class="c-column-flex-container c-column-flex-2 c-tablet-flex-fullwidth">
           <div class="c-footer-ul c-column-flex-1">
             {%- assign footer_linklist_four = section.settings.footer_linklist_four -%}
             {% if linklists[footer_linklist_four].links.size > 0 %}
@@ -186,7 +188,7 @@
               </ul>
             {% endif %}
           </div>
-        </div>
+        </div> -->
 
         {% if section.settings.footer_newsletter_enable %}
           <div class="c-column-flex-3 m-padding-bottom-s c-mobile-hide">
@@ -302,7 +304,7 @@
       {% endif %}
       
       <div class="c-social">
-    	<p class="copyright">&copy; 2019 GEMA & CO</p>
+        <p class="copyright">&copy; 2020 GEMA & CO | <a href="/pages/legal">Terms</a> | <a href="/pages/legal">Privacy</a> | <a href="/pages/ca-supply-chain">CA Act</a></p>
       </div>
     </div>
     {% if social_icons and section.settings.footer_newsletter_enable and section.settings.show_payment_icons %}

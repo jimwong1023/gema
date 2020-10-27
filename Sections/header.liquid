@@ -109,10 +109,10 @@
         <div class="grid__item small--one-half">
           {% comment %}
             Use the uploaded logo from theme settings if enabled.
-            Site name gets precedence with H1 tag on homepage, div on other pages.
+            Site name gets precedence with H2 tag on homepage, div on other pages.
           {% endcomment %}
           {% if template.name == 'index' %}
-            <h1 class="h2 site-header__logo" itemscope itemtype="http://schema.org/Organization">
+            <h2 class="h2 site-header__logo" itemscope itemtype="http://schema.org/Organization">
           {% else %}
             <div class="h2 site-header__logo" itemscope itemtype="http://schema.org/Organization">
           {% endif %}
@@ -140,7 +140,7 @@
               <a class="site-header__logo-link" href="/" itemprop="url">{{ shop.name }}</a>
             {% endif %}
           {% if template.name == 'index' %}
-            </h1>
+            </h2>
           {% else %}
             </div>
           {% endif %}

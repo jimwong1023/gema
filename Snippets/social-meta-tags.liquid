@@ -3,6 +3,7 @@
 {%- assign og_url = canonical_url -%}
 {%- assign og_type = 'website' -%}
 {%- assign og_description = page_description | default: shop.description | default: shop.name -%}
+{%- capture og_image_tags -%}<meta property="og:image" content="https://cdn.shopify.com/s/files/1/2109/1565/files/ECFF5CC6-BD50-4A16-B5B6-C690B08F3591.jpeg?v=1590036450">{% endcapture -%}
 
 {% comment %} Template specific overides {% endcomment %}
 {%- if template.name == 'product' -%}
@@ -31,7 +32,6 @@
 <meta property="og:title" content="{{ og_title }}">
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description }}">
-<meta property="og:image" content="https://cdn.shopify.com/s/files/1/2109/1565/files/DSCF4154_4.jpg?859294773187918799">
 {%- if template.name == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
   <meta property="og:price:currency" content="{{ shop.currency }}">

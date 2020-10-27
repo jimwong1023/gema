@@ -1,0 +1,41 @@
+{% include 'support-header' %}
+
+
+<div class="page-width c-column-flex-container c-mobile-flex-column padding-top-m m-padding-top-none padding-bottom-m">
+  <div class="c-column-flex-2 padding-top-s">
+    {% include 'support-sidebar', curr_page: 'Sitemap' %}
+  </div>
+  <div class="c-column-flex-7">
+    <div>
+      <h1 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Sitemap</h1>
+      <h2 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Products</h2>
+      {% for c in collections reversed %}
+        <h3 class="c-header-m padding-top-s padding-bottom-s"><a href="{{ c.url }}">{{ c.title }}</a></h3>
+        <ul>
+          {% paginate c.products by 1000 %}
+            {% for product in c.products %}
+              <li>
+                <p><a href="{{ product.url }}">{{ product.title }}</a></p>
+              </li>
+            {% endfor %}
+          {% endpaginate %}
+        </ul>
+      {% endfor %}
+      <h2 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Services</h2>
+      <ul>
+        <li><p><a href="/pages/bespoke">Custom / Bespoke Jewelry</a></p></li>
+        <li><p><a href="/blogs/blog">Blog</a></p></li>
+        <li><p><a href="/pages/our-story">Our Mission</a></p></li>
+        <li><p><a href="/pages/gemstone">Materials and Care</a></p></li>
+        <li><p><a href="/pages/the-4-cs">4cs of Moissanite</a></p></li>
+        <li><p><a href="/pages/frequently-asked-questions">FAQ</a></p></li>
+        <li><p><a href="/pages/shipping">Shipping</a></p></li>
+        <li><p><a href="/pages/returns">Returns</a></p></li>
+        <li><p><a href="/pages/payment-options">Payment Options</a></p></li>
+        <li><p><a href="/pages/warranty">Warranty</a></p></li>
+        <li><p><a href="/pages/contact-us">Contact Us</a></p></li>
+      </ul>
+    </div>
+  </div>
+</div>
+

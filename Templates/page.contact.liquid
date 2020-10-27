@@ -9,7 +9,7 @@
       <div class="grid grid--half-gutters">
         <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
           <div class="padding-bottom-s m-padding-bottom-s">
-            <h3 class="c-header-l c-accent-color">{{ page.title }}</h3>
+            <h1 class="c-header-l c-accent-color">{{ page.title }}</h1>
           </div>
 
           {% if page.content.size > 0 %}
@@ -22,9 +22,12 @@
             {% form 'contact' %}
 
               {% if form.posted_successfully? %}
-                <p class="note form-success">
+<!--                 <p class="note form-success">
                   {{ 'contact.form.post_success' | t }}
-                </p>
+                </p> -->
+                <script>
+                  window.location = "/pages/thank-you-for-contacting-us";
+                </script>
               {% endif %}
 
               {{ form.errors | default_errors }}

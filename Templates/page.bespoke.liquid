@@ -1,10 +1,11 @@
-<div class="page-width c-page-width-l padding-top-m m-padding-top-m m-padding-bottom-none">
-  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Design your own</h3>
+<div class="page-width c-page-width-l padding-top-m m-padding-top-none m-padding-bottom-none">
+  <h1 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Design Your Own</h1>
   <p class="m-padding-top-none">
     Whether you’ve already got a design idea in your mind or have been inspired by a jewelry piece 
     that you have already seen, but would like to adapt it to suit your own tastes, 
     we can create your very own personalized piece using our bespoke design service.
   </p>
+  <p>We can custom cut our Moissanite to any dimension you desire as well as color match to your already existing pieces all at incredibly compeitive prices!</p>
   <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">The Custom Process</h3>
   <p>Our custom process allows you to walk through the entire bespoke process with us. You help
     select the stone(s) and all the details before the piece gets put into production.
@@ -17,9 +18,9 @@
   </ul>
 </div>
   
-<div class="page-width c-page-width-l c-column-flex-container c-mobile-flex-column padding-bottom-m m-padding-top-none m-padding-bottom-none">
+<div class="page-width c-page-width-l c-column-flex-container c-mobile-flex-column m-padding-top-none m-padding-bottom-none">
   <div class="c-column-flex-7 padding-top-s">
-    <div class="padding-bottom-l m-padding-bottom-m">
+    <div>
       <div class="grid grid--half-gutters">
         <div class="grid__item">
           <div class="padding-bottom-s m-padding-bottom-s">
@@ -36,13 +37,6 @@
 
           <div class="contact-form form-vertical">
             {% form 'contact' %}
-
-              {% if form.posted_successfully? %}
-                <p class="note form-success">
-                  {{ 'contact.form.post_success' | t }}
-                </p>
-              {% endif %}
-
               {{ form.errors | default_errors }}
 
               <div class="grid grid--half-gutters">
@@ -74,14 +68,47 @@
 
 
               <label class="c-contact-form-label" for="ContactFormMessage">Share details about your vision</label>
-              <textarea rows="10" id="ContactFormMessage" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+              <textarea rows="10" id="ContactFormMessage" name="contact[body]" placeholder="Describe your vision here. Indicate what stones and sizes you'd like, include links to any inspiration pieces, etc...">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
               <input type="submit" class="btn c-contact-form-label" value="{{ 'contact.form.submit' | t }}">
-
+			  {% if form.posted_successfully? %}
+                <script>
+                  window.location = "/pages/thank-you-for-contacting-us";
+                </script>
+              {% endif %}
             {% endform %}
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="page-width c-page-width-l padding-top-m m-padding-top-none padding-bottom-m">
+  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Why Design Your Own Moissanite Ring?</h1>
+  <p>Getting engaged is one of the most important decisions you’ll ever make in your life. It represents a special commitment to the unique bond that you and your partner share that no else can replicate.</p>
+  <p>Doesn’t it make sense to reflect that in your engagement ring as well?</p>
+  <p>To build your own Moissanite engagement ring is to have the creative freedom to craft an accessory that’s one-of-a-kind. You can infuse your unique tastes and perspective into the ring to make it your own. Or maybe your partner already has a design in mind that you’d like to bring to life.</p>
+  <p>Many people think that a custom Moissanite engagement ring (or any bespoke ring for that matter) is more expensive than ready-made pieces. However, nothing could be farther from the truth. In fact, a bespoke ring will give you much better control over the price while designing the ideal <a class="classic-link" href="https://gemaandco.com/collections/engagement-rings">Moissanite ring</a> for your fiancé.</p>
+  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">What Elements to Consider When You Design Your Own Moissanite Engagement Ring</h3>
+  <p>One of the most stressful things about choosing a diamond engagement ring is poring over endless decisions, like color and clarity, while keeping with a set budget. Thankfully, a custom Moissanite ring is incredibly simple to purchase with fewer things to consider.</p>
+  <p>One of the more critical considerations as you design Moissanite rings is the shape of the gemstone. The shape will dictate the overall visual appearance of your stone, as well as how brilliant it is. It’s also a reflection of the wearer’s tastes and personality. Many pick the classic shapes like Round and Princess, but there are more unique cuts like Marquise, Tapered Baguette, elongated Ovals / Cushions / Emeralds / etc., Half Moon, and other varieties.</p>
+  <p>Next to shape, when working with <a class="classic-link" href="https://gemaandco.com/blogs/blog/the-difference-between-moissanite-and-diamond">Moissanite</a> you will need to consider the size of the stone. A larger gem will be more radiant and impressive but will cost more. Thankfully, it’s much less expensive than a similarly-sized diamond. Hence, a larger Moissanite is within reach for anyone, even with a modest budget.</p>
+  <p>Lastly, the setting of the ring is an important design decision as it will highlight and complement the gemstone. A classic setting is the <a class="classic-link" href="https://gemaandco.com/collections/solitaire">Solitaire Ring</a>, which is a simple band that showcases the brilliance of the Moissanite itself. For more luxurious and brilliant designs, go with a <a class="classic-link" href="https://gemaandco.com/collections/pave">Pave</a> or <a class="classic-link" href="https://gemaandco.com/collections/halo">Halo</a>.</p>
+  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">How We Make Our Rings</h3>
+  <p>When we design Moissanite engagement rings, we make sure it’s a very involved process. We’ll walk you through every step of the way, from the initial meeting to the final delivery of your ring.</p>
+  <p>We start by talking about the design vision for your dream engagement ring, as well as your timeline. You can present your inspiration, ideas, or even sketches to help us get a  clear picture of what you want out of your ring. If you don’t have anything in mind, we’ll be more than happy to give you our recommendations.</p>
+  <p>You then pick from a variety of shapes and sizes for the Moissanite, as well as the setting and metal used in the band. We can also narrow down the dimensions of the ring to make sure it fits his or her hand as perfectly as possible.</p>
+  <p>Once you’ve finalized a design, it then goes into our custom fabrication process for around 2.5 weeks and up to 4 weeks for more complicated designs.</p>
+  <p>Now all that’s left is for you to pop the question and slip the ring onto your fiance’s finger!</p>
+  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Why Moissanite?</h3>
+  <p>Moissanite is a unique gemstone similar to a diamond but with a distinct appearance and composition.</p>
+  <p>Most Moissanite used today is created in a laboratory from silicon carbide, but that doesn’t mean the stone is inferior or low quality. The best examples of this gemstone can compete with the world’s best diamond. In fact, being artificially grown makes custom Moissanite engagement rings more ethical since there’s no mining involved or issues with unfair labor practices.</p>
+  <p>The brilliance of Moissanite is what sets it apart from other gemstones. Because of a unique facing pattern, Moissanite emits rays of light similar to a disco ball. It’s also on average much brighter and more radiant than a diamond.</p>
+  <p>Moissanite is also one of the hardest gemstones on Earth, with a Mohs scale rating of 9.25. Only diamond scores higher with a rating of 10, which makes the durability of a custom Moissanite ring an excellent accessory to wear every day.</p>
+  <p>Pricing, however, is one of the best reasons to buy custom made Moissanite engagement rings. Their cost is significantly lower and doesn’t tend to fluctuate as wildly as diamonds do.</p>
+  <h3 class="c-header-l padding-top-s padding-bottom-s c-accent-color">Moissanite Custom Ring Design Ideas and Inspiration</h3>
+  <p>The best engagement ring is one that complements the unique personality of your significant other.</p>
+  <p>If your fiancé prefers a more classic and timeless look, the Round cut is a safe choice. It’s one of the most famous gemstone cuts, known for its radiant fire and brilliance. The Princess Cut is an elegant square cut that’s great for accentuating a larger stone. For more modern tastes, the Oval has excellent visual appeal, while the retro Emerald or Cushion cuts are sought after for their Art Deco inspired-design.</p>
+  <p>The setting of the ring also plays a big part in how the overall ring is perceived. A classic Solitaire Cut is great for making smaller stones appear more significant than they do, as it allows more light to enter for a brighter fire. A Pave setting is also great for this purpose, as the added gems can dramatically increase the ring’s overall brilliance.</p>
 </div>

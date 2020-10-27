@@ -130,6 +130,10 @@
                 <span class="cart__savings-amount">{{ cart.total_discounts | money }}</span>
               </div>
             {% endif %}
+            {% comment %} <!-- Insert QuadPay Widget --> {% endcomment %}
+            <div class="padding-top-s" style="margin: 0 0 10px 0;min-height:20px; display: flex; flex-direction: row-reverse;">
+              <quadpay-widget amount={{ cart.total_price | divided_by: 100.00 }} logoSize="80%"></quadpay-widget>
+            </div>
             <div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>
             <a href="collections/engagement-rings" class="btn btn--secondary cart__update cart__continue--large small--hide c-secondary-btn" >{{ 'cart.general.continue_shopping' | t }}</a>
             <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide c-secondary-btn" value="{{ 'cart.general.update' | t }}">

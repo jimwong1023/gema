@@ -389,7 +389,7 @@ $z-index-announcement-bar: 10;
 $z-index-skip-to-content: 10000; // really high to be safe of app markup
 
 /*================ SVG ================*/
-$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/21/assets/ico-select.svg?10700812878839934709'};
+$svg-select-icon: #{'//cdn.shopify.com/s/files/1/2109/1565/t/50/assets/ico-select.svg?v=9781051768414492346'};
 
 /*================ Drawers ================*/
 $transition-drawer: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
@@ -407,47 +407,34 @@ $transition-image-slideshow: opacity 0.8s cubic-bezier(0.44, 0.13, 0.48, 0.87);
 
 /*================ Typography ================*/
 @font-face {
-  font-family: Brandon_Grotesque_Regular;
-  src: url(./Brandon_Grotesque_Regular.otf);
-}
-
-@font-face {
-  font-family: Brandon_Grotesque_Light;
-  src: url(./Brandon_Grotesque_Light.otf);
-}
-
-@font-face {
-  font-family: Brandon_Grotesque_Bold;
-  src: url(./Brandon_Grotesque_Bold.otf);
-}
-
-@font-face {
-  font-family: Brandon_Text_Light;
-  src: url(./Brandon_Text_Light.otf);
-}
-@font-face {
-  font-family: Brandon_Text_Regular;
-  src: url(./Brandon_Text_Medium.otf);
-}
-@font-face {
-  font-family: Brandon_Text_Medium;
-  src: url(./Brandon_Text_Medium.otf);
-}
-@font-face {
-  font-family: Brandon_Text_Bold;
-  src: url(./Brandon_Text_Bold.otf);
-}
-@font-face {
   font-family: Maison_Neue_Light;
   src: url(./Maison_Neue_Light.otf);
 }
 @font-face {
   font-family: Maison_Neue_Medium;
-  src: url(./Maison_Neue_Medium.otf);
+  src: url(./Maison_Neue_Medium.ttf);
+}
+@font-face {
+  font-family: Maison_Neue_Reg;
+  src: url(./Maison_Neue_Regular.ttf);
 }
 @font-face {
   font-family: Tiempos_Headline_Regular;
   src: url(./Tiempos_Headline_Regular.otf);
+}
+
+@font-face {
+  font-family: Gema_NM_Bold;
+  src: url(./NM-Bold.ttf);
+}
+
+@font-face {
+  font-family: Gema_GS_Light;
+  src: url(./GillSans-Light.ttf);
+}
+@font-face {
+  font-family: Gema_GS;
+  src: url(./GillSans.ttf);
 }
 
 
@@ -464,7 +451,7 @@ $font-size-header: 20px;
 $font-bold-titles: false;
 
 $font-stack-body: Maison_Neue_Light;
-$font-size-base: 13px; // Henseforth known as 1em
+$font-size-base: 12px; // Henseforth known as 1em
 
 $font-stack-cart-notification: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
 
@@ -511,7 +498,7 @@ $slick-opacity-not-active: 0.25;
 
 // Only called once so make sure proper file is grabbed
 @function slick-image-url($url) {
-  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/21/assets/ajax-loader.gif?10700812878839934709);
+  @return url(//cdn.shopify.com/s/files/1/2109/1565/t/50/assets/ajax-loader.gif?v=4135686330247201572);
 }
 
 // Unused intentionally
@@ -791,14 +778,13 @@ $grid-breakpoints: (
 
 body {
   margin: 0;
-  letter-spacing: 0.03em;
 }
 
 .body__announcement-bar {
   padding-top: 144px;
   
   @media only screen and (max-width: $grid-medium) {
-    padding-top: 70px;
+    padding-top: 90px;
   }
 }
 
@@ -1371,7 +1357,7 @@ select {
   textarea,
   select,
   button {
-    font-size: $font-size-mobile-input;
+    font-size: em($font-size-base); /*===I removed the "-2" here to get mobile text larger==*/
   }
 }
 
@@ -1814,7 +1800,6 @@ a {
 .btn--secondary {
   background-color: transparent;
   color: $color-dark-grey;
-  letter-spacing: .03em;
   border-color: $color-medium-grey;
 }
 
@@ -2055,7 +2040,6 @@ select {
   font-family: $font-stack-body;
   max-width: 100%;
   line-height: 1.2;
-  letter-spacing: .03em;
 
   &:focus {
     border-color: darken($color-border, 10%);
@@ -2132,7 +2116,7 @@ select {
   text-indent: 0.01px;
   text-overflow: '';
   cursor: pointer;
-  padding-top: $input-padding-top-bottom-small;
+/*   padding-top: $input-padding-top-bottom-small; */
 /*   padding-left: $input-padding-left-right-small; */
   padding-bottom: $input-padding-top-bottom-small;
 
@@ -2345,7 +2329,7 @@ $dropdown-padding: 11px 17px;
   
   a {
     padding: 3px 40px;
-    letter-spacing: .1em;
+    letter-spacing: .05em;
   }
 
   li {
@@ -2363,7 +2347,6 @@ $dropdown-padding: 11px 17px;
   font-size: em($font-size-base);
   font-family: $font-stack-header;
   text-transform: uppercase;
-  letter-spacing: .1em;
   color: $color-medium-grey;
 }
 
@@ -2405,6 +2388,7 @@ $dropdown-padding: 11px 17px;
 .site-nav--has-dropdown {
   line-height: 45px; 
   min-height: 45px;
+  cursor: default;
 }
 
 .site-nav--has-centered-dropdown {
@@ -2703,7 +2687,6 @@ hr {
 .grid-view-item__title {
   font-size: em($font-size-base + 3px);
   font-family: $font-custom-header;
-  letter-spacing: .05em;
   margin-bottom: 0;
   color: $color-text;
 
@@ -3243,8 +3226,7 @@ h1.product-single__title {
   background-color: $color-dark-grey;
   font-family: $font-stack-header;
   font-size: em($font-size-base);
-  font-weight: bold;
-  letter-spacing: .1em;
+  letter-spacing: .075em;
   
   @include media-query ($small) {
     letter-spacing: .08em;
@@ -3342,6 +3324,10 @@ h1.product-single__title {
   width: 100%;
   height: 100%;
   position: relative;
+}
+
+.product-single__thumbnails-item {
+  clear: none !important;
 }
 
 @include media-query($small) {
@@ -3630,7 +3616,6 @@ h1.product-single__title {
 .cart-note__label {
   margin-bottom: 5px;
   font-family: $font-stack-header;
-  letter-spacing: .03em;
 }
 
 .cart-note__input {
@@ -3840,15 +3825,10 @@ h1.product-single__title {
 .announcement-bar__message {
   display: block;
   font-family: $font-stack-header;
-  padding: 15px $gutter-site-mobile;
-  font-weight: bold;
-  letter-spacing: 0.03em;
+  padding: 11px $gutter-site-mobile;
 
   @include media-query($medium-up) {
     padding: 5px $gutter-site;
-  }
-  @include media-query($small) {
-    letter-spacing: -0.03em;
   }
 }
 
@@ -3949,7 +3929,6 @@ h1.product-single__title {
   position: absolute;
   top: 1px;
   margin-left: 6px;
-  font-weight: bold;
   background-color: $color-dark-grey;
   color: $color-white;
   border-radius: 10px;
@@ -4441,7 +4420,15 @@ $mobile-nav-button-padding: 15px;
 .subnav__mobile-nav__link {
   display: block;
   width: 100%;
-  padding: 8px 10px 8px 20px;
+  padding: 6px 10px 6px 20px;
+}
+
+.subnav__mobile-nav__link:first-child {
+  padding: 12px 10px 6px 20px;
+}
+
+.subnav__mobile-nav__link:last-child {
+  padding: 6px 10px 12px 20px;
 }
 
 .mobile-nav__link {
@@ -4582,7 +4569,7 @@ $mobile-nav-button-padding: 15px;
 }
 
 .mobile-nav-wrapper__announcement-bar {
-  @include transform(translate3d(-100%, 70px, 0));
+  @include transform(translate3d(-100%, 90px, 0));
 }
 
 .mobile-nav-wrapper__no-announcement-bar {
@@ -5985,7 +5972,7 @@ $toolbar-height-small: 46px;
 }
 .newsletter__input {
   text-transform: uppercase;
-  letter-spacing:.1em;
+  letter-spacing:.05em;
   
   @media only screen and (max-width: 450px) {
     font-size: em($font-size-base);
@@ -6280,18 +6267,18 @@ $toolbar-height-small: 46px;
 }
 .m-padding-top-xs {
   @media only screen and (max-width: $grid-medium) {
-    padding-top: 12px;
+    padding-top: 10px;
   }
 }
 
 .m-padding-top-s {
   @media only screen and (max-width: $grid-medium) {
-    padding-top: 22px;
+    padding-top: 20px;
   }
 }
 .m-padding-top-m {
   @media only screen and (max-width: $grid-medium) {
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 .m-padding-top-l {
@@ -6390,6 +6377,10 @@ $toolbar-height-small: 46px;
   display: flex;
 }
 
+.c-flex-wrap {
+  flex-wrap: wrap;
+}
+
 .c-flex-align-right {
   justify-content: flex-end
 }
@@ -6411,6 +6402,12 @@ $toolbar-height-small: 46px;
 .c-tablet-flex-column {
   @media only screen and (max-width: $grid-large) {
     flex-direction: column;
+  }
+}
+
+.c-tablet-flex-fullwidth {
+  @media only screen and (max-width: $grid-large) {
+    flex: 0 0 100% !important;
   }
 }
 
@@ -6680,9 +6677,20 @@ $toolbar-height-small: 46px;
 .spr-review-header-byline {
   margin: 3px 0px 10px 0px !important;
   color: $color-medium-grey;
-  letter-spacing: 0.03em;
+  font-style: normal !important;
+  opacity: 1 !important;
   @include media-query($small) {
     letter-spacing: 0em;
+  }
+}
+
+.spr-header-outside {
+  margin-bottom: -40px;
+  padding-top: 25px;
+  
+  @media only screen and (max-width: $grid-small) {
+    margin-bottom: -25px;
+    padding-top: 0;
   }
 }
 
@@ -6690,7 +6698,7 @@ $toolbar-height-small: 46px;
   font-family: $font-custom-header;
   font-size: 1.4em !important;
   @media only screen and (max-width: $grid-large) and (min-width: $grid-small) {
-    padding: 0px 40px 35px 0;
+/*     padding: 0px 40px 35px 0; */
     text-align: left !important;
     margin: 0;
   }
@@ -6730,11 +6738,11 @@ $toolbar-height-small: 46px;
   }
 }
 
-#shopify-product-reviews {
+/* #shopify-product-reviews {
   @media only screen and (max-width: $grid-large) {
     margin: 0 0 1em 0 !important;
   }
-}
+} */
 // END REVIEWS
 
 // Main Landing Hero
@@ -6794,7 +6802,7 @@ $toolbar-height-small: 46px;
 }
 
 .c-logo-width {
-  max-width: 120px;
+  max-width: 150px;
   
   @media only screen and (max-width: $grid-medium) {
     max-width: 105px;
@@ -6806,7 +6814,7 @@ $toolbar-height-small: 46px;
 }
 
 .c-display-inline {
-  display: inline-block;
+  display: inline-block !important;
 }
 
 .c-mobile-text-center {
@@ -6849,7 +6857,6 @@ $toolbar-height-small: 46px;
 .c-mobile-product-header {
   font-size: 1.25em;
   font-family: $font-custom-header;
-  letter-spacing: .03em;
 }
 
 .c-engagement-container {
@@ -6913,7 +6920,6 @@ $toolbar-height-small: 46px;
   font-size: 1.4em;
   font-family: $font-custom-header;
   margin: 0px;
-  letter-spacing: .03em;
   @media only screen and (max-width: 450px) {
     font-size: em($font-size-base + 2px);
   }
@@ -6921,31 +6927,27 @@ $toolbar-height-small: 46px;
 .c-header-l {
   font-size: 1.75em;
   margin: 0px;
-  letter-spacing: .015em;
   font-family: $font-custom-header;
   @media only screen and (max-width: 450px) {
     font-size: 1.4em;
-    letter-spacing: .03em;
   }
 }
 .c-header-xl {
   font-family: $font-custom-header;
   font-size: 2em;
   margin: 0px;
-  letter-spacing: .03em;
   @media only screen and (max-width: 450px) {
     font-size: 2em;
-    letter-spacing: 0em;
+    letter-spacing: -0.03em;
   }
 }
 .c-header-xxl {
   font-family: $font-custom-header;
-  font-size: 2.75em;
-  letter-spacing: .050em;
+  font-size: 33px;
   margin: 0px;
   @media only screen and (max-width: 450px) {
-    font-size: 2.5em;
-    letter-spacing: 0em;
+    font-size: 28px;
+    letter-spacing: -0.03em;
   }
 }
 
@@ -6959,10 +6961,6 @@ $toolbar-height-small: 46px;
   }
   .c-color-chart-title {
     padding: 10px;
-  }
-  
-  .c-color-chart-gema {
-    font-weight: bold;
   }
   
   .c-color-chart-table {
@@ -7095,7 +7093,7 @@ $toolbar-height-small: 46px;
 
 // HEADER CSS
 .c-site-header-padding {
-  padding: 15px 0 0 0;
+  padding: 11px 0 0 0;
   
   @media only screen and (max-width: $grid-widescreen) {
     padding: 15px 40px 0 40px;
@@ -7192,7 +7190,6 @@ $toolbar-height-small: 46px;
   h1 {
     font-size: 1.4em;
     font-family: $font-custom-header;
-    letter-spacing: .03em;
     
     @media only screen and (max-width: 450px) {
   }
@@ -7233,7 +7230,6 @@ input {
 }
 .custom-product-header {
   display: inline-block;
-  letter-spacing: .03em;
 }
 .custom-product-price {
   font-family: $font-custom-header;
@@ -7382,6 +7378,11 @@ input {
 .c-section-center {
   margin: 0 auto;
   
+}
+
+.homepage-drawer-link {
+  display: inline-block !important;
+  text-decoration: underline;
 }
 
 .custom-about-content {
@@ -7639,7 +7640,6 @@ input {
   font-size: 1.4em;
   font-family: $font-stack-header;
   margin: 0px;
-  letter-spacing: .03em;
   @media only screen and (max-width: 450px) {
     font-size: em($font-size-base);
   }
@@ -7652,7 +7652,7 @@ input {
 .c-footer-label,
 .mailing-list-header {
   font-size: 1em;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
   text-transform: uppercase;
   font-family: $font-stack-header;
   
@@ -7674,7 +7674,6 @@ input {
 }
 .c-footer-ul {
   margin-top: 0px;
-  margin-bottom: 10px;
 
   @media only screen and (max-width: 450px) {
       margin-top: 0px;
@@ -7683,7 +7682,7 @@ input {
 .c-site-footer__linklist-item a,
 .newsletter__submit-text--large{
   color: $color-medium-grey;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
   font-size: 1em;
 }
 .c-site-footer__newsletter {
@@ -8550,7 +8549,6 @@ input {
 }
 .c-custom-header {
   font-family: $font-custom-header;
-  letter-spacing: .03em;
   
 /*   @media only screen and (max-width: $grid-small) {
     letter-spacing: .03em;
@@ -8709,7 +8707,7 @@ input {
   }
   @media only screen and (max-width: $grid-small) {
     height: 42em;
-    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/mobile_landing_moissanite_engagement_ring.png?16251263022857534788");
+    background-image: url("https://cdn.shopify.com/s/files/1/2109/1565/files/mobile_landing_hero_oval_moissanite.png?16737399008375091046");
     top: 0;
     center: 50%;
     padding-right: 0;
@@ -8727,6 +8725,17 @@ input {
   @media only screen and (max-width: $grid-small) {
     text-align: center;
     padding-bottom: 50px;
+  }
+  
+  p {
+    font-family: $font-custom-header;
+    font-size: 15px;
+    line-height: 1.5em;
+    padding-right: 60%;
+    
+    @media only screen and (max-width: $grid-medium) {
+      padding-right: 30%;
+    }
   }
 }
 .c-landing-3 {
@@ -8856,6 +8865,9 @@ input {
 .text-white {
   color: white;
 }
+.text-slate-gray {
+  color: $color-slate-gray;
+}
 .m-hidden {
   @media only screen and (max-width: 450px) {
     display: none;
@@ -8879,13 +8891,19 @@ input {
 .c-border-bottom {
   border-bottom: 1px solid $color-dark-grey !important;
 }
+
+.c-mobile-border-bottom {
+  @media only screen and (max-width: $grid-medium) {
+    border-bottom: 1px solid $color-light-grey;
+  }
+}
 .c-swatch {
   font-family: $font-stack-header;
 }
 .c-label{
   text-transform: uppercase;
   font-family: $font-stack-header;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
 }
 .c-specs {
   padding-top: 5px;
@@ -8905,4 +8923,10 @@ input {
 
 input, textarea {
   border-radius: 0px !important;
+}
+
+quadpay-widget {
+  span {
+    font-weight: normal !important;
+  }
 }

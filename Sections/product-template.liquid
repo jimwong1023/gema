@@ -2,6 +2,9 @@
   <meta itemprop="name" content="{{ product.title }}">
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_image.src | img_url: '800x' }}">
+  <div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+    <meta itemprop="name" content="{{ shop.name }}" />
+  </div>
 
   {% comment %}
     Get first variant, or deep linked one
@@ -83,9 +86,9 @@
               <span class="icon__fallback-text">{{ 'sections.slideshow.previous_slide' | t }}</span>
             </button>
           {% endif %}
-          <ul class="grid grid--uniform product-single__thumbnails grid--half-gutters product-single__thumbnails-{{ section.id }}">
+          <ul class="grid grid--uniform product-single__thumbnails grid--half-gutters product-single__thumbnails-{{ section.id }} align--top-middle">
             {% for image in product.images %}
-              <li class="grid__item {{ product_thumbnail_width }} product-single__thumbnails-item js">
+              <li class="c-display-inline {{ product_thumbnail_width }} product-single__thumbnails-item js">
                 <a href="{{ image.src | img_url: product_image_zoom_size, scale: product_image_scale }}"
                    class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
                    data-thumbnail-id="{{ image.id }}"
@@ -122,13 +125,15 @@
             <p itemprop="brand" class="product-single__vendor">{{ product.vendor }}</p>
           {% endif %}
 
-          <h4 id="header-compareable-price" class="custom-product-secondary-header c-custom-compareable-price{% if current_variant.metafields.custom_text.compareable_price == blank or current_variant.metafields.custom_text.compareable_price == "" %} hidden{% endif %}">Diamond Equivalent Price – <span id="variant-compareable-price">{{ current_variant.metafields.custom_text.compareable_price }}</span></h4>
+          <h4 id="header-compareable-price" class="custom-product-secondary-header c-custom-compareable-price hidden"><span id="variant-compareable-price"></span></h4>
           <div class="reviews-top">
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           </div>
         </div>
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+          <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+          <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
 
           <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
@@ -206,7 +211,12 @@
                   {% endunless %}
                 </span>
               </button>
-              <p class="custom-finance">No Interest if paid in full in 6 months using <a target="_blank" href="https://www.paypal.com/us/webapps/mpp/paypal-credit"><img src="https://cdn.shopify.com/s/files/1/2109/1565/files/paypal-logo.png?7744322486139905394"></a><a target="_blank" class="custom-finance__link" href="https://www.paypal.com/us/webapps/mpp/paypal-credit">Learn More</a></p>
+              {% comment %} <!-- Insert QuadPay Widget --> {% endcomment %}
+              <div style="margin: 0 0 10px 0; min-height: 20px;">
+                <p class="padding-top-s">
+                  <quadpay-widget amount={{ current_variant.price | divided_by: 100.00 }} logoSize="80%"></quadpay-widget>
+                </p>
+              </div>
             </div>
           </form>
         </div>
@@ -215,6 +225,12 @@
           <label class="c-label">Description</label>
           <div class="padding-top-xs">
             {{ product.description }}
+          </div>
+          <div class="padding-top-s {% if product.metafields.product_specs.setting == blank or product.metafields.product_specs.setting == "" %}hidden{% endif %}">
+            <label class="c-label">Customization</label>
+            <div class="padding-top-xs">
+              Custom Moissanite dimensions as well as alternative gemstones can be used. For inquires: <a href="mailto:support@gemaandco.com"><i>support@gemaandco.com</i></a>
+            </div>
           </div>
         </div>
 
@@ -235,9 +251,9 @@
       <div class="c-column-flex-1 {% if product.metafields.product_specs.setting == blank or product.metafields.product_specs.setting == "" %}hidden{% endif %}">
         <p class="margin-bottom-xxs c-label">Setting Details</p>
         <hr class="margin-none padding-top-xs">
-        <div class="padding-top-xs">Style: Solitaire</div>
+        <div class="padding-top-xs">Style: {% if product.metafields.product_specs.style == blank or product.metafields.product_specs.style == "" %}Solitaire{% else %}{{ product.metafields.product_specs.style }}{% endif %}</div>
         <div class="c-specs">Metal: 14K Gold or Platinum</div>
-        <div class="c-specs">Band Width: 1.7mm | 1.9mm</div>
+        <div class="c-specs">Band Width: 1.7mm</div>
         <div class="c-specs">Rhodium Finish: White Gold only</div>
         <div class="c-specs">Prongs: {{ product.metafields.product_specs.setting }}</div>
       </div>
@@ -265,8 +281,6 @@
         <div class="padding-top-xs">Cleaning Solution: Non-abrasive</div>
         <div class="c-specs">Steamer Reaction: Usually safe</div>
         <div class="c-specs">Ultrasonic Reaction: Usually safe</div>
-        <div class="c-specs">Gem Manufacturer: Charles&Colvard</div>
-        <div class="c-specs">Gemstone Warranty: Lifetime</div>
       </div>
     </div>
   </div>
@@ -317,14 +331,28 @@
         <div>Cleaning Solution: Non-abrasive</div>
         <div>Ultrasonic Reaction: Usually safe</div>
         <div>Steamer Reaction: Usually safe</div>
-        <div>Gem Manufacturer: Charles&Colvard</div>
         <div>Gemstone Warranty: Lifetime</div>
+      </div>
+    </div>
+    <div class="about-row">
+      <a href="#" class="js-dropdown-content-link">
+        <span class="about-icon-right">{% include "icon-chevron-right-small" %}</span>
+        <span class="about-icon-down hidden">{% include "icon-chevron-down-small" %}</span>
+        <h4 class="about-header4 c-label">Collections</h4>
+      </a>
+      <div class="js-dropdown-content product-specs padding-bottom-xs hidden">
+        {% for collection in product.collections %}
+          <div><a class="classic-link" href="{{ collection.url }}">{{ collection.title }}</a></div>
+        {% endfor %}
       </div>
     </div>
   </div>
 </div>
 
 <div class="page-width padding-bottom-s m-padding-top-none m-padding-bottom-none">
+  <div class="spr-header-outside">
+    <h2 class="spr-header-title">Reviews - {{product.title}}</h2>
+  </div>
   <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
 </div>
 
@@ -357,14 +385,14 @@
   </div>
 </div>
 
-<!-- {% if collection %}
+{% if collection %}
   <div class="text-center return-link-wrapper">
     <a href="{{ collection.url }}" class="btn btn--secondary btn--has-icon-before return-link">
       {% include 'icon-arrow-left' %}
       {{ 'products.product.back_to_collection' | t: title: collection.title }}
     </a>
   </div>
-{% endif %} -->
+{% endif %}
 
 <script defer="defer">
   GemaDropdowns.initialize('js-dropdown-content-link');
