@@ -1265,8 +1265,7 @@ textarea {
 }
 
 /*================ #Basic Styles ================*/
-body,
-html {
+.html-color, .body-color {
   background-color: $color-body;
 }
 
@@ -3506,6 +3505,14 @@ h1.product-single__title {
   }
 }
 
+.cart-summary {
+  padding-left: 30%;
+  
+  @media only screen and (max-width: $grid-large) {
+    padding-left: 0;
+  }
+}
+
 .cart__meta-text {
   padding: 0px;
   font-size: em($font-size-base);
@@ -3598,6 +3605,11 @@ h1.product-single__title {
   @media only screen and (max-width: $grid-small) {
     padding-top: 0px;
   }
+}
+
+.cart__update {
+  display: block;
+  width: 100%;
 }
 
 .cart__update--large {
@@ -3781,10 +3793,11 @@ h1.product-single__title {
 
 .cart-checkout {
   min-height: 44px;
+  display: block;
   
-  @media only screen and (max-width: $grid-medium) {
+/*   @media only screen and (max-width: $grid-medium) { */
     width: 100%;
-  }
+/*   } */
 }
 
 .additional-checkout-buttons {
@@ -4599,55 +4612,6 @@ $mobile-nav-button-padding: 15px;
 .mobile-nav--close {
   .icon-hamburger {
     display: none;
-  }
-}
-
-/*================ Modals ================*/
-.modal {
-  @include transform(translateY(-20px));
-  background-color: $color-bg;
-  bottom: 0;
-  color: $color-text;
-  display: none;
-  left: 0;
-  opacity: 0;
-  overflow: hidden;
-  position: fixed;
-  right: 0;
-  top: 0;
-}
-
-.modal--is-active {
-  @include transform(translateY(0));
-  display: block;
-  opacity: 1;
-  overflow: hidden;
-}
-
-.modal__inner {
-  @include prefix(transform-style, preserve-3d, moz webkit spec);
-  height: 100%;
-}
-
-.modal__centered {
-  @include transform(translateY(-50%));
-  position: relative;
-  top: 50%;
-
-  .no-csstransforms & {
-    top: 20%;
-  }
-}
-
-.modal__close {
-  border: 0;
-  padding: $gutter-site;
-  position: fixed;
-  top: 0;
-  right: 0;
-
-  .icon {
-    font-size: em(20);
   }
 }
 
@@ -8939,8 +8903,7 @@ input, textarea {
   border-radius: 0px !important;
 }
 
-quadpay-widget {
-  span {
-    font-weight: normal !important;
-  }
+/* Bread CSS */
+#bread-checkout-btn-product:hover, #bread-checkout-btn:hover {
+  opacity: 0.6;
 }

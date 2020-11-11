@@ -211,11 +211,10 @@
                   {% endunless %}
                 </span>
               </button>
-              {% comment %} <!-- Insert QuadPay Widget --> {% endcomment %}
               <div style="margin: 0 0 10px 0; min-height: 20px;">
-                <p class="padding-top-s">
-                  <quadpay-widget amount={{ current_variant.price | divided_by: 100.00 }} logoSize="80%"></quadpay-widget>
-                </p>
+                {% if product.available %}
+                  <div id="bread-checkout-btn-product" style="width:100%; height:50px; margin:20px 0px;"></div>
+                {% endif %}
               </div>
             </div>
           </form>

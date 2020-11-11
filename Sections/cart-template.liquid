@@ -120,27 +120,28 @@
             </div>
           {% endif %}
           <div class="grid__item text-right small--text-center{% if section.settings.cart_notes_enable %} medium-up--one-half{% endif %}">
-            <div>
-              <span class="cart__subtotal-title"><strong>{{ 'cart.general.subtotal' | t }}</strong></span>
-              <span class="cart__subtotal"><strong>{{ cart.total_price | money }}</strong></span>
-            </div>
-            {% if cart.total_discounts > 0 %}
-              <div class="cart__savings">
-                {{ 'cart.general.savings' | t }}
-                <span class="cart__savings-amount">{{ cart.total_discounts | money }}</span>
+            <div class="cart-summary">
+              <div>
+                <span class="cart__subtotal-title"><strong>{{ 'cart.general.subtotal' | t }}</strong></span>
+                <span class="cart__subtotal"><strong>{{ cart.total_price | money }}</strong></span>
               </div>
-            {% endif %}
-            {% comment %} <!-- Insert QuadPay Widget --> {% endcomment %}
-            <div class="padding-top-s" style="margin: 0 0 10px 0;min-height:20px; display: flex; flex-direction: row-reverse;">
-              <quadpay-widget amount={{ cart.total_price | divided_by: 100.00 }} logoSize="80%"></quadpay-widget>
+              {% if cart.total_discounts > 0 %}
+                <div class="cart__savings">
+                  {{ 'cart.general.savings' | t }}
+                  <span class="cart__savings-amount">{{ cart.total_discounts | money }}</span>
+                </div>
+              {% endif %}
+              <div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>
+  <!--             <a href="collections/engagement-rings" class="btn btn--secondary cart__update cart__continue--large small--hide c-secondary-btn" >{{ 'cart.general.continue_shopping' | t }}</a> -->
+              <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide c-secondary-btn" value="{{ 'cart.general.update' | t }}">
+              {% if cart.item_count > 0 %}
+                <div id="bread-checkout-btn" style="height:50px; margin:1.5% 0px;"></div>
+              {% endif %}
+              <input type="submit" onclick="ga('send', 'event', 'checkout', 'proceed to checkout');" name="checkout" class="btn btn--small-wide cart-checkout c-primary-btn c-label" value="{{ 'cart.general.checkout' | t }}">
+  <!--             {% if additional_checkout_buttons %}
+                <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+              {% endif %} -->
             </div>
-            <div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>
-            <a href="collections/engagement-rings" class="btn btn--secondary cart__update cart__continue--large small--hide c-secondary-btn" >{{ 'cart.general.continue_shopping' | t }}</a>
-            <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide c-secondary-btn" value="{{ 'cart.general.update' | t }}">
-            <input type="submit" onclick="ga('send', 'event', 'checkout', 'proceed to checkout');" name="checkout" class="btn btn--small-wide cart-checkout c-primary-btn c-label" value="{{ 'cart.general.checkout' | t }}">
-<!--             {% if additional_checkout_buttons %}
-              <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
-            {% endif %} -->
           </div>
         </div>
       </footer>
